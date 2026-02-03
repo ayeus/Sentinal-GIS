@@ -1,0 +1,17 @@
+pandas
+numpy
+geopandas
+shapely
+pyproj
+pyarrow
+scikit-learn
+statsmodels
+xgboost
+matplotlib
+seaborn
+folium
+streamlit
+requests
+tqdm
+pyyaml
+jupyter
