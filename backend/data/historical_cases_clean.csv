@@ -1,0 +1,1900 @@
+Date,State,District,Disease,Cases,Deaths
+2020-01-20,Karnataka,Raichur,Acute Diarrheal Disease,13,0
+2020-10-25,Kerala,Cannanore (Kannur),Leishmaniasis / Kala-Azar,1,0
+2020-12-09,Kerala,Cannanore (Kannur),Acute Diarrheal Disease,16,0
+2020-12-16,Maharashtra,Satara,Dengue,19,0
+2020-12-28,Maharashtra,Satara,Dengue,8,0
+2021-01-02,Karnataka,Chamarajanagara,Chikungunya,15,0
+2021-01-04,Tamil Nadu,Thiruvallur,Diphtheria,1,0
+2021-01-07,Maharashtra,Gondia,Acute Diarrheal Disease,194,0
+2021-01-10,Maharashtra,Satara,Acute Diarrheal Disease,44,0
+2021-01-11,Puducherry,Puducherry,Dengue,6,0
+2021-01-13,Karnataka,Gadag,Influenza,93,0
+2021-01-17,Andhra Pradesh,West Godavari,Convulsions Of Unknown Cause,29,0
+2021-01-17,Karnataka,Bagalkot,Chikungunya,18,0
+2021-01-17,Karnataka,Tumkur,Influenza,15,0
+2021-01-18,Kerala,Trivandrum,Food Poisoning,28,0
+2021-01-18,Punjab,Patiala,Acute Diarrheal Disease,41,0
+2021-01-18,West Bengal,North 24 Parganas,Acute Diarrheal Disease,62,0
+2021-01-20,Karnataka,Ballari,Acute Diarrheal Disease,18,1
+2021-01-20,Maharashtra,Gadchiroli,Malaria,2,1
+2021-01-20,Uttarakhand,Pauri Garhwal,Hepatitis/Jaundice,5,0
+2021-01-24,Karnataka,Ballari,Acute Diarrheal Disease,19,0
+2021-01-24,Karnataka,Chickaballapura,Acute Diarrheal Disease,61,0
+2021-01-29,Andhra Pradesh,Prakasam,Rabies,1,1
+2021-02-01,Karnataka,Hassan,Acute Diarrheal Disease,14,0
+2021-02-02,Assam,Karbianglog (Diphu),Food Poisoning,202,0
+2021-02-06,Himachal Pradesh,Bilaspur,Acute Diarrheal Disease,309,0
+2021-02-07,Bihar,Supaul,Food Poisoning,40,0
+2021-02-16,Tamil Nadu,Madurai,Diphtheria,1,0
+2021-02-18,Odisha,Bhadrak,Food Poisoning,42,0
+2021-02-21,Odisha,Kendrapara,Food Poisoning,47,0
+2021-02-22,Puducherry,Puducherry,Acute Diarrheal Disease,108,0
+2021-02-22,Tamil Nadu,Pudukottai,Acute Diarrheal Disease,41,0
+2021-02-25,Punjab,Kapurthala,Food Poisoning,28,0
+2021-03-12,Meghalaya,West Khasi Hills,Acute Diarrheal Disease,37,0
+2021-03-15,Andhra Pradesh,Ananthapur,Food Poisoning,5,0
+2021-03-15,Jharkhand,West Singhbhum,Chickenpox,14,0
+2021-03-15,Maharashtra,Bhandara,Food Poisoning,88,1
+2021-03-16,West Bengal,Puruliya,Acute Diarrheal Disease,255,0
+2021-03-17,Haryana,Panipat,Diphtheria,1,0
+2021-03-18,Haryana,Faridabad,Chickenpox,5,0
+2021-03-18,Jharkhand,West Singhbhum,Chickenpox,8,0
+2021-03-22,West Bengal,South 24 Parganas,Acute Diarrheal Disease,32,0
+2021-03-24,Assam,Jorhat,Rubella,1,0
+2021-03-24,Kerala,Ernakulam,Food Poisoning,19,0
+2021-03-24,Odisha,Angul,Food Poisoning,127,0
+2021-03-24,West Bengal,Purba Medinipur,Food Poisoning,503,0
+2021-03-25,Odisha,Nawarangpur,Chickenpox,5,0
+2021-03-25,West Bengal,South 24 Parganas,Acute Diarrheal Disease,57,0
+2021-03-28,Kerala,Ernakulam,Acute Diarrheal Disease,19,0
+2021-03-30,Tamil Nadu,Madurai,Diphtheria,1,0
+2021-04-01,Odisha,Angul,Food Poisoning,24,0
+2021-04-04,Odisha,Kandhamal,Acute Diarrheal Disease,10,0
+2021-04-04,West Bengal,South 24 Parganas,Acute Diarrheal Disease,120,1
+2021-04-05,Meghalaya,East Khasi Hills,Acute Diarrheal Disease,8,0
+2021-04-05,West Bengal,Howrah,Acute Diarrheal Disease,31,0
+2021-04-06,West Bengal,Burdhaman,Acute Diarrheal Disease,41,0
+2021-04-07,West Bengal,Hooghly,Cholera,25,0
+2021-04-09,Meghalaya,East Garo Hills,Acute Diarrheal Disease,24,0
+2021-04-22,West Bengal,South 24 Parganas,Acute Diarrheal Disease,55,0
+2021-07-29,Uttarakhand,Dehradun,Acute Diarrheal Disease,19,0
+2021-08-25,Telangana,Nirmal,Food Poisoning,106,0
+2021-12-13,Kerala,Ernakulam,Hepatitis/Jaundice,9,0
+2021-12-16,Jharkhand,Sahibganj,Measles,63,0
+2021-12-20,Kerala,Ernakulam,Food Poisoning,2,0
+2021-12-24,Kerala,Ernakulam,Acute Diarrheal Disease,14,0
+2021-12-28,Maharashtra,Kolhapur,Acute Diarrheal Disease,44,2
+2021-12-31,Kerala,Thrissur,Lymes Disease,1,0
+2022-01-02,Meghalaya,East Jaintia Hills,Acute Diarrheal Disease,160,0
+2022-01-04,Kerala,Thrissur,Leishmaniasis / Kala-Azar,1,0
+2022-01-05,Jharkhand,Godda,Measles,9,0
+2022-01-10,Jharkhand,Pakur,Fever With Rash,7,0
+2022-01-10,Maharashtra,Gadchiroli,Malaria,7,2
+2022-01-17,Kerala,Ernakulam,Typhoid,4,0
+2022-01-17,Kerala,Idukki,Food Poisoning,16,0
+2022-01-18,Tamil Nadu,Pudukottai,Acute Diarrheal Disease,8,0
+2022-01-21,Jharkhand,Godda,Measles,3,0
+2022-01-21,Jharkhand,West Singhbhum,Chickenpox,12,0
+2022-01-23,Kerala,Thrissur,Leishmaniasis / Kala-Azar,1,0
+2022-01-24,Uttar Pradesh,Ballia,Diphtheria,1,0
+2022-01-24,Uttar Pradesh,Fatehpur,Encephalitis Sydrome / JE,1,0
+2022-01-25,Uttar Pradesh,Ballia,Pertussis,1,0
+2022-01-28,Odisha,Jharsuguda,Acute Diarrheal Disease,21,1
+2022-01-29,Gujarat,Banaskantha,Hepatitis/Jaundice,8,0
+2022-01-31,Tamil Nadu,Ariyalur,Fever of Unknown Origin,15,0
+2022-02-02,Kerala,Palakkad,Food Poisoning,61,0
+2022-02-02,Kerala,Palakkad,Food Poisoning,61,0
+2022-02-02,Kerala,Wayanad,Kyasanur Forest Disease,1,0
+2022-02-02,West Bengal,Howrah,Hepatitis/Jaundice,44,0
+2022-02-02,West Bengal,Howrah,Hepatitis/Jaundice,60,0
+2022-02-05,Tamil Nadu,Ariyalur,Dengue,6,0
+2022-02-06,Telangana,Narayanpet,Food Poisoning,91,0
+2022-02-09,Maharashtra,Gadchiroli,Malaria,1,1
+2022-02-11,Kerala,Wayanad,Mumps,30,0
+2022-02-11,Odisha,Koraput,Acute Diarrheal Disease,15,0
+2022-02-16,Tamil Nadu,Virudhunagar,Dengue,17,0
+2022-02-17,Gujarat,Ahmedabad,Acute Diarrheal Disease,67,0
+2022-02-17,Gujarat,Anand,Food Poisoning,53,0
+2022-02-17,West Bengal,Burdwan,Food Poisoning,89,0
+2022-02-21,Kerala,Kasaragod,Leptospirosis,18,0
+2022-02-21,Odisha,Subarnapur,Chickenpox,8,0
+2022-02-22,Gujarat,Panchmahal,Acute Flaccid Paralysis,7,0
+2022-02-23,West Bengal,South 24 Parganas,Acute Diarrheal Disease,21,0
+2022-02-23,West Bengal,South 24 Parganas,Acute Diarrheal Disease,21,0
+2022-02-24,Gujarat,Mahisagar,Acute Flaccid Paralysis,2,0
+2022-02-24,Karnataka,Tumkur,Chickenpox,9,0
+2022-02-24,Kerala,Ernakulam,Acute Diarrheal Disease,21,0
+2022-02-25,Tamil Nadu,Cuddalore,Food Poisoning,29,0
+2022-02-27,Gujarat,Kheda,Acute Flaccid Paralysis (Epstein Bar Virus & Human Herpes Virus 7),2,0
+2022-03-01,Maharashtra,Akola,Food Poisoning,102,0
+2022-03-02,Telangana,Hanumakonda,Food Poisoning,22,0
+2022-03-03,Jharkhand,West Singhbhum,Food Poisoning,9,0
+2022-03-03,Karnataka,Bengaluru Rural,Rabies,1,1
+2022-03-03,Karnataka,Tumakuru,Acute Diarrheal Disease,27,0
+2022-03-04,Odisha,Koraput,Acute Diarrheal Disease,9,1
+2022-03-05,Gujarat,Anand,Acute Diarrheal Disease,24,1
+2022-03-05,Gujarat,Mahesana,Food Poisoning,1268,0
+2022-03-05,Tamil Nadu,Madurai,Chickenpox,25,0
+2022-03-05,West Bengal,North 24 Parganas,Acute Diarrheal Disease,359,1
+2022-03-05,West Bengal,North 24 Parganas,Acute Diarrheal Disease,556,0
+2022-03-06,Gujarat,Gandhinagar,Acute Diarrheal Disease,14,0
+2022-03-07,Tamil Nadu,Virudhunagar - Sivakasi,Food Poisoning,7,0
+2022-03-08,Gujarat,Navsari,Acute Diarrheal Disease,57,0
+2022-03-08,Punjab,Faridkot,Hepatitis/Jaundice,31,0
+2022-03-09,Telangana,Peddapalli,Food Poisoning,20,0
+2022-03-10,Kerala,Idukki,Chickenpox,17,0
+2022-03-11,Kerala,Ernakulam,Acute Diarrheal Disease,16,0
+2022-03-11,Telangana,Nalgonda,Dengue,6,0
+2022-03-11,Telangana,Peddapalli,Food Poisoning,12,0
+2022-03-12,Maharashtra,Akola,Chikungunya,9,0
+2022-03-12,Telangana,Adilabad,Food Poisoning,70,0
+2022-03-15,Maharashtra,Akola,Chickenpox,5,0
+2022-03-15,Telangana,Mahabubabad,Food Poisoning,56,0
+2022-03-16,Kerala,Thiruvanantha Puram,Dengue,8,0
+2022-03-16,Tamil Nadu,Thanjavur,Scrub Typhus,35,0
+2022-03-17,Karnataka,Haveri,Acute Diarrheal Disease,25,0
+2022-03-17,Madhya Pradesh,Gwalior,Acute Diarrheal Disease,48,0
+2022-03-17,Tamil Nadu,Ranipet,Chickenpox,7,0
+2022-03-18,Karnataka,Haveri,Acute Diarrheal Disease,36,0
+2022-03-18,Tamil Nadu,Krishnagiri,Food Poisoning,7,0
+2022-03-19,Tamil Nadu,Krishnagiri,Food Poisoning,6,0
+2022-03-21,Kerala,Ernakulam,Acute Diarrheal Disease,21,0
+2022-03-21,Maharashtra,Raigad,Dengue,11,0
+2022-03-22,Karnataka,Bagalkote,Food Poisoning,63,0
+2022-03-22,Karnataka,Dakshina Kannada,Acute Diarrheal Disease,29,0
+2022-03-22,Kerala,Kottayam,Food Poisoning,9,0
+2022-03-22,Odisha,Koraput,Acute Diarrheal Disease,41,0
+2022-03-22,Tamil Nadu,Salem,Food Poisoning,30,0
+2022-03-23,Gujarat,Kheda,Acute Diarrheal Disease,19,0
+2022-03-24,Gujarat,Bhavnagar,Crimean-Congo Hemorrhagic Fever,1,0
+2022-03-24,Tamil Nadu,Ariyallur,Acute Diarrheal Disease,14,0
+2022-03-25,Jharkhand,Godda,Measles,10,0
+2022-03-25,Rajasthan,Sri Ganganagar,Hepatitis/Jaundice,23,1
+2022-03-25,Rajasthan,Sri Ganganagar,Hepatitis/Jaundice,23,1
+2022-03-25,Rajasthan,Sri Ganganagar,Hepatitis/Jaundice,28,1
+2022-03-25,Tamil Nadu,Namakkal,Chickenpox,32,0
+2022-03-25,Tamil Nadu,Ramanathapur Am,Food Poisoning,63,0
+2022-03-26,Haryana,Panchkula,Typhoid,6,0
+2022-03-26,West Bengal,South 24 Parganas,Acute Diarrheal Disease,35,0
+2022-03-27,Gujarat,Navsari,Acute Diarrheal Disease,19,0
+2022-03-27,Gujarat,Surendranagar,Food Poisoning,57,0
+2022-03-27,Karnataka,Davanagere,Acute Diarrheal Disease,21,0
+2022-03-28,Kerala,Idukki,Food Poisoning,12,0
+2022-03-28,Kerala,Kollam,Food Poisoning,18,0
+2022-03-28,Odisha,Koraput,Acute Diarrheal Disease,8,0
+2022-03-28,Punjab,Nawanshahr,Hepatitis/Jaundice,207,0
+2022-03-28,Rajasthan,Pali,Fever With Rash,11,0
+2022-03-28,Tamil Nadu,Tiruchirappalli,Chickenpox,24,0
+2022-03-29,Jharkhand,Godda,Measles,2,0
+2022-03-29,Karnataka,Koppal,Food Poisoning,50,0
+2022-03-29,Maharashtra,Akola,Chikungunya,3,0
+2022-03-30,Kerala,Thrissur,Acute Diarrheal Disease,7,0
+2022-03-30,Tamil Nadu,Pudukkottai,Dengue,15,0
+2022-03-31,Tamil Nadu,Krishnagiri,Food Poisoning,18,0
+2022-04-02,Karnataka,Dakshina Kannada,Acute Diarrheal Disease,12,0
+2022-04-02,Meghalaya,South West Garo Hills,Chickenpox,32,0
+2022-04-02,Telangana,Jagtial,Food Poisoning,25,0
+2022-04-03,Odisha,Ganjam,Acute Diarrheal Disease,69,0
+2022-04-03,Uttarakhand,Haridwar,Food Poisoning,89,0
+2022-04-05,Madhya Pradesh,Chhindwara,Fever With Rash,13,0
+2022-04-05,Meghalaya,East Khasi Hills,Influenza,129,0
+2022-04-05,Odisha,Ganjam,Acute Diarrheal Disease,83,0
+2022-04-06,Karnataka,Bellary,Chikungunya,11,0
+2022-04-06,West Bengal,Hooghly,Cholera,50,0
+2022-04-07,Bihar,Jehanabad,Measles,6,0
+2022-04-08,Odisha,Angul,Food Poisoning,18,0
+2022-04-08,Odisha,Ganjam,Acute Diarrheal Disease,39,0
+2022-04-08,Telangana,Hyderabad,Acute Diarrheal Disease,95,0
+2022-04-10,Jharkhand,Godda,Measles,14,0
+2022-04-11,Karnataka,Tumkuru,Food Poisoning,19,0
+2022-04-11,Odisha,Ganjam,Acute Diarrheal Disease,32,0
+2022-04-12,Uttar Pradesh,Lucknow,Chickenpox,10,0
+2022-04-12,West Bengal,Paschim Medinipur,Acute Diarrheal Disease,105,0
+2022-04-13,Uttar Pradesh,Ghazipur,Chickenpox,3,0
+2022-04-14,Jharkhand,Godda,Chickenpox,5,0
+2022-04-14,Kerala,Malappuram,Hepatitis/Jaundice,20,0
+2022-04-16,Tamil Nadu,Kancheepuram,Food Poisoning,15,0
+2022-04-16,West Bengal,South Parganas,Food Poisoning,160,0
+2022-04-17,Maharashtra,Solapur,Food Poisoning,31,0
+2022-04-17,Odisha,Sundargarh,Food Poisoning,26,0
+2022-04-17,Tamil Nadu,Kallakurichi,Acute Diarrheal Disease,14,0
+2022-04-17,Telangana,Nalgonda,Food Poisoning,60,0
+2022-04-18,Gujarat,Junagadh,Food Poisoning,64,0
+2022-04-18,Odisha,Kandhamal,Acute Diarrheal Disease,11,0
+2022-04-18,Tamil Nadu,Ariyalur,Fever With Rash,9,0
+2022-04-18,West Bengal,Bardhaman,Acute Diarrheal Disease,91,0
+2022-04-19,Kerala,Thrissur,West Nile Fever,1,0
+2022-04-19,Kerala,Trivandrum,Acute Diarrheal Disease,6,0
+2022-04-19,West Bengal,South 24 Parganas,Acute Diarrheal Disease,71,0
+2022-04-20,Jharkhand,Godda,Fever With Rash,20,0
+2022-04-21,Gujarat,Bhavnagar,Crimean-Congo Hemorrhagic Fever,1,1
+2022-04-21,Odisha,Ganjam,Cholera,23,0
+2022-04-21,Uttarakhand,Dehradun,Hepatitis/Jaundice,5,0
+2022-04-22,Kerala,Kannur,Food Poisoning,53,0
+2022-04-22,Odisha,Bhadrak,Food Poisoning,37,0
+2022-04-22,Rajasthan,Sirohi,Encephalitis Sydrome / JE,12,7
+2022-04-22,Tamil Nadu,Thanjavur,Food Poisoning,11,0
+2022-04-23,Haryana,Panipat,Acute Diarrheal Disease,6,0
+2022-04-23,Tamil Nadu,Thiruvarur,Food Poisoning,41,0
+2022-04-24,Jharkhand,Godda,Measles,14,0
+2022-04-24,Jharkhand,Godda,Measles,14,0
+2022-04-24,Karnataka,Hassan,Acute Diarrheal Disease,40,0
+2022-04-24,Kerala,Ernakulam,Dengue,69,0
+2022-04-24,Kerala,Kannur,Food Poisoning,26,0
+2022-04-24,Kerala,Kollam,Acute Diarrheal Disease,61,0
+2022-04-24,Uttarakhand,Nainital,Measles,8,2
+2022-04-25,Punjab,S.A.S Nagar,Acute Diarrheal Disease,113,0
+2022-04-26,Gujarat,Sabarkantha,Dengue,4,3
+2022-04-26,Karnataka,Hassan,Acute Diarrheal Disease,40,0
+2022-04-26,Odisha,Ganjam,Acute Diarrheal Disease,29,0
+2022-04-26,Tamil Nadu,Madurai,Chickenpox,5,0
+2022-04-27,Rajasthan,Pali,Food Poisoning,42,0
+2022-04-28,Andhra Pradesh,Krishna,Acute Diarrheal Disease,30,0
+2022-04-28,Karnataka,Kodagu,Food Poisoning,50,0
+2022-04-28,Karnataka,Tumkur,Chickenpox,19,0
+2022-04-28,Odisha,Nuapada,Food Poisoning,100,0
+2022-04-28,Tamil Nadu,Ariyalur,Acute Diarrheal Disease,17,0
+2022-04-29,Assam,Nagaon,Chickenpox,13,0
+2022-04-29,Kerala,Alappuzha,Food Poisoning,66,0
+2022-04-29,Kerala,Kollam,Acute Diarrheal Disease,63,0
+2022-04-29,Odisha,Angul,Food Poisoning,85,0
+2022-04-29,Odisha,Gajapati,Chickenpox,25,0
+2022-04-29,Tamil Nadu,Krishnagiri,Food Poisoning,11,0
+2022-05-01,Kerala,Kasaragod,Acute Diarrheal Disease,58,1
+2022-05-02,Kerala,Ernakulam,Dengue,50,0
+2022-05-02,Kerala,Wayanad,Food Poisoning,16,0
+2022-05-02,Madhya Pradesh,Dewas,Food Poisoning,300,0
+2022-05-02,Odisha,Jajpur,Food Poisoning,41,0
+2022-05-02,Odisha,Jajpur,Food Poisoning,18,0
+2022-05-02,Uttarakhand,Almora,Measles,8,0
+2022-05-02,Uttarakhand,Almora,Measles,8,0
+2022-05-02,West Bengal,Howrah,Food Poisoning,120,0
+2022-05-02,West Bengal,Paschim Medinipur,Food Poisoning,253,0
+2022-05-03,Karnataka,Shivamogga,Kyasanur Forest Disease,4,1
+2022-05-03,Kerala,Palakkad,Dengue,18,0
+2022-05-03,Kerala,Wayanad,Food Poisoning,13,0
+2022-05-03,Tamil Nadu,Thanjavur,Chickenpox,5,0
+2022-05-03,Tamil Nadu,Thanjavur,Chickenpox,8,0
+2022-05-03,Tamil Nadu,Thiruvannama Lai,Food Poisoning,18,0
+2022-05-03,Tamil Nadu,Thiruvannama Lai,Food Poisoning,18,0
+2022-05-03,Uttar Pradesh (Ihip),Sitapur,Food Poisoning,39,0
+2022-05-04,Jharkhand,Saraikela Kharsawan,Chickenpox,6,0
+2022-05-04,Karnataka,Tumakuru,Rabies,1,1
+2022-05-04,Kerala,Thiruvanantha Puram,Acute Diarrheal Disease,10,0
+2022-05-04,Kerala,Thiruvanantha Puram,Brucellosis,1,0
+2022-05-04,Maharashtra,Sindhudurg (Kudal),Malaria,5,0
+2022-05-05,Jammu & Kashmir,Jammu,Chickenpox,8,0
+2022-05-05,Odisha,Nabarangpur,Food Poisoning,18,0
+2022-05-05,Rajasthan,Alwar,Measles,11,0
+2022-05-05,Tamil Nadu,Pudukkottai,Food Poisoning,41,0
+2022-05-05,Tamil Nadu,Pudukkottai,Food Poisoning,48,0
+2022-05-05,West Bengal,South 24 Parganas,Food Poisoning,195,0
+2022-05-06,Karnataka,Chikkamagalu Ru,Food Poisoning,51,0
+2022-05-06,Kerala,Thiruvanantha Puram,Food Poisoning,4,0
+2022-05-06,Maharashtra,Jalgaon,Dengue,9,1
+2022-05-06,Tamil Nadu,Vellore,Acute Diarrheal Disease,15,0
+2022-05-06,Uttar Pradesh,Fatehpur,Chickenpox,3,0
+2022-05-06,West Bengal,Paschim Medinipur,Hepatitis/Jaundice,10,0
+2022-05-07,Assam,Nagaon,Leptospirosis,2,0
+2022-05-07,Chhatisgarh,Janjgir Champa,Acute Diarrheal Disease,57,0
+2022-05-07,Jharkhand,Dhanbad,Measles,8,0
+2022-05-07,Karnataka,Kalaburgai,Cholera,144,0
+2022-05-07,Karnataka,Shivamogga,Acute Diarrheal Disease,85,0
+2022-05-07,Madhya Pradesh,Mandsaur,Acute Diarrheal Disease,254,0
+2022-05-07,Rajasthan,Dausa,Acute Diarrheal Disease,22,0
+2022-05-07,Tamil Nadu,Vellore,Acute Diarrheal Disease,15,0
+2022-05-08,Kerala,Kozhikode,Acute Diarrheal Disease,100,0
+2022-05-08,Kerala,Wayanad,Food Poisoning,47,0
+2022-05-08,West Bengal,Jalpaiguri,Dengue,272,0
+2022-05-09,Arunachal Pradesh,West Siang,Food Poisoning,3,0
+2022-05-09,Karnataka,Hassan,Acute Diarrheal Disease,20,0
+2022-05-09,Kerala,Ernakulam,Acute Diarrheal Disease,65,0
+2022-05-09,Kerala,Palakkad,Noro Virus,21,0
+2022-05-09,Madhya Pradesh,Datia,Chickenpox,6,0
+2022-05-09,Maharashtra,Nashik,Chikungunya,6,0
+2022-05-09,Tamil Nadu,Tiruchirappalli,Food Poisoning,12,0
+2022-05-10,Bihar,Supaul,Food Poisoning,23,0
+2022-05-10,Gujarat,Surendranagar,Hepatitis/Jaundice,46,0
+2022-05-10,Haryana,Palwal,Fever With Rash,7,0
+2022-05-10,Kerala,Ernakulam,Dengue,47,1
+2022-05-10,Kerala,Ernakulam,Dengue,20,0
+2022-05-10,Odisha,Ganjam,Acute Diarrheal Disease,22,0
+2022-05-10,Punjab,Jalandhar,Chickenpox,16,0
+2022-05-10,Rajasthan,Dausa,Acute Diarrheal Disease,115,0
+2022-05-11,Jharkhand,Dhumka,Chickenpox,28,0
+2022-05-11,Punjab,S.A.S Nagar,Acute Diarrheal Disease,18,0
+2022-05-11,Tamil Nadu,Thoothukudi,Hepatitis/Jaundice,5,0
+2022-05-12,Kerala,Thrissur,Acute Diarrheal Disease,32,0
+2022-05-12,Rajasthan,Bikaner,Acute Diarrheal Disease,27,0
+2022-05-12,Uttar Pradesh,Ghazipur,Chickenpox,15,0
+2022-05-12,Uttar Pradesh,Lucknow,Chickenpox,6,0
+2022-05-12,West Bengal,South24 Parganas,Cholera,60,0
+2022-05-13,Chhatisgarh,Gariyaband,Acute Diarrheal Disease,33,0
+2022-05-13,Jammu And Kashmir,Anantnag,Chickenpox,10,0
+2022-05-13,Jammu And Kashmir,Anantnag,Hepatitis/Jaundice,26,0
+2022-05-13,Jammu And Kashmir,Badgam,Hepatitis/Jaundice,12,0
+2022-05-13,Karnataka,Tumkur,Acute Diarrheal Disease,13,0
+2022-05-13,Madhya Pradesh,Morena,Acute Diarrheal Disease,15,0
+2022-05-14,Haryana,Panipat,Measles,3,0
+2022-05-14,Uttar Pradesh,Ghazipur,Chickenpox,5,0
+2022-05-15,Gujarat,Navsari,Acute Diarrheal Disease,47,0
+2022-05-15,Tamil Nadu,Krishnagiri,Dengue,12,0
+2022-05-16,Karnataka,Dakshina Kannada,Fever With Rash,32,0
+2022-05-17,Karnataka,Udupi,Dengue,92,0
+2022-05-17,Maharashtra,Pune,Dengue,7,0
+2022-05-17,Uttar Pradesh,Ghazipur,Acute Diarrheal Disease,3,1
+2022-05-20,Jharkhand,Ranchi,Acute Diarrheal Disease,21,0
+2022-05-20,Maharashtra,Pune,Acute Diarrheal Disease,97,0
+2022-05-20,Meghalaya,West Khasi Hills,Food Poisoning,8,0
+2022-05-20,Tamil Nadu,Tenkasi,Dengue,19,0
+2022-05-21,Jharkhand,Pakur,Measles,7,0
+2022-05-21,Uttar Pradesh,Sant Ravi Das Nagar,Acute Diarrheal Disease,21,1
+2022-05-22,Assam,Cachar,Chickenpox,5,0
+2022-05-22,Jammu And Kashmir,Doda,Chickenpox,18,0
+2022-05-22,Madhya Pradesh,Ratlam,Acute Diarrheal Disease,113,0
+2022-05-22,Odisha,Koraput,Rubella,10,0
+2022-05-22,West Bengal,Hooghly,Cholera,67,0
+2022-05-23,Chhattisgarh,Janjgir Champa,Acute Diarrheal Disease,33,0
+2022-05-23,Haryana,Nuh,Measles,18,0
+2022-05-23,Jharkhand,Dumka,Chickenpox,18,0
+2022-05-23,Kerala,Kannur,Food Poisoning,27,0
+2022-05-23,Kerala,Palakkad,Acute Diarrheal Disease,29,0
+2022-05-23,Maharashtra,Latur,Food Poisoning,376,0
+2022-05-23,Odisha,Dhenkanal,Acute Diarrheal Disease,16,0
+2022-05-23,Punjab,Faridkot,Chickenpox,6,0
+2022-05-24,Gujarat,Surat,Food Poisoning,132,0
+2022-05-24,Kerala,Kozhikode,Acute Diarrheal Disease,42,0
+2022-05-24,Kerala,Thiruvanantha Puram,Acute Diarrheal Disease,16,0
+2022-05-24,Madhya Pradesh,Jabalpur,Leptospirosis,1,1
+2022-05-24,Madhya Pradesh,Neemuch,Chickenpox,4,0
+2022-05-24,Odisha,Dhenkanal,Acute Diarrheal Disease,21,0
+2022-05-24,Tamil Nadu,Tiruchirappalli,Food Poisoning,34,0
+2022-05-24,Tamil Nadu,Trichirapalli,Food Poisoning,34,0
+2022-05-25,Maharashtra,Chandrapur,Malaria,13,1
+2022-05-25,Maharashtra,Latur,Food Poisoning,42,0
+2022-05-25,Odisha,Keonjhar,Acute Diarrheal Disease,8,0
+2022-05-25,Odisha,Sundargarh,Food Poisoning,24,0
+2022-05-25,Puducherry,Karaikal,Cholera,26,0
+2022-05-26,Jammu And Kashmir,Pulwama,Chickenpox,11,0
+2022-05-26,Kerala,Thiruvanantha Puram,Acute Diarrheal Disease,11,0
+2022-05-26,Nagaland,Longleng,Chickenpox,10,0
+2022-05-26,Odisha,Jajpur,Acute Diarrheal Disease,16,0
+2022-05-26,Puducherry,Karaikal,Acute Diarrheal Disease,113,0
+2022-05-26,Uttarakhand,Almora,Fever With Rash,11,0
+2022-05-27,Arunachal Pradesh,West Kameng,Acute Diarrheal Disease,37,0
+2022-05-27,Jharkhand,West Singhbhum,Food Poisoning,15,0
+2022-05-27,Kerala,Alappuzha,Acute Diarrheal Disease,9,0
+2022-05-27,Tamil Nadu,Thiruvarur,Food Poisoning,67,0
+2022-05-28,Arunachal Pradesh,Kamle,Scrub Typhus,2,0
+2022-05-28,Jharkhand,West Singhbhum,Acute Diarrheal Disease,9,0
+2022-05-28,Kerala,Thiruvanantha Puram,Acute Diarrheal Disease,47,0
+2022-05-28,Tamil Nadu,Thiruvarur,Food Poisoning,67,0
+2022-05-29,Karnataka,Raichur,Acute Diarrheal Disease,321,3
+2022-05-29,Maharashtra,Gadchiroli,Malaria,196,0
+2022-05-29,Maharashtra,Gadchiroli,Malaria,114,1
+2022-05-29,Uttarakhand,Udhamsingh Nagar,Acute Diarrheal Disease,10,0
+2022-05-30,Haryana,Gurugram,Acute Diarrheal Disease,6,0
+2022-05-30,Karnataka,Mysuru,Acute Diarrheal Disease,41,0
+2022-05-30,Tamil Nadu,Kallakurichi,Acute Diarrheal Disease,40,0
+2022-05-30,Tamil Nadu,Kallakurichi,Acute Diarrheal Disease,40,0
+2022-05-30,Uttarakhand,Udham Singh Nagar,Acute Diarrheal Disease,39,0
+2022-05-31,Andhra Pradesh,Nandyal,Food Poisoning,13,2
+2022-05-31,Assam,Baksa,Acute Diarrheal Disease,15,0
+2022-05-31,Jammu And Kashmir,Shopian,Chickenpox,14,0
+2022-05-31,Karnataka,Bbmp,Cholera,169,1
+2022-05-31,Madhya Pradesh,Morena,Acute Diarrheal Disease,4,0
+2022-05-31,Madhya Pradesh,Narsinghpur,Acute Diarrheal Disease,136,2
+2022-05-31,Maharashtra,Satara,Chikungunya,5,0
+2022-05-31,Nagaland,Tuensang,Suspected Filariasis,21,0
+2022-05-31,Odisha,Mayurbhanj,Acute Diarrheal Disease,73,0
+2022-05-31,Tamil Nadu,Pudukkottai,Food Poisoning,17,0
+2022-05-31,Tamil Nadu,Pudukkottai,Food Poisoning,28,0
+2022-05-31,Uttar Pradesh,Siddharth Nagar,Acute Diarrheal Disease,30,1
+2022-06-01,Karnataka,Kalaburagi,Acute Diarrheal Disease,16,0
+2022-06-01,Karnataka,Vijayapura,Chikungunya,13,0
+2022-06-01,Maharashtra,Nagpur,Acute Diarrheal Disease,41,0
+2022-06-01,Mizoram,Aizawl,Leishmaniasis / Kala-Azar,1,0
+2022-06-01,Uttar Pradesh,Lucknow,Chickenpox,5,0
+2022-06-02,Chhattisgarh,Janjgir- Champa,Food Poisoning,53,0
+2022-06-02,Kerala,Kasaragod,Food Poisoning,22,0
+2022-06-02,Odisha,Boudh,Food Poisoning,10,0
+2022-06-03,Assam,Bongaigaon,Food Poisoning,19,0
+2022-06-03,Assam,Sonitpur,Dengue,2,0
+2022-06-03,Chhattisgarh,Balod,Food Poisoning,3,1
+2022-06-03,Maharashtra,Satara,Chikungunya,5,0
+2022-06-03,Tamil Nadu,Dharmapuri,Acute Diarrheal Disease,24,0
+2022-06-03,Tamil Nadu,Dharmapuri,Acute Diarrheal Disease,26,0
+2022-06-03,Tamil Nadu,Thanjavur,Acute Diarrheal Disease,9,0
+2022-06-04,Assam,Bongaigaon,Food Poisoning,20,0
+2022-06-04,Kerala,Thiruvanantha Puram,Hand Foot Mouth Disease,5,0
+2022-06-04,Madhya Pradesh,Sagar,Chickenpox,5,0
+2022-06-04,Madhya Pradesh,Sheopur,Acute Diarrheal Disease,56,0
+2022-06-04,Maharashtra,Chandrapur,Malaria,3,1
+2022-06-05,Kerala,Kottayam,Food Poisoning,11,0
+2022-06-05,Kerala,Thiruvanantha Puram,Acute Diarrheal Disease,8,0
+2022-06-06,Chhattisgarh,Bilaspur,Food Poisoning,59,1
+2022-06-06,Gujarat,Junagadh,Acute Diarrheal Disease,25,0
+2022-06-06,Jharkhand,West Singhbhum,Acute Diarrheal Disease,4,0
+2022-06-06,Karnataka,Kolar,Food Poisoning,30,0
+2022-06-06,Maharashtra,Chandrapur,Malaria,2,0
+2022-06-06,Maharashtra,Yavatmal,Food Poisoning,15,0
+2022-06-06,Nagaland,Mon,Fever With Rash,26,0
+2022-06-06,Tamil Nadu,Tiruchirappalli,Acute Diarrheal Disease,7,0
+2022-06-06,Tamil Nadu,Tiruchirappalli,Cholera,17,0
+2022-06-06,Tamil Nadu,Tiruchirappalli,Acute Diarrheal Disease,17,0
+2022-06-07,Chhattisgarh,Jashpur,Acute Diarrheal Disease,12,0
+2022-06-07,Karnataka,Chikkaballapura,Rabies,2,2
+2022-06-07,Karnataka,Davanagere,Food Poisoning,30,0
+2022-06-07,Karnataka,Vijayapura,Food Poisoning,23,0
+2022-06-07,Kerala,Thiruvanantha Puram,Acute Diarrheal Disease,9,0
+2022-06-07,Madhya Pradesh,Bhopal,Acute Diarrheal Disease,32,0
+2022-06-07,Madhya Pradesh,Morena,Acute Diarrheal Disease,12,0
+2022-06-07,Maharashtra,Latur,Acute Diarrheal Disease,21,0
+2022-06-07,Nagaland,Peren,Fever With Rash,4,0
+2022-06-08,Karnataka,Chikkaballapu Ra,Dengue,28,1
+2022-06-08,Karnataka,Haveri,Encephalitis Sydrome / JE,2,0
+2022-06-08,Rajasthan,Bhilwara,Acute Diarrheal Disease,160,0
+2022-06-09,Assam,Karbi Anglong,Acute Diarrheal Disease,54,0
+2022-06-10,Assam,Dibrugarh,Acute Diarrheal Disease,18,0
+2022-06-10,Himachal Pradesh,Solan,Dengue,34,0
+2022-06-10,Karnataka,Gadag,Food Poisoning,38,0
+2022-06-10,Odisha,Khordha,Acute Diarrheal Disease,7,0
+2022-06-11,Jharkhand (Ihip),East Singhbhum,Acute Diarrheal Disease,21,1
+2022-06-11,Karnataka,Chikkamagalu Ru,Acute Diarrheal Disease,37,0
+2022-06-12,Jammu And Kashmir (Ihip),Ganderbal,Chickenpox,13,0
+2022-06-12,Karnataka,Mandya,Acute Diarrheal Disease,14,0
+2022-06-12,Karnataka,Vijayapura,Chikungunya,16,0
+2022-06-12,Madhya Pradesh (Ihip),Rewa,Acute Diarrheal Disease,20,1
+2022-06-13,Karnataka,Dakshina Kannada,Acute Diarrheal Disease,18,0
+2022-06-13,Karnataka,Shivamogga,Acute Diarrheal Disease,45,0
+2022-06-13,Kerala,Thrissur,Food Poisoning,49,0
+2022-06-13,Maharashtra (Ihip),Gondia,Malaria,47,1
+2022-06-14,Karnataka,Kolar,Acute Diarrheal Disease,13,0
+2022-06-15,Assam (Ihip),Jorhat,Fever of Unknown Origin,25,0
+2022-06-15,Chhattisgarh (Ihip),Balod,Acute Diarrheal Disease,8,1
+2022-06-15,Maharashtra,Sindhudurg (Kudal),Dengue,7,0
+2022-06-15,Maharashtra (Ihip),Nagpur,Acute Diarrheal Disease,47,0
+2022-06-15,Punjab (Ihip),Patiala,Acute Diarrheal Disease,283,0
+2022-06-16,Dadra And Nagar Haveli And Daman And Diu,Dadra And Nagar Haveli,Acute Diarrheal Disease,17,0
+2022-06-16,Jharkhand (Ihip),West Singhbhum,Fever With Rash,5,0
+2022-06-16,Kerala,Kollam,Dengue,42,0
+2022-06-16,Uttar Pradesh (Ihip),Kaushambi,Acute Diarrheal Disease,8,2
+2022-06-17,Jammu And Kashmir (Ihip),Jammu,Fever With Rash,8,0
+2022-06-18,Punjab,Fatehgarh Sahib,Acute Diarrheal Disease,6,0
+2022-06-18,Tamil Nadu,Thanjavur,Chickenpox,8,0
+2022-06-18,Uttar Pradesh (Ihip),Lucknow,Fever of Unknown Origin,19,0
+2022-06-20,Karnataka,Mandya,Acute Diarrheal Disease,21,0
+2022-06-20,Karnataka,Mysuru,Acute Diarrheal Disease,26,0
+2022-06-20,Kerala,Kozhikode,Hepatitis/Jaundice,17,0
+2022-06-22,Himachal Pradesh,Mandi,Acute Diarrheal Disease,19,0
+2022-06-22,Mizoram,Aizawl,Acute Diarrheal Disease,24,0
+2022-06-22,Punjab,Patiala,Acute Diarrheal Disease,140,0
+2022-06-22,Rajasthan,Jalore,Acute Diarrheal Disease,115,0
+2022-06-23,Karnataka,Bangalore Rural,Dengue,14,1
+2022-06-23,Madhya Pradesh,Dhar,Malaria,10,0
+2022-06-23,Maharashtra,Sangli,Acute Diarrheal Disease,83,0
+2022-06-23,Tamil Nadu,Tiruvannamalai,Food Poisoning,47,0
+2022-06-24,Jharkhand,Giridih,Measles,2,0
+2022-06-24,Karnataka,Mandya,Rabies,1,1
+2022-06-24,Tamil Nadu,Thiruvarur,Food Poisoning,12,0
+2022-06-25,Chhattisgarh,Balod,Food Poisoning,15,0
+2022-06-25,Kerala,Wayanad,Mumps,11,0
+2022-06-25,Tamil Nadu,Thiruvarur,Food Poisoning,12,0
+2022-06-26,Karnataka,Kalaburagi,Acute Diarrheal Disease,19,0
+2022-06-27,Chhattisgarh,Kabirdham,Food Poisoning,9,0
+2022-06-27,Madhya Pradesh,Bhopal,Chickenpox,3,0
+2022-06-27,Madhya Pradesh,Seoni,Acute Diarrheal Disease,35,0
+2022-06-27,Telangana,Hyderabad,Acute Diarrheal Disease,65,0
+2022-06-28,Odisha,Bargarh,Food Poisoning,95,0
+2022-06-28,Tamil Nadu,Villupuram,Acute Diarrheal Disease,8,0
+2022-06-29,Gujarat,Chhota Udepur,Acute Diarrheal Disease,203,0
+2022-06-29,Uttar Pradesh,Lucknow,Food Poisoning,6,0
+2022-06-30,Madhya Pradesh,Narsinghpur,Acute Diarrheal Disease,20,0
+2022-07-01,Arunachal Pradesh,Kra Daadi,Acute Diarrheal Disease,20,0
+2022-07-01,Karnataka,Bagalkote,Acute Diarrheal Disease,25,0
+2022-07-01,Madhya Pradesh,Khargone,Acute Diarrheal Disease,19,0
+2022-07-02,Nagaland,Kiphire,Acute Diarrheal Disease,76,0
+2022-07-02,Uttar Pradesh,Rae Bareli,Chickenpox,25,0
+2022-07-03,Karnataka,Chitradurga,Encephalitis Sydrome / JE,1,0
+2022-07-03,Karnataka,Raichur,Acute Diarrheal Disease,42,0
+2022-07-03,Karnataka,Vijayapura,Acute Diarrheal Disease,54,0
+2022-07-03,Madhya Pradesh,Umaria,Acute Diarrheal Disease,7,1
+2022-07-04,Maharashtra,Chandrapur,Acute Diarrheal Disease,45,0
+2022-07-04,Odisha,Subarnapur,Acute Diarrheal Disease,24,0
+2022-07-04,Uttarakhand,Rudraprayag,Acute Diarrheal Disease,12,0
+2022-07-05,Odisha,Sundargarh,Food Poisoning,108,0
+2022-07-06,Haryana,Nuh,Measles,8,0
+2022-07-06,Karnataka,Bidar,Chikungunya,36,0
+2022-07-07,Chhattisgarh,Raigarh,Acute Diarrheal Disease,27,0
+2022-07-07,Haryana,Kaithal,Hepatitis/Jaundice,13,0
+2022-07-07,Jharkhand,West Singhbhum,Fever With Rash,5,0
+2022-07-07,Telangana,Jogulamba Gadwal,Acute Diarrheal Disease,38,0
+2022-07-15,Odisha,Nabarangpur,Acute Diarrheal Disease,8,0
+2022-07-16,Chhattisgarh,Janjgir Champa,Acute Diarrheal Disease,22,0
+2022-07-16,Karnataka,Kalaburagi,Acute Diarrheal Disease,33,0
+2022-07-16,Odisha,Mayurbhanj,Acute Diarrheal Disease,20,0
+2022-07-16,Punjab,S.A.S Nagar,Acute Diarrheal Disease,90,0
+2022-07-16,Rajasthan,Pratapgarh,Dengue,11,0
+2022-07-17,Uttar Pradesh,Mirzapur,Acute Diarrheal Disease,26,1
+2022-07-18,Karnataka,Uttara Kannada,Food Poisoning,21,0
+2022-07-18,Madhya Pradesh,Sagar,Acute Diarrheal Disease,23,0
+2022-07-18,Punjab,Mansa,Food Poisoning,13,0
+2022-07-19,Bihar,Pashchim Champaran,Food Poisoning,14,0
+2022-07-19,Karnataka,Chamarajanagar,Food Poisoning,12,0
+2022-07-19,Karnataka,Gadag,Chikungunya,21,0
+2022-07-19,Madhya Pradesh,Sagar,Fever With Rash,5,0
+2022-07-20,Madhya Pradesh,Sehore,Acute Diarrheal Disease,15,0
+2022-07-20,Odisha,Bargarh,Acute Diarrheal Disease,14,0
+2022-07-21,Karnataka,Chitradurga,Food Poisoning,58,0
+2022-07-21,Tamil Nadu,Kanyakumari,Food Poisoning,25,0
+2022-07-21,Tamil Nadu,Madurai,Measles,6,1
+2022-07-22,Chhattisgarh,Baloda Bazar,Acute Diarrheal Disease,31,0
+2022-07-22,Odisha,Subarnapur,Acute Diarrheal Disease,51,1
+2022-07-23,Jharkhand,East Singhbum,Chickenpox,22,0
+2022-07-23,Karnataka,Ballari,Acute Diarrheal Disease,44,1
+2022-07-23,Odisha,Subarnapur,Acute Diarrheal Disease,13,0
+2022-07-24,Chhattisgarh,Baloda Bazar,Acute Diarrheal Disease,12,0
+2022-07-25,Chhattisgarh,Mahasamund,Acute Diarrheal Disease,29,0
+2022-07-25,Karnataka,Hassan,Acute Diarrheal Disease,25,0
+2022-07-25,Odisha,Nuapada,Cholera,35,0
+2022-07-26,Chhattisgarh,Mahasamund,Acute Diarrheal Disease,20,0
+2022-07-26,Chhattisgarh,Raigarh,Acute Diarrheal Disease,49,0
+2022-07-26,Maharashtra,Washim,Cholera,2,0
+2022-07-27,Madhya Pradesh,Damoh,Acute Diarrheal Disease,56,0
+2022-07-27,Odisha,Cuttack,Acute Diarrheal Disease,12,0
+2022-07-27,Uttarakhand,Uttar Kashi,Hepatitis/Jaundice,28,0
+2022-07-28,Madhya Pradesh,Shivpuri,Acute Diarrheal Disease,14,0
+2022-07-28,Mizoram,Serchhip,Food Poisoning,26,0
+2022-07-28,Odisha,Koraput,Acute Diarrheal Disease,8,0
+2022-07-28,Punjab,Fatehgarh Sahib,Dengue,19,0
+2022-07-28,Tamil Nadu,Nagapatinam,Food Poisoning,24,0
+2022-07-28,Telangana,Jogulamba Gadwal,Acute Diarrheal Disease,65,0
+2022-07-28,Uttar Pradesh,Fatehpur,Dengue,9,0
+2022-07-28,Uttar Pradesh,Kaushambi,Acute Diarrheal Disease,12,0
+2022-07-29,Chhattisgarh,Baloda Bazar,Food Poisoning,3,1
+2022-07-29,Karnataka,Chitradunga,Acute Diarrheal Disease,29,0
+2022-07-29,Karnataka,Mysuru,Fever of Unknown Origin,60,0
+2022-07-29,Punjab,S.A.S Nagar,Acute Diarrheal Disease,121,0
+2022-07-29,Sikkim,West District,Dengue,5,0
+2022-07-30,Chhattisgarh,Janjgir - Champa,Acute Diarrheal Disease,16,0
+2022-07-30,Odisha,Nabarangpur,Food Poisoning,24,0
+2022-07-31,Odisha,Balasore,Food Poisoning,12,0
+2022-07-31,Odisha,Nabarangpur,Food Poisoning,122,0
+2022-07-31,Odisha,Nabarangpur,Cholera,10,0
+2022-08-01,Maharashtra,Akola,Dengue,4,0
+2022-08-01,Maharashtra,Chandrapur,Acute Diarrheal Disease,5,1
+2022-08-01,Telangana,Medak,Acute Diarrheal Disease,22,0
+2022-08-01,Uttar Pradesh,Kaushambi,Acute Diarrheal Disease,22,0
+2022-08-02,Karnataka,Mysuru,Fever of Unknown Origin,25,0
+2022-08-02,Mizoram,Aizawl West,Measles,20,0
+2022-08-02,Telangana,Medak,Acute Diarrheal Disease,8,0
+2022-08-03,Karnataka,Dharwad,Acute Diarrheal Disease,17,0
+2022-08-04,Maharashtra,Chandrapur,Acute Diarrheal Disease,37,0
+2022-08-05,Karnataka,Ballari,Cholera,147,0
+2022-08-05,Punjab,Ludhiana,Measles,6,0
+2022-08-05,Uttar Pradesh,Mirzapur,Acute Diarrheal Disease,23,0
+2022-08-06,Kerala,Kasaragod,Acute Diarrheal Disease,18,0
+2022-08-06,Punjab,Patiala,Acute Diarrheal Disease,110,2
+2022-08-07,Jharkhand,Lohardaga,Food Poisoning,7,0
+2022-08-07,Uttar Pradesh,Mirzapur,Acute Diarrheal Disease,14,0
+2022-08-08,Haryana,Nuh,Measles,30,0
+2022-08-08,Uttarakhand,Pauri Garhwal,Dengue,11,0
+2022-08-09,Chhattisgarh,Balodabazar,Acute Diarrheal Disease,10,0
+2022-08-10,Kerala,Kollam,Food Poisoning,8,0
+2022-08-10,West Bengal,Hooghly,Food Poisoning,119,0
+2022-08-12,Tamil Nadu,Tiruchirappalli,Chickenpox,7,0
+2022-08-13,Karnataka,Vijayanagara,Acute Diarrheal Disease,79,1
+2022-08-13,Uttar Pradesh,Pratapgarh,Food Poisoning,6,0
+2022-08-14,Odisha,Kalahandi,Cholera,32,0
+2022-08-16,Assam,Bongaigaon,Encephalitis Sydrome / JE,2,0
+2022-08-16,Tamil Nadu,Dindigul,Dengue,20,0
+2022-08-16,Uttar Pradesh,Mirzapur,Acute Diarrheal Disease,22,0
+2022-08-17,Karnataka,Raichur,Food Poisoning,58,0
+2022-08-18,Haryana,Yamuna Nagar,Acute Diarrheal Disease,25,0
+2022-08-18,Karnataka,Bagalkote,Acute Diarrheal Disease,111,0
+2022-08-19,Karnataka,Ballari,Acute Diarrheal Disease,11,1
+2022-08-19,Odisha,Dhenkanal,Food Poisoning,11,0
+2022-08-20,Madhya Pradesh,Rajgarh,Influenza,1,1
+2022-08-20,Punjab,Hoshiarpur,Acute Diarrheal Disease,13,0
+2022-08-20,Uttar Pradesh,Mirzapur,Dengue,4,0
+2022-08-21,Karnataka,Hassan,Acute Diarrheal Disease,21,0
+2022-08-21,Kerala,Ernakulam,Food Poisoning,16,0
+2022-08-21,Odisha,Koraput,Acute Diarrheal Disease,7,0
+2022-08-22,Kerala,Thrissur,Acute Meningoence Phalitis (Naegleria Fowleri),1,1
+2022-08-22,Madhya Pradesh,Satna,Acute Diarrheal Disease,35,0
+2022-08-22,Odisha,Cuttack,Acute Diarrheal Disease,16,0
+2022-08-22,Uttar Pradesh,Chitrakoot,Acute Diarrheal Disease,19,2
+2022-08-22,Uttarakhand,Nainital,Measles,6,0
+2022-08-23,Andhra Pradesh,Ysr Kadapa,Dengue,4,0
+2022-08-23,Jammu And Kashmir,Bandipora,Chickenpox,6,0
+2022-08-23,Kerala,Malappuram,Leishmaniasis / Kala-Azar,1,0
+2022-08-23,Madhya Pradesh,Katni,Scrub Typhus,8,0
+2022-08-23,Madhya Pradesh,Shivpuri,Acute Diarrheal Disease,58,0
+2022-08-23,Odisha,Cuttack,Hepatitis/Jaundice,13,0
+2022-08-23,Odisha,Keonjhar,Acute Diarrheal Disease,43,0
+2022-08-24,Chhattisgarh,Mahasamund,Acute Diarrheal Disease,20,0
+2022-08-24,Jharkhand,Jamtara,Measles,4,0
+2022-08-24,Madhya Pradesh,Indore,Acute Diarrheal Disease,4,2
+2022-08-24,Maharashtra,Nashik,Cholera,10,2
+2022-08-25,Chhattisgarh,Balodabazar,Acute Diarrheal Disease,32,0
+2022-08-25,Gujarat,Anand,Acute Diarrheal Disease,39,0
+2022-08-25,Madhya Pradesh,Sagar,Acute Diarrheal Disease,7,0
+2022-08-25,Maharashtra,Yavatmal,Acute Diarrheal Disease,12,0
+2022-08-25,Uttarakhand,Pauri Garhwal,Influenza,110,0
+2022-08-26,Karnataka,Uttara Kannada,Leptospirosis,1,1
+2022-08-26,Uttarakhand,Dehradun,Hepatitis/Jaundice,5,0
+2022-08-27,Jharkhand,Jamtara,Measles,3,0
+2022-08-27,Uttar Pradesh,Sitapur,Malaria,205,0
+2022-08-27,Uttar Pradesh,Sonbhadra,Acute Diarrheal Disease,13,0
+2022-08-28,Karnataka,Shivamogga,Diphtheria,1,0
+2022-08-29,Uttarakhand,Udhamsingh Nagar,Fever With Rash,4,0
+2022-08-30,Madhya Pradesh,Mandla,Acute Diarrheal Disease,6,0
+2022-08-30,Uttar Pradesh,Mirzapur,Acute Diarrheal Disease,4,2
+2022-08-30,Uttarakhand,Nainital,Fever With Rash,10,0
+2022-08-31,Karnataka,Uttara Kannada,Leptospirosis,1,1
+2022-08-31,Uttar Pradesh,Mirzapur,Acute Diarrheal Disease,9,0
+2022-08-31,Uttarakhand,Udhamsingh Nagar,Food Poisoning,38,0
+2022-09-01,Bihar,Nalanda,Dengue,14,0
+2022-09-01,Karnataka,Kalaburagi,Dengue,13,0
+2022-09-01,Mizoram,Aizawl,Acute Diarrheal Disease,16,0
+2022-09-01,Odisha,Mayurbhanj,Acute Diarrheal Disease,13,0
+2022-09-01,Uttar Pradesh,Ghaziabad,Food Poisoning,29,0
+2022-09-02,Jharkhand,Sahebganj,Dengue,7,0
+2022-09-02,Karnataka,Koppal,Diphtheria,1,0
+2022-09-02,Odisha,Kalahandi,Cholera,17,1
+2022-09-04,Kerala,Malappuram,Food Poisoning,9,0
+2022-09-05,Bihar,Nalanda,Dengue,10,0
+2022-09-05,Telangana,Warangal,Food Poisoning,33,0
+2022-09-05,Telangana,Warangal,Acute Diarrheal Disease,33,0
+2022-09-05,Uttarakhand,Dehradun,Dengue,23,0
+2022-09-05,Uttarakhand,Haridwar,Dengue,110,0
+2022-09-06,Chhattisgarh,Mahasamund,Acute Diarrheal Disease,29,0
+2022-09-06,Uttar Pradesh,Amroha,Food Poisoning,39,0
+2022-09-07,Jammu And Kashmir,Rajauri,Acute Diarrheal Disease,25,0
+2022-09-07,Karnataka,Dakshina Kannada,Influenza,230,0
+2022-09-07,Madhya Pradesh,Rewa,Acute Diarrheal Disease,30,0
+2022-09-07,Uttar Pradesh,Chandauli,Acute Diarrheal Disease,13,0
+2022-09-08,Gujarat,Junagadh,Food Poisoning,47,0
+2022-09-08,Karnataka,Dakshina Kannada,Fever With Rash,11,0
+2022-09-08,Maharashtra,Yavatmal,Acute Diarrheal Disease,64,0
+2022-09-08,Uttarakhand,Rudra Prayag,Acute Diarrheal Disease,12,0
+2022-09-09,Tamil Nadu,Thanjavur,Food Poisoning,48,0
+2022-09-10,Jharkhand,Sahebganj,Acute Diarrheal Disease,20,0
+2022-09-10,Karnataka,Kalaburagi,Acute Diarrheal Disease,67,0
+2022-09-10,Odisha,Mayurbhanj,Acute Diarrheal Disease,11,0
+2022-09-10,Rajasthan,Sikar,Food Poisoning,10,0
+2022-09-10,Uttar Pradesh,Mirzapur,Acute Diarrheal Disease,3,1
+2022-09-11,Gujarat,Anand,Acute Diarrheal Disease,10,0
+2022-09-11,Kerala,Ernakulam,Hepatitis/Jaundice,21,0
+2022-09-11,Kerala,Malappuram,Food Poisoning,15,0
+2022-09-11,Kerala,Malappuram,Hepatitis/Jaundice,17,0
+2022-09-11,Kerala,Malappuram,Hepatitis/Jaundice,17,0
+2022-09-11,Madhya Pradesh,Khargone,Food Poisoning,12,0
+2022-09-12,Karnataka,Uttara Kannada,Leptospirosis,1,1
+2022-09-13,Uttar Pradesh,Hardoi,Diphtheria,4,4
+2022-09-14,Assam,Kamrup,Food Poisoning,34,0
+2022-09-14,Karnataka,Uttara Kannada,Leptospirosis,1,1
+2022-09-14,Kerala,Palakkad,Chickenpox,7,0
+2022-09-15,Uttar Pradesh,Kannauj,Diphtheria,10,0
+2022-09-16,Assam,Goalpara,Acute Diarrheal Disease,4,0
+2022-09-16,Karnataka,Mandya,Food Poisoning,29,0
+2022-09-17,Andaman And Nicobar Islands,South Andaman,Acute Diarrheal Disease,23,0
+2022-09-17,Karnataka,Kalaburagi,Cholera,7,0
+2022-09-17,Maharashtra,Pune,Dengue,20,1
+2022-09-18,Karnataka,Kalaburagi,Leptospirosis,7,0
+2022-09-18,Odisha,Kalahandi,Acute Diarrheal Disease,48,0
+2022-09-18,Uttar Pradesh,Hardoi,Acute Diarrheal Disease,35,0
+2022-09-19,Chhattisgarh,Dhamtari,Acute Diarrheal Disease,207,0
+2022-09-19,Jammu And Kashmir,Kulgam,Hepatitis/Jaundice,20,0
+2022-09-19,Karnataka,Tumkur,Food Poisoning,16,0
+2022-09-19,Karnataka,Tumkur,Encephalitis Sydrome / JE,1,0
+2022-09-19,Madhya Pradesh,Mandla,Acute Diarrheal Disease,5,0
+2022-09-19,Maharashtra,Chandrapur,Dengue,17,0
+2022-09-19,Odisha,Nabarangpur,Acute Diarrheal Disease,10,0
+2022-09-19,Tamil Nadu,Salem,Food Poisoning,13,0
+2022-09-19,Telangana,Kumuram Bheem Asifabad,Acute Diarrheal Disease,70,0
+2022-09-20,Bihar,Nalanda,Dengue,39,0
+2022-09-20,Chhattisgarh,Mahasamund,Acute Diarrheal Disease,22,0
+2022-09-20,Maharashtra,Bhandara,Hand Foot Mouth Disease,19,0
+2022-09-20,Maharashtra,Nanded,Acute Diarrheal Disease,56,0
+2022-09-20,Meghalaya,East Khasi Hills,Acute Diarrheal Disease,142,0
+2022-09-20,Tamil Nadu,Coimbatore,Food Poisoning,13,0
+2022-09-21,Karnataka,Kalaburagi,Acute Diarrheal Disease,12,0
+2022-09-21,Uttar Pradesh,Fatehpur,Scrub Typhus,11,0
+2022-09-22,Karnataka,Hassan,Acute Diarrheal Disease,12,0
+2022-09-22,Kerala,Kollam,Dengue,5,1
+2022-09-22,Madhya Pradesh,Indore,Acute Diarrheal Disease,37,0
+2022-09-22,Maharashtra,Chandrapur,Malaria,14,1
+2022-09-23,Kerala,Kollam,Food Poisoning,20,0
+2022-09-23,Madhya Pradesh,Mandla,Fever With Rash,5,0
+2022-09-23,Madhya Pradesh,Mandla,Scrub Typhus,6,0
+2022-09-23,Maharashtra,Pune,Dengue,10,0
+2022-09-23,Tamil Nadu,Thanjavur,Typhoid,29,0
+2022-09-23,Uttar Pradesh,Hardoi,Fever of Unknown Origin,31,0
+2022-09-24,Bihar,Purbi Champaran,Acute Diarrheal Disease,72,0
+2022-09-24,Jharkhand,West Singhbhum,Malaria,11,0
+2022-09-24,Madhya Pradesh,Rewa,Acute Diarrheal Disease,32,2
+2022-09-25,Uttar Pradesh,Bahraich,Food Poisoning,12,0
+2022-09-25,Uttar Pradesh,Bhadohi,Dengue,13,0
+2022-09-25,Uttar Pradesh,Fatehpur,Leptospirosis,8,0
+2022-09-26,Bihar,Nalanda,Dengue,31,0
+2022-09-26,Maharashtra,Pune,Dengue,7,1
+2022-09-27,Maharashtra,Aurangabad,Food Poisoning,7,0
+2022-09-27,Odisha,Koraput,Dengue,10,4
+2022-09-27,Odisha,Nabarangpur,Food Poisoning,7,0
+2022-09-28,Kerala,Kasaragod,Monkey Pox,1,0
+2022-09-29,Chhattisgarh,Balodabazar,Acute Diarrheal Disease,43,0
+2022-09-29,Kerala,Kollam,Food Poisoning,65,0
+2022-09-29,Maharashtra,Parbhani,Chikungunya,76,0
+2022-09-30,Jharkhand,East Singhbum,Acute Diarrheal Disease,15,0
+2022-09-30,Kerala,Alappuzha,Food Poisoning,27,0
+2022-09-30,Rajasthan,Kota,Acute Diarrheal Disease,31,0
+2022-10-03,Gujarat,Gandhinagar,Food Poisoning,114,0
+2022-10-04,Karnataka,Bidar,Rabies,1,1
+2022-10-04,Kerala,Kollam,Dengue,14,1
+2022-10-04,Madhya Pradesh,Shajapur,Acute Diarrheal Disease,24,0
+2022-10-04,Odisha,Angul,Acute Diarrheal Disease,14,0
+2022-10-05,Uttar Pradesh,Sonbhadra,Dengue,32,0
+2022-10-06,Karnataka,Koppal,Chikungunya,33,0
+2022-10-07,Odisha,Nabarangpur,Acute Diarrheal Disease,17,0
+2022-10-08,Gujarat,Bhavnagar,Hepatitis/Jaundice,15,0
+2022-10-08,Telangana,Kumuram Bheem Asifabad,Acute Diarrheal Disease,15,2
+2022-10-09,Kerala,Thituvanantha Puram,Hepatitis/Jaundice,3,0
+2022-10-09,Uttar Pradesh,Farrukhabad,Acute Diarrheal Disease,11,0
+2022-10-10,Karnataka,Vijayanagar,Acute Diarrheal Disease,43,0
+2022-10-10,Karnataka,Yadgiri,Encephalitis Sydrome / JE,2,0
+2022-10-11,Kerala,Trivandrum,Acute Diarrheal Disease,9,0
+2022-10-11,Tamil Nadu,Nagapattinam,Food Poisoning,30,0
+2022-10-11,Uttarakhand,Haridwar,Dengue,40,0
+2022-10-12,Tamil Nadu,Nagapattinam,Food Poisoning,30,0
+2022-10-12,Telangana,Khammam,Dengue,18,0
+2022-10-12,Uttar Pradesh,Kannauj,Fever With Rash,11,0
+2022-10-13,Chhattisgarh,Dhamtari,Acute Diarrheal Disease,103,0
+2022-10-13,Tamil Nadu,Sivaganga,Food Poisoning,15,0
+2022-10-13,Uttarakhand,Dehradun,Dengue,24,0
+2022-10-14,Gujarat,Dang,Food Poisoning,102,0
+2022-10-14,Telangana,Vikarabad,Acute Diarrheal Disease,34,0
+2022-10-14,Uttar Pradesh,Deoria,Acute Diarrheal Disease,48,0
+2022-10-15,Jharkhand,Khunti,Fever With Rash,3,0
+2022-10-15,Jharkhand,Lohardaga,Fever of Unknown Origin,45,0
+2022-10-15,Kerala,Palakkad,Chickenpox,21,0
+2022-10-16,Karnataka,Koppal,Acute Diarrheal Disease,50,0
+2022-10-16,Maharashtra,Aurangabad,Acute Diarrheal Disease,20,0
+2022-10-17,Maharashtra,Nashik,Cholera,52,1
+2022-10-18,Jharkhand,Sahebganj,Acute Diarrheal Disease,5,0
+2022-10-19,Kerala,Ernakulam,Dengue,12,0
+2022-10-19,Kerala,Palakkad,Acute Diarrheal Disease,131,0
+2022-10-20,Delhi,West Delhi,Measles,2,0
+2022-10-20,Maharashtra,Sangli,Dengue,12,0
+2022-10-20,Tamil Nadu,Kallakurichi,Chickenpox,15,0
+2022-10-20,Uttarakhand,Chamoli,Measles,5,0
+2022-10-21,Karnataka,Yadgiri,Acute Diarrheal Disease,40,1
+2022-10-22,Gujarat,Bhavnagar,Crimean-Congo Hemorrhagic Fever,1,0
+2022-10-22,Jharkhand,Dumka,Dengue,3,0
+2022-10-22,Madhya Pradesh,Mandla,Encephalitis Sydrome / JE,5,0
+2022-10-23,Kerala,Kannur,Measles,11,0
+2022-10-25,Arunachal Pradesh,Lohit,Acute Diarrheal Disease,116,0
+2022-10-25,Karnataka,Belagavi,Cholera,328,1
+2022-10-25,Telangana,Medak,Acute Diarrheal Disease,25,0
+2022-10-26,Jharkhand,Giridih,Fever With Rash,20,0
+2022-10-26,Karnataka,Mysuru,Acute Diarrheal Disease,15,0
+2022-10-26,Madhya Pradesh,Ratlam,Acute Diarrheal Disease,32,0
+2022-10-28,Kerala,Thrissur,Food Poisoning,20,0
+2022-10-28,Maharashtra,Thane,Dengue,1,1
+2022-10-28,Telangana,Jangoan,Acute Diarrheal Disease,13,0
+2022-10-29,Jharkhand,Giridih,Fever With Rash,30,0
+2022-10-29,Kerala,Malappuram,Food Poisoning,16,0
+2022-10-29,Kerala,Malappuram,Food Poisoning,70,0
+2022-10-29,Kerala,Malappuram,Food Poisoning,16,0
+2022-10-29,Kerala,Malappuram,Food Poisoning,70,0
+2022-10-29,Maharashtra,Sangli,Dengue,36,1
+2022-10-29,Uttar Pradesh,Fatehpur,Dengue,6,1
+2022-10-31,Karnataka,Tumkur,Chickenpox,24,0
+2022-10-31,Maharashtra,Dhule,Dengue,4,1
+2022-10-31,Maharashtra,Nashik,Cholera,58,0
+2022-11-01,Karnataka,Koppal,Chikungunya,45,0
+2022-11-01,Karnataka,Vijayanagara,Acute Diarrheal Disease,83,0
+2022-11-01,Kerala,Ernakulam,Food Poisoning,22,0
+2022-11-01,Maharashtra,Kolhapur,Dengue,5,1
+2022-11-02,Uttar Pradesh,Muzaffarnagar,Dengue,10,0
+2022-11-03,Bihar,Muzaffarpur,Dengue,2,0
+2022-11-03,Karnataka,Dakshin Kannad,Hepatitis/Jaundice,10,0
+2022-11-03,Karnataka,Kodagu,Diphtheria,1,1
+2022-11-03,Uttar Pradesh,Fatehpur,Leptospirosis,1,0
+2022-11-04,Jharkhand,Bokaro,Acute Diarrheal Disease,5,1
+2022-11-04,Karnataka,Uttar Kannada,Leptospirosis,1,1
+2022-11-04,Kerala,Kottayam,Food Poisoning,20,0
+2022-11-04,Punjab,Patiala,Acute Diarrheal Disease,218,2
+2022-11-04,Tamil Nadu,Salem,Food Poisoning,29,0
+2022-11-05,Karnataka,Kalaburagi,Acute Diarrheal Disease,13,0
+2022-11-05,Karnataka,Koppal,Cholera,41,0
+2022-11-06,Kerala,Idukki,Food Poisoning,167,0
+2022-11-06,Kerala,Kottayam,Food Poisoning,22,0
+2022-11-06,Maharashtra,Bhandara,Scrub Typhus,8,1
+2022-11-07,Karnataka,Davangere,Food Poisoning,60,0
+2022-11-07,Karnataka,Davangere,Acute Diarrheal Disease,63,0
+2022-11-08,Kerala,Ernakulam,Acute Diarrheal Disease,13,0
+2022-11-08,Kerala,Kollam,Zika Virus,1,0
+2022-11-09,Kerala,Ernakulam,Food Poisoning,21,0
+2022-11-09,Kerala,Kottayam,Food Poisoning,37,0
+2022-11-09,Tamil Nadu,Thanjavur,Acute Diarrheal Disease,15,0
+2022-11-10,Karnataka,Mysuru,Dengue,13,0
+2022-11-10,Maharashtra,Kolhapur,Cholera,233,2
+2022-11-10,Tamil Nadu,Thanjavur,Allergic Conjunctivitis,22,0
+2022-11-10,Uttar Pradesh,Sonbhadra,Diphtheria,1,1
+2022-11-11,Kerala,Malappuram,Hepatitis/Jaundice,49,0
+2022-11-11,Maharashtra,Aurangabad,Fever of Unknown Origin,24,0
+2022-11-11,Maharashtra,Aurangabad,Dengue,2,1
+2022-11-12,Karnataka,Yadgiri,Encephalitis Sydrome / JE,2,0
+2022-11-12,Uttar Pradesh,Auraiya,Dengue,101,0
+2022-11-13,Gujarat,Bharuch,Food Poisoning,343,0
+2022-11-13,Kerala,Malappuram,Measles,30,0
+2022-11-13,Kerala,Palakkad,Acute Diarrheal Disease,21,0
+2022-11-14,Kerala,Kannur,Food Poisoning,9,0
+2022-11-14,Kerala,Kottayam,Food Poisoning,20,0
+2022-11-14,Kerala,Kottayam,Food Poisoning,11,0
+2022-11-14,Kerala,Malappuram,Measles,28,0
+2022-11-14,Maharashtra,Latur,Fever of Unknown Origin,20,0
+2022-11-15,Haryana,Palwal,Measles,5,0
+2022-11-15,Karnataka,Haveri,Encephalitis Sydrome / JE,4,1
+2022-11-15,Karnataka,Raichur,Zika Virus,1,0
+2022-11-15,Kerala,Kasaragod,Food Poisoning,33,0
+2022-11-17,Karnataka,Koppal,Food Poisoning,45,0
+2022-11-17,Kerala,Kannur,Hepatitis/Jaundice,12,0
+2022-11-18,Karnataka,Davangere,Leptospirosis,1,1
+2022-11-18,Kerala,Malappuram,Leishmaniasis / Kala-Azar,2,0
+2022-11-19,Gujarat,Valsad,Acute Diarrheal Disease,34,0
+2022-11-19,Karnataka,Koppal,Acute Diarrheal Disease,45,0
+2022-11-19,Rajasthan,Alwar,Measles,32,0
+2022-11-21,Karnataka,Dakshina Kannada,Acute Diarrheal Disease,15,0
+2022-11-22,Karnataka,Koppal,Acute Diarrheal Disease,13,0
+2022-11-22,Kerala,Kannur,Leishmaniasis / Kala-Azar,1,1
+2022-11-22,Rajasthan,Alwar,Measles,30,0
+2022-11-23,Madhya Pradesh,Shahdol,Fever With Rash,15,0
+2022-11-23,Maharashtra,Kolhapur,Acute Diarrheal Disease,14,0
+2022-11-24,Karnataka,Dakhina Kannada,Leptospirosis,1,1
+2022-11-24,Kerala,Thrissur,Dengue,21,0
+2022-11-24,Kerala,Thrissur,Acute Diarrheal Disease,66,0
+2022-11-25,Kerala,Malappuram,Monkey Pox,2,0
+2022-11-25,Maharashtra,Raigad,Leptospirosis,28,1
+2022-11-26,Karnataka,Bangalore Urban,Acute Diarrheal Disease,104,0
+2022-11-28,Karnataka,Ballari,Rabies,2,2
+2022-11-28,Karnataka,Davangere,Encephalitis Sydrome / JE,1,0
+2022-11-29,Karnataka,Ramanagara,Acute Diarrheal Disease,15,0
+2022-11-29,Mizoram,Aizawl,Acute Diarrheal Disease,26,0
+2022-11-29,Odisha,Angul,Food Poisoning,17,0
+2022-11-30,Maharashtra,Latur,Fever of Unknown Origin,19,0
+2022-11-30,Puducherry,Puducherry,Chickenpox,15,0
+2022-11-30,Tamil Nadu,Virudhunagar,Fever of Unknown Origin,12,0
+2022-12-01,Assam,Marigaon,Acute Diarrheal Disease,15,0
+2022-12-02,Karnataka,Tumakuru,Acute Diarrheal Disease,11,0
+2022-12-02,Karnataka,Tumkur,Acute Diarrheal Disease,18,0
+2022-12-02,Kerala,Alappuzha,Acute Diarrheal Disease,161,0
+2022-12-03,Haryana,Panipat,Measles,7,0
+2022-12-03,Madhya Pradesh,Neemuch,Chickenpox,11,0
+2022-12-03,Odisha,Bargarh,Food Poisoning,39,0
+2022-12-04,Karnataka,Chamarajanagar,Acute Diarrheal Disease,26,0
+2022-12-04,Karnataka,Chitradurga,Food Poisoning,54,0
+2022-12-04,Karnataka,Kolar,Chickenpox,11,0
+2022-12-05,Karnataka,Mandya,Fever of Unknown Origin,36,0
+2022-12-05,Kerala,Thrissur,Acute Diarrheal Disease,22,0
+2022-12-05,Maharashtra,Kolhapur,Acute Diarrheal Disease,50,0
+2022-12-06,Chhattisgarh,Raigarh,Acute Diarrheal Disease,58,0
+2022-12-06,Karnataka,Raichur,Food Poisoning,18,0
+2022-12-06,Karnataka,Raichur,Food Poisoning,18,0
+2022-12-06,Maharashtra,Amravati,Acute Diarrheal Disease,61,0
+2022-12-07,Kerala,Palakkad,Food Poisoning,13,0
+2022-12-07,Maharashtra,Kolhapur,Acute Diarrheal Disease,16,0
+2022-12-09,Uttar Pradesh,Lucknow,Chickenpox,5,0
+2022-12-10,Karnataka,Tumkur,Fever & Urti,16,0
+2022-12-10,Kerala,Kannur,Food Poisoning,179,0
+2022-12-11,Kerala,Ernakulam,Food Poisoning,31,0
+2022-12-12,Karnataka,Dakshina Kannada,Influenza,48,0
+2022-12-12,Karnataka,Shivamogga,Fever With Rash,12,0
+2022-12-15,Karnataka,Tumkur,Food Poisoning,80,0
+2022-12-15,Maharashtra,Nanded,Acute Diarrheal Disease,121,0
+2022-12-15,Telangana,Nirmal,Food Poisoning,16,0
+2022-12-16,Karnataka,Bagalakote,Chickenpox,12,0
+2022-12-17,Gujarat,Anand,Acute Diarrheal Disease,25,0
+2022-12-17,Karnataka,Udupi,Encephalitis Sydrome / JE,1,1
+2022-12-17,Telangana,Nirmal,Acute Diarrheal Disease,16,0
+2022-12-18,Kerala,Ernakulam,Food Poisoning,23,0
+2022-12-19,Chhattisgarh,Balod,Acute Diarrheal Disease,15,0
+2022-12-19,Karnataka,Davangere,Leptospirosis,1,1
+2022-12-19,Karnataka,Koppal,Food Poisoning,20,0
+2022-12-19,Karnataka,Mandya,Chickenpox,37,0
+2022-12-19,Kerala,Kannur,Food Poisoning,37,0
+2022-12-19,West Bengal,Uttar Dinajpur,Measles,64,0
+2022-12-24,Karnataka,Chikkaballapura,Fever of Unknown Origin,15,0
+2022-12-24,Kerala,Palakkad,Encephalitis Sydrome / JE,1,1
+2022-12-25,Karnataka,Tumkur,Chickenpox,12,0
+2022-12-25,Telangana,Adilabad,Acute Diarrheal Disease,35,0
+2022-12-26,Karnataka,Shivamogga,Food Poisoning,25,0
+2022-12-26,Karnataka,Tumkur,Fever & Urti,25,0
+2022-12-26,Kerala,Ernakulam,Food Poisoning,16,0
+2022-12-29,Kerala,Pathanamthitta,Food Poisoning,23,0
+2022-12-30,Maharashtra,Aurangabad,Measles,14,0
+2023-01-01,Tripura,South Tripura,Acute Diarrheal Disease,147,0
+2023-01-01,Uttar Pradesh,Pratapgarh,Chickenpox,18,0
+2023-01-03,Uttar Pradesh,Bhadohi,Measles,17,0
+2023-01-05,Uttar Pradesh,Faizabad,Measles,10,0
+2023-01-08,Meghalaya,West Khasi Hills,Rubella,1,0
+2023-01-09,Uttar Pradesh,Jhansi,Chickenpox,11,0
+2023-01-13,Kerala,Ernakulam,Food Poisoning,73,0
+2023-01-14,Kerala,Kannur,Food Poisoning,63,0
+2023-01-15,Kerala,Kannur,Food Poisoning,78,0
+2023-01-15,Punjab,S.A.S Nagar,Acute Diarrheal Disease,32,0
+2023-01-16,Karnataka,Shivamogga,Acute Diarrheal Disease,178,0
+2023-01-16,Karnataka,Tumkur,Chikungunya,15,0
+2023-01-16,Kerala,Ernakulam,Food Poisoning,106,0
+2023-01-16,Kerala,Kannur,Food Poisoning,44,0
+2023-01-17,Kerala,Wayanand,Acute Diarrheal Disease,43,0
+2023-01-17,Odisha,Jajpur,Hepatitis/Jaundice,19,0
+2023-01-18,Kerala,Kannur,Food Poisoning,60,0
+2023-01-19,Karnataka,Bengaluru,Acute Diarrheal Disease,44,0
+2023-01-19,Maharashtra,Pune,Measles,5,0
+2023-01-19,Maharashtra,Pune,Measles,8,0
+2023-01-19,Odisha,Cuttack,Food Poisoning,220,0
+2023-01-20,Karnataka,Tumkur,Fever of Unknown Origin,33,0
+2023-01-20,Karnataka,Tumkur,Fever of Unknown Origin,25,0
+2023-01-20,Karnataka,Uduppi,Food Poisoning,30,0
+2023-01-20,Madhya Pradesh,Shivpuri,Food Poisoning,111,0
+2023-01-21,Chhattisgarh,Baloda Bazar,Chickenpox,52,0
+2023-01-21,Karnataka,Chikkamagaluru,Kyasanur Forest Disease,1,0
+2023-01-21,Karnataka,Hassan,Rabies,1,1
+2023-01-21,Karnataka,Tumkur,Fever of Unknown Origin,16,0
+2023-01-21,Kerala,Malappuram,Food Poisoning,20,0
+2023-01-21,Kerala,Malappuram,Acute Diarrheal Disease,20,0
+2023-01-21,Uttar Pradesh,Pilibhit,Acute Diarrheal Disease,25,0
+2023-01-23,Bihar,Nalanda,Chickenpox,12,0
+2023-01-23,Chhattisgarh,Janjgir-Champa,Chickenpox,11,0
+2023-01-23,Karnataka,Davangere,Chickenpox,13,0
+2023-01-23,Karnataka,Tumkur,Dengue,20,0
+2023-01-24,Bihar,Madhubani,Chickenpox,28,0
+2023-01-24,Kerala,Wayanad,Acute Diarrheal Disease,98,0
+2023-01-25,Chhattisgarh,Baloda Bazar,Chickenpox,21,0
+2023-01-25,Rajasthan,Dausa,Food Poisoning,103,0
+2023-01-26,Kerala,Palakkad,Influenza,23,0
+2023-01-26,Kerala,Palakkad,Chickenpox,19,0
+2023-01-26,Kerala,Thrissur,Acute Diarrheal Disease,30,0
+2023-01-27,Kerala,Kollam,Food Poisoning,23,0
+2023-01-27,Maharashtra,Sangli,Food Poisoning,34,0
+2023-01-27,Odisha,Deogarh,Acute Diarrheal Disease,20,0
+2023-01-27,Tamil Nadu,Tiruchirappalli,Cholera,6,0
+2023-01-27,Uttar Pradesh,Fatehpur,Chickenpox,24,0
+2023-01-28,Karnataka,Davangere,Food Poisoning,12,0
+2023-01-30,Kerala,Kannur,Food Poisoning,40,0
+2023-01-30,Maharashtra,Latur,Measles,7,0
+2023-01-31,Himachal Pradesh,Kangra,Acute Diarrheal Disease,112,0
+2023-01-31,Odisha,Bargarh,Food Poisoning,31,0
+2023-01-31,Puducherry,Pondicherry,Food Poisoning,15,0
+2023-02-01,Karnataka,Dakshin Kannada,Leptospirosis,1,1
+2023-02-01,Kerala,Kasaragod,Food Poisoning,165,0
+2023-02-01,Kerala,Kasaragod,Food Poisoning,165,0
+2023-02-01,Kerala,Kasaragod,Food Poisoning,123,0
+2023-02-02,Gujarat,Mahesana,Acute Diarrheal Disease,249,0
+2023-02-02,Karnataka,Bidar,Rabies,1,1
+2023-02-02,Maharashtra,Solapur,Food Poisoning,66,0
+2023-02-03,Gujarat,Mahesana,Acute Diarrheal Disease,56,0
+2023-02-03,Karnataka,Hassan,Chickenpox,29,0
+2023-02-04,Karnataka,Tumkur,Chickenpox,13,0
+2023-02-04,Karnataka,Udupi,Acute Diarrheal Disease,12,0
+2023-02-04,Kerala,Malappuram,Leishmaniasis / Kala-Azar,1,0
+2023-02-04,Kerala,Thrissur,Chickenpox,11,0
+2023-02-05,Karnataka,Belagavi,Food Poisoning,25,0
+2023-02-06,Karnataka,Ballari,Rabies,1,1
+2023-02-06,Karnataka,Dakshin Kannada,Acute Diarrheal Disease,254,0
+2023-02-06,Karnataka,Dakshina Kannada,Food Poisoning,254,0
+2023-02-06,Karnataka,Hassan,Chickenpox,19,0
+2023-02-06,Karnataka,Vijaypur,Chickenpox,25,0
+2023-02-06,Maharashtra,Raigad,Leptospirosis,20,1
+2023-02-06,Odisha,Angul,Food Poisoning,27,0
+2023-02-06,Uttar Pradesh,Pratapgarh,Fever With Rash,6,0
+2023-02-06,Uttar Pradesh,Pratapgarh,Fever With Rash,5,0
+2023-02-07,Jharkhand,Dumka,Chickenpox,3,0
+2023-02-07,Uttar Pradesh,Fatehpur,Measles,5,0
+2023-02-08,Assam,Marigaon,Leptospirosis,1,0
+2023-02-08,Karnataka,Bengaluru Urban,Chickenpox,29,0
+2023-02-08,Karnataka,Dakshina Kannada,Acute Diarrheal Disease,34,0
+2023-02-08,Kerala,Kannur,Food Poisoning,131,0
+2023-02-08,Kerala,Kollam,Food Poisoning,20,0
+2023-02-08,Uttar Pradesh,Jalaun,Measles,31,0
+2023-02-09,Karnataka,Hassan,Measles,60,0
+2023-02-09,Kerala,Kannur,Food Poisoning,238,0
+2023-02-09,Maharashtra,Pune,Acute Diarrheal Disease,49,0
+2023-02-10,Gujarat,Junagadh,Food Poisoning,32,0
+2023-02-10,Odisha,Deogarh,Chickenpox,28,0
+2023-02-10,Tamil Nadu,Erode,Food Poisoning,102,0
+2023-02-11,Jharkhand,Khunti,Chickenpox,17,0
+2023-02-11,Karnataka,Kodagu,Diphtheria,1,1
+2023-02-11,Kerala,Ernakulam,Food Poisoning,105,0
+2023-02-12,Kerala,Kannur,Measles,12,0
+2023-02-12,Odisha,Rayagada,Fever With Rash,12,0
+2023-02-13,Assam,Dibrugarh,Rabies,1,1
+2023-02-13,Uttar Pradesh,Mirzapur,Food Poisoning,21,2
+2023-02-14,Karnataka,Yadgiri,Acute Diarrheal Disease,93,3
+2023-02-16,Assam,Sonitpur,Chickenpox,20,0
+2023-02-16,Karnataka,Hassan,Food Poisoning,16,0
+2023-02-16,Karnataka,Raichur,Chikungunya,42,0
+2023-02-16,Karnataka,Tumkur,Rabies,1,1
+2023-02-17,Odisha,Balasore,Encephalitis Sydrome / JE,12,1
+2023-02-18,Madhya Pradesh,Raisen,Chickenpox,14,0
+2023-02-19,Gujarat,Jamnagar,Food Poisoning,44,0
+2023-02-19,Maharashtra,Osmanabad,Food Poisoning,13,0
+2023-02-20,Gujarat,Navsari,Food Poisoning,18,0
+2023-02-20,Jammu And Kashmir,Badgam,Hepatitis/Jaundice,9,0
+2023-02-20,Kerala,Kottayam,Monkey Pox,1,0
+2023-02-20,Tamil Nadu,Tenkasi,Dengue,23,0
+2023-02-21,Karnataka,Bagalkote,Chickenpox,10,0
+2023-02-21,Karnataka,Yadgir,Chikungunya,13,0
+2023-02-21,Odisha,Rayagada,Acute Diarrheal Disease,11,0
+2023-02-21,Telangana,Narayanpet,Acute Diarrheal Disease,64,0
+2023-02-21,Uttarakhand,Pithoragarh,Hepatitis/Jaundice,56,0
+2023-02-22,Jammu And Kashmir,Badgam,Hepatitis/Jaundice,8,0
+2023-02-23,Madhya Pradesh,Betul,Acute Diarrheal Disease,31,0
+2023-02-23,Odisha,Bargarh,Food Poisoning,14,0
+2023-02-24,Kerala,Kannur,Food Poisoning,182,0
+2023-02-24,Maharashtra,Ahmednagar,Fever of Unknown Origin,120,0
+2023-02-25,Bihar,Aurangabad,Measles,6,0
+2023-02-25,Odisha,Cuttack,Food Poisoning,12,0
+2023-02-25,Tamil Nadu,Tiruvannamalai,Chickenpox,40,0
+2023-02-26,Madhya Pradesh,Khargone,Acute Diarrheal Disease,46,0
+2023-02-27,Kerala,Palakkad,Chickenpox,22,0
+2023-02-28,Chhattisgarh,Durg,Fever With Rash,31,0
+2023-03-01,Tamil Nadu,Salem,Chickenpox,13,0
+2023-03-02,Kerala,Thrissur,Adenovirus,220,0
+2023-03-02,Meghalaya,West Garo Hills,Rabies,1,1
+2023-03-04,Karnataka,Vijayanagar,Rabies,1,1
+2023-03-04,Kerala,Malappuram,Cholera,52,0
+2023-03-04,Madhya Pradesh,Gwalior,Measles,10,0
+2023-03-04,Odisha,Ganjam,Chickenpox,20,0
+2023-03-05,Jharkhand,Chatra,Acute Diarrheal Disease,22,0
+2023-03-05,Karnataka,Chikkaballapura,Rabies,1,1
+2023-03-06,Jharkhand,Chatra,Fever With Rash,13,0
+2023-03-07,Assam,Barpeta,Acute Diarrheal Disease,22,0
+2023-03-07,Uttarakhand,Rudra Prayag,Typhoid,18,0
+2023-03-08,Karnataka,Mandya,Acute Diarrheal Disease,33,0
+2023-03-08,Kerala,Kannur,Food Poisoning,35,0
+2023-03-09,Kerala,Pathanamthitta,Food Poisoning,29,0
+2023-03-10,Karnataka,Koppal,Rabies,1,1
+2023-03-10,Odisha,Subarnapur,Chickenpox,12,0
+2023-03-11,West Bengal,Paschim Medinipur,Food Poisoning,97,0
+2023-03-13,Chhattisgarh,Dhamtari,Acute Diarrheal Disease,11,0
+2023-03-13,Karnataka,Davangere,Rabies,1,1
+2023-03-13,Kerala,Palakkad,Chickenpox,12,0
+2023-03-14,Chhattisgarh,Dhamtari,Chickenpox,14,0
+2023-03-14,Jharkhand,Chatra,Chickenpox,12,0
+2023-03-14,Kerala,Malappuram,Hepatitis/Jaundice,28,0
+2023-03-15,Meghalaya,East Jaintia Hills,Rabies,1,1
+2023-03-15,Odisha,Ganjam,Chickenpox,18,0
+2023-03-15,Odisha,Sundargarh,Hepatitis/Jaundice,75,0
+2023-03-16,Kerala,Malappuram,Typhoid,32,0
+2023-03-17,Jharkhand,Deoghar,Acute Diarrheal Disease,18,0
+2023-03-17,Karnataka,Mandya,Food Poisoning,126,0
+2023-03-17,Uttar Pradesh,Farrukhabad,Chickenpox,23,0
+2023-03-18,Andhra Pradesh,Ntr,Acute Diarrheal Disease,22,0
+2023-03-18,Karnataka,Dakshina Kannada,Measles,15,0
+2023-03-18,Karnataka,Yadgiri,Acute Diarrheal Disease,18,0
+2023-03-18,Odisha,Balangir,Food Poisoning,24,0
+2023-03-18,Odisha,Koraput,Fever With Rash,30,0
+2023-03-20,Karnataka,Bagalkote,Chickenpox,10,0
+2023-03-20,Karnataka,Mandya,Fever With Rash,8,0
+2023-03-20,Meghalaya,Ri Bhoi,Rabies,1,1
+2023-03-20,West Bengal,South 24 Paranas,Food Poisoning,120,0
+2023-03-20,West Bengal,South24 Parganas,Food Poisoning,120,0
+2023-03-21,Kerala,Ernakulam,Food Poisoning,23,0
+2023-03-22,Jharkhand,Hazaribagh,Fever With Rash,16,0
+2023-03-23,Karnataka,Chitradurga,Chickenpox,19,0
+2023-03-23,Kerala,Ernakulam,West Nile Fever,1,0
+2023-03-24,Haryana,Sonipat,Food Poisoning,63,0
+2023-03-25,Bihar,Rohtas,Fever With Rash,5,0
+2023-03-25,Kerala,Kollam,Food Poisoning,23,0
+2023-03-25,West Bengal,South24 Parganas,Food Poisoning,88,0
+2023-03-26,West Bengal,Hooghly,Acute Diarrheal Disease,57,0
+2023-03-26,West Bengal,South 24 Parganas,Acute Diarrheal Disease,50,0
+2023-03-27,Karnataka,Ballari,Acute Diarrheal Disease,95,0
+2023-03-27,Karnataka,Chamarajanagar,Chickenpox,14,0
+2023-03-28,Karnataka,Raichur,Acute Diarrheal Disease,10,0
+2023-03-28,Uttar Pradesh,Gonda,Chickenpox,12,0
+2023-03-29,Karnataka,Bagalkote,Chickenpox,24,0
+2023-03-29,Punjab,Bathinda,Measles,11,0
+2023-03-30,Kerala,Ernakulam,Dengue,26,0
+2023-03-30,Meghalaya,West Jaintia Hills,Rabies,1,1
+2023-03-31,Gujarat,Panchmahal,Acute Diarrheal Disease,29,0
+2023-04-01,Jharkhand,Giridih,Measles,7,0
+2023-04-01,Kerala,Wayanad,Measles,29,0
+2023-04-02,Kerala,Kollam,Food Poisoning,47,0
+2023-04-02,Kerala,Malappuram,Food Poisoning,71,0
+2023-04-02,West Bengal,Paschim Medinipur,Acute Diarrheal Disease,123,0
+2023-04-03,Chhattisgarh,Bilaspur,Chickenpox,19,0
+2023-04-03,Gujarat,Surat,Measles,6,0
+2023-04-03,Gujarat,Surat,Measles,6,0
+2023-04-03,Meghalaya,West Garo Hills,Chickenpox,16,0
+2023-04-04,Jharkhand,Jamtara,Chickenpox,21,0
+2023-04-04,Karnataka,Dakshina Kannada,Leptospirosis,1,1
+2023-04-04,Kerala,Thiruvananthapu Ram,Acute Diarrheal Disease,335,0
+2023-04-04,Kerala,Wayanad,Food Poisoning,16,0
+2023-04-04,Punjab,Jalandhar,Cholera,10,0
+2023-04-04,West Bengal,North 24 Parganas,Acute Diarrheal Disease,151,0
+2023-04-05,Chhattisgarh,Balod,Chickenpox,12,0
+2023-04-05,Gujarat,Surat,Measles,10,0
+2023-04-05,Karnataka,Hassan,Rabies,1,1
+2023-04-05,Karnataka,Mandya,Rabies,1,1
+2023-04-05,Kerala,Thiruvananthapu Ram,Acute Diarrheal Disease,234,0
+2023-04-05,Odisha,Koraput,Fever With Rash,27,0
+2023-04-05,West Bengal,North 24 Parganas,Acute Diarrheal Disease,103,0
+2023-04-06,Karnataka,Hassan,Rabies,1,1
+2023-04-06,Madhya Pradesh,Khargone,Food Poisoning,53,0
+2023-04-06,Punjab,Sri Muktsar Sahib,Measles,5,0
+2023-04-07,Punjab,S.A.S Nagar,Acute Diarrheal Disease,19,0
+2023-04-08,Karnataka,Chikkaballapura,Rabies,1,1
+2023-04-08,Kerala,Thrissur,West Nile Fever,1,0
+2023-04-08,Odisha,Cuttack,Food Poisoning,114,0
+2023-04-08,Odisha,Cuttack,Acute Diarrheal Disease,52,0
+2023-04-09,Kerala,Pathanamthitta,Dengue,10,0
+2023-04-10,Kerala,Palakkad,Hepatitis/Jaundice,13,0
+2023-04-11,Bihar,Banka,Fever With Rash,17,0
+2023-04-11,Karnataka,Dharwad,Acute Diarrheal Disease,13,0
+2023-04-11,Karnataka,Vijayanagar,Food Poisoning,32,0
+2023-04-11,Kerala,Malappuram,Food Poisoning,19,0
+2023-04-11,Odisha,Koraput,Fever With Rash,13,0
+2023-04-12,Bihar,Muzaffarpur,Encephalitis Sydrome / JE,1,0
+2023-04-12,Karnataka,Bellary,Dengue,15,0
+2023-04-12,Karnataka,Gadag,Measles,61,0
+2023-04-12,West Bengal,Basirhat,Food Poisoning,87,0
+2023-04-15,Gujarat,Surat,Fever With Rash,7,0
+2023-04-15,Gujarat,Surat,Measles,8,0
+2023-04-15,Jharkhand,East Singhbum,Chickenpox,14,0
+2023-04-15,Kerala,Thiruvanathap Uram,Dengue,12,0
+2023-04-16,Kerala,Ernakulam,Dengue,23,0
+2023-04-16,West Bengal,Diamond Harbour,Food Poisoning,114,0
+2023-04-18,Karnataka,Mandya,Measles,7,0
+2023-04-18,Madhya Pradesh,Indore,Food Poisoning,23,0
+2023-04-18,Odisha,Sundargarh,Acute Diarrheal Disease,25,0
+2023-04-19,Karnataka,Bangalore,Acute Diarrheal Disease,297,0
+2023-04-19,Karnataka,Bidar,Acute Diarrheal Disease,40,0
+2023-04-19,Karnataka,Kalaburagi,Acute Diarrheal Disease,11,0
+2023-04-19,Madhya Pradesh,Mandsaur,Food Poisoning,125,0
+2023-04-19,West Bengal,Purulia,Acute Diarrheal Disease,36,0
+2023-04-19,West Bengal,Purulia,Acute Diarrheal Disease,39,0
+2023-04-20,Odisha,Koraput,Acute Diarrheal Disease,30,0
+2023-04-21,Jammu And Kashmir,Shopian,Hepatitis/Jaundice,5,0
+2023-04-22,Karnataka,Tumkur,Acute Diarrheal Disease,50,0
+2023-04-22,Madhya Pradesh,Katni,Measles,9,0
+2023-04-22,Tamil Nadu,Tiruchirappalli,Acute Diarrheal Disease,17,0
+2023-04-23,Meghalaya,East Khasi Hills,Chickenpox,23,0
+2023-04-23,Odisha,Mayurbhanj,Acute Diarrheal Disease,65,0
+2023-04-24,Kerala,Malappuram,Food Poisoning,23,0
+2023-04-24,Meghalaya,East Khasi Hills,Chickenpox,25,0
+2023-04-24,West Bengal,Basirhat Hd,Hepatitis/Jaundice,93,0
+2023-04-25,Karnataka,Bagalkote,Measles,13,0
+2023-04-26,Gujarat,Gandhinagar,Acute Diarrheal Disease,50,0
+2023-04-26,Karnataka,Chikkaballapura,Acute Diarrheal Disease,17,0
+2023-04-26,Kerala,Thrissur,Dengue,63,0
+2023-04-27,Jharkhand,Khunti,Fever With Rash,15,0
+2023-04-27,Punjab,S.A.S Nagar,Acute Diarrheal Disease,22,0
+2023-04-27,Tamil Nadu,Thanjavur,Acute Diarrheal Disease,18,0
+2023-04-27,Telangana,Hyderabad,Acute Diarrheal Disease,65,0
+2023-04-28,Karnataka,Hassan,Acute Diarrheal Disease,20,0
+2023-04-28,Madhya Pradesh,Neemuch,Measles,6,0
+2023-04-28,Maharashtra,Nanded,Dengue,13,0
+2023-04-29,Chhattisgarh,Narayanpur,Acute Diarrheal Disease,26,0
+2023-04-29,Kerala,Trivandrum,Adenovirus,117,0
+2023-04-30,Odisha,Koraput,Anthrax,5,0
+2023-04-30,Uttar Pradesh,Jalaun,Chickenpox,3,0
+2023-05-01,Assam,Karbi Anglong,Rabies,1,1
+2023-05-01,Jammu And Kashmir,Udhampur,Measles,4,0
+2023-05-01,Meghalaya,West Jaintia Hills,Rabies,1,1
+2023-05-02,Assam,Bongaigaon,Encephalitis Sydrome / JE,1,0
+2023-05-02,Kerala,Kannur,Food Poisoning,42,0
+2023-05-02,Kerala,Thrissur,Food Poisoning,7,1
+2023-05-02,Kerala,Trivandrum,Zika Virus,2,0
+2023-05-03,Bihar,Sheohar,Encephalitis Sydrome / JE,1,0
+2023-05-03,Karnataka,Davangere,Rabies,1,1
+2023-05-03,Karnataka,Vijayanagar,Acute Diarrheal Disease,36,0
+2023-05-03,Kerala,Ernakulam,Acute Diarrheal Disease,36,0
+2023-05-03,Kerala,Kollam,Acute Diarrheal Disease,44,0
+2023-05-03,Kerala,Pathanamthitta,Dengue,8,0
+2023-05-03,Maharashtra,Yavatmal,Food Poisoning,50,0
+2023-05-03,Odisha,Sundargarh,Food Poisoning,34,0
+2023-05-04,Gujarat,Valsad,Acute Diarrheal Disease,10,0
+2023-05-04,Karnataka,Bellary,Acute Diarrheal Disease,42,0
+2023-05-04,Kerala,Palakkad,Food Poisoning,10,0
+2023-05-04,Kerala,Thrissur,Dengue,48,0
+2023-05-05,Kerala,Kannur,Food Poisoning,53,0
+2023-05-06,Jharkhand,Giridih,Acute Diarrheal Disease,5,0
+2023-05-06,Kerala,Thrissur,Food Poisoning,85,0
+2023-05-07,Gujarat,Amreli,Food Poisoning,95,0
+2023-05-08,Kerala,Kottayam,Dengue,5,0
+2023-05-09,Chhattisgarh,Balod,Acute Diarrheal Disease,26,0
+2023-05-09,Jharkhand,Ramgarh,Acute Diarrheal Disease,7,0
+2023-05-09,Kerala,Ernakulam,Dengue,41,0
+2023-05-10,Gujarat,Jamnagar,Acute Diarrheal Disease,35,0
+2023-05-10,Haryana,Yamunanagar,Acute Diarrheal Disease,42,0
+2023-05-10,Jharkhand,Khunti,Chickenpox,5,0
+2023-05-10,Kerala,Ernakulam,Dengue,31,0
+2023-05-10,Kerala,Kollam,Dengue,51,0
+2023-05-10,Kerala,Kottayam,Food Poisoning,7,0
+2023-05-10,Kerala,Kottayam,Food Poisoning,120,0
+2023-05-10,Kerala,Kozhikode,Dengue,15,0
+2023-05-10,Uttar Pradesh,Fatehpur,Chickenpox,22,0
+2023-05-11,Kerala,Kannur,West Nile Fever,1,0
+2023-05-11,Kerala,Kottayam,Dengue,9,0
+2023-05-11,Kerala,Malappuram,Dengue,9,0
+2023-05-11,Odisha,Bargarh,Hepatitis/Jaundice,7,0
+2023-05-13,Assam,Marigaon,Acute Diarrheal Disease,27,0
+2023-05-13,Madhya Pradesh,Ashoknagar,Fever With Rash,6,0
+2023-05-15,Assam,Karbi Anglong,Acute Diarrheal Disease,15,1
+2023-05-15,Karnataka,Koppal,Cholera,35,0
+2023-05-15,Kerala,Kannur,Food Poisoning,23,0
+2023-05-15,Odisha,Cuttack,Food Poisoning,28,0
+2023-05-16,Assam,Jorhat,Encephalitis Sydrome / JE,2,0
+2023-05-16,Uttar Pradesh,Fatehpur,Measles,3,0
+2023-05-16,West Bengal,Purulia,Food Poisoning,60,0
+2023-05-17,Karnataka,Koppal,Cholera,36,0
+2023-05-17,Kerala,Kannur,Acute Diarrheal Disease,51,0
+2023-05-17,Kerala,Malappuram,Food Poisoning,135,0
+2023-05-17,Maharashtra,Yavatmal,Food Poisoning,21,0
+2023-05-17,West Bengal,Purulia,Acute Diarrheal Disease,30,0
+2023-05-18,Kerala,Pathanamthitta,Dengue,10,0
+2023-05-19,Kerala,Wayanad,Food Poisoning,46,0
+2023-05-20,Odisha,Jajpur,Food Poisoning,16,0
+2023-05-21,Gujarat,Junagadh,Food Poisoning,109,0
+2023-05-21,Kerala,Ernakulam,Food Poisoning,70,0
+2023-05-22,Karnataka,Dakshina Kannada,Acute Diarrheal Disease,16,0
+2023-05-22,Kerala,Idukki,Dengue,16,0
+2023-05-22,Kerala,Wayanad,Acute Diarrheal Disease,45,0
+2023-05-23,Chhattisgarh,Raipur,Acute Diarrheal Disease,9,0
+2023-05-23,Chhattisgarh,Surguja,Fever of Unknown Origin,6,0
+2023-05-23,Jharkhand,East Singhbum,Chickenpox,11,0
+2023-05-23,Jharkhand,West Singhbhum,Chickenpox,7,0
+2023-05-23,Karnataka,Haveri,Acute Diarrheal Disease,52,0
+2023-05-23,Kerala,Pathanamthitta,Dengue,19,0
+2023-05-23,Maharashtra,Gadchiroli,Malaria,21,1
+2023-05-24,Kerala,Kottayam,Dengue,5,0
+2023-05-24,Kerala,Kozhikode,Monkey Pox,1,0
+2023-05-24,Punjab,Bathinda,Measles,5,0
+2023-05-25,Bihar,Gaya,Acute Diarrheal Disease,12,0
+2023-05-25,Karnataka,Raichur,Acute Diarrheal Disease,50,1
+2023-05-25,Karnataka,Raichur,Cholera,61,0
+2023-05-25,Kerala,Idukki,Dengue,15,0
+2023-05-25,Madhya Pradesh,Ashoknagar,Fever With Rash,6,0
+2023-05-25,Maharashtra,Gadchiroli,Malaria,6,1
+2023-05-25,Mizoram,Aizawl,Fever of Unknown Origin,30,0
+2023-05-26,Kerala,Kannur,Food Poisoning,43,0
+2023-05-26,Kerala,Kollam,Food Poisoning,15,0
+2023-05-27,Assam,Cachar,Rabies,1,1
+2023-05-27,Karnataka,Raichur,Acute Diarrheal Disease,17,0
+2023-05-27,Kerala,Alappuzha,West Nile Fever,1,0
+2023-05-28,Chhattisgarh,Balod,Acute Diarrheal Disease,38,0
+2023-05-28,Odisha,Koraput,Anthrax,7,0
+2023-05-29,Bihar,Supaul,Acute Diarrheal Disease,50,0
+2023-05-29,Kerala,Alappuzha,Dengue,22,0
+2023-05-29,Kerala,Palakkad,Food Poisoning,14,0
+2023-05-29,Kerala,Wayanad,Food Poisoning,114,0
+2023-05-29,Maharashtra,Gadchiroli,Malaria,19,1
+2023-05-30,Assam,Marigaon,Scrub Typhus,2,0
+2023-05-30,Kerala,Kollam,Food Poisoning,24,0
+2023-05-30,Kerala,Thrissur,Food Poisoning,35,0
+2023-05-30,Maharashtra,Satara,Food Poisoning,101,0
+2023-05-31,Tripura,Unakoti,Acute Diarrheal Disease,23,0
+2023-06-01,Kerala,Kasaragod,Food Poisoning,47,0
+2023-06-01,Punjab,Bathinda,Measles,3,0
+2023-06-02,Jharkhand,East Singhbum,Fever With Rash,14,0
+2023-06-02,Karnataka,Dakshina Kannada,Acute Diarrheal Disease,27,0
+2023-06-02,Karnataka,Davanagere,Food Poisoning,15,0
+2023-06-02,Karnataka,Raichur,Cholera,101,0
+2023-06-03,Karnataka,Koppal,Cholera,32,0
+2023-06-03,Kerala,Kollam,Food Poisoning,13,0
+2023-06-03,Maharashtra,Yavatmal,Acute Diarrheal Disease,107,0
+2023-06-03,West Bengal,Pachim Medinipur,Food Poisoning,78,0
+2023-06-04,Chhattisgarh,Narayanpur,Acute Diarrheal Disease,5,0
+2023-06-04,Kerala,Malappuram,Food Poisoning,175,0
+2023-06-04,Kerala,Palakkad,Acute Diarrheal Disease,16,0
+2023-06-04,Odisha,Koraput,Food Poisoning,149,0
+2023-06-04,Uttar Pradesh,Unnao,Food Poisoning,20,0
+2023-06-05,Karnataka,Bagalakote,Cholera,13,0
+2023-06-05,Karnataka,Koppal,Cholera,34,0
+2023-06-05,Kerala,Kannur,Acute Diarrheal Disease,30,0
+2023-06-05,Madhya Pradesh,Gwalior,Measles,6,1
+2023-06-06,Gujarat,Valsad,Food Poisoning,9,0
+2023-06-06,Karnataka,Hassan,Acute Diarrheal Disease,12,0
+2023-06-06,Karnataka,Koppal,Acute Diarrheal Disease,48,0
+2023-06-06,Karnataka,Koppal,Cholera,124,1
+2023-06-06,Karnataka,Koppal,Cholera,27,0
+2023-06-06,Karnataka,Raichur,Acute Diarrheal Disease,21,0
+2023-06-07,Karnataka,Bbmp,Acute Diarrheal Disease,99,0
+2023-06-07,Karnataka,Hassan,Acute Diarrheal Disease,35,0
+2023-06-07,Karnataka,Koppal,Acute Diarrheal Disease,21,0
+2023-06-07,Uttarakhand,Pauri Garhwal,Fever of Unknown Origin,25,0
+2023-06-08,Karnataka,Koppal,Acute Diarrheal Disease,63,0
+2023-06-08,Kerala,Palakkad,Acute Diarrheal Disease,9,0
+2023-06-09,West Bengal,Nadia,Acute Diarrheal Disease,49,0
+2023-06-12,Karnataka,Dharwad,Food Poisoning,32,0
+2023-06-12,Karnataka,Shivamogga,Cholera,102,0
+2023-06-12,Madhya Pradesh,Katni,Fever With Rash,10,0
+2023-06-13,Karnataka,Chikkamagaluru,Dengue,14,0
+2023-06-15,Chhattisgarh,Bastar,Dengue,9,0
+2023-06-16,Bihar,Purbi Champaran,Measles,11,0
+2023-06-16,Jharkhand,Jamtara,Chickenpox,14,0
+2023-06-16,Jharkhand,Ramgarh,Measles,5,0
+2023-06-16,Kerala,Thiruvananthapu Ram,Zika Virus,1,0
+2023-06-16,Punjab,S.A.S Nagar,Acute Diarrheal Disease,91,0
+2023-06-17,Karnataka,Mandya,Acute Diarrheal Disease,52,0
+2023-06-18,Madhya Pradesh,Satna,Chickenpox,7,0
+2023-06-19,Arunachal Pradesh,Lower Subansiri,Chickenpox,17,0
+2023-06-19,Assam,Charaideo,Food Poisoning,7,0
+2023-06-19,Assam,Dhemaji,Food Poisoning,4,0
+2023-06-19,Bihar,Jamui,Acute Diarrheal Disease,15,0
+2023-06-19,Bihar,Pashchim Champaran,Fever With Rash,2,0
+2023-06-19,Bihar,Siwan,Chickenpox,8,0
+2023-06-19,Chhattisgarh,Balod,Fever of Unknown Origin,249,0
+2023-06-19,Chhattisgarh,Balod,Acute Diarrheal Disease,16,0
+2023-06-19,Karnataka,Ballari,Typhoid,47,0
+2023-06-19,Karnataka,Ballari,Typhoid,41,0
+2023-06-19,Karnataka,Belagavi,Acute Diarrheal Disease,24,0
+2023-06-19,Karnataka,Bidar,Acute Diarrheal Disease,17,0
+2023-06-19,Karnataka,Kalaburagi,Food Poisoning,30,0
+2023-06-19,Karnataka,Udupi,Acute Diarrheal Disease,15,0
+2023-06-19,Odisha,Jagatsinghpur,Malaria,7,0
+2023-06-20,Bihar,Supaul,Chickenpox,7,0
+2023-06-20,Jharkhand,Deoghar,Malaria,12,0
+2023-06-20,Kerala,Kannur,Food Poisoning,14,0
+2023-06-20,Maharashtra,Osmanabad,Chikungunya,6,0
+2023-06-20,Nagaland,Dimapur,Dengue,68,0
+2023-06-21,Assam,Dhemaji,Food Poisoning,16,0
+2023-06-21,Assam,Dibrugarh,Chickenpox,22,0
+2023-06-21,Assam,Dibrugarh,Food Poisoning,8,0
+2023-06-21,Gujarat,Ahmedabad,Acute Diarrheal Disease,119,0
+2023-06-21,Jammu And Kashmir,Shopian,Mumps,10,0
+2023-06-21,Jharkhand,Deoghar,Malaria,14,0
+2023-06-21,Karnataka,Koppal,Cholera,27,0
+2023-06-21,Madhya Pradesh,Khargone,Acute Diarrheal Disease,58,0
+2023-06-21,Maharashtra,Pune,Dengue,9,0
+2023-06-21,Punjab,Ludhiana,Food Poisoning,11,0
+2023-06-21,Uttar Pradesh,Bhadohi,Acute Diarrheal Disease,11,0
+2023-06-22,Bihar,Buxar,Fever With Rash,8,0
+2023-06-22,Jammu And Kashmir,Shopian,Mumps,14,0
+2023-06-22,Jharkhand,Dhanbad,Chickenpox,5,0
+2023-06-22,Jharkhand,Dumka,Chickenpox,21,0
+2023-06-22,Karnataka,Shivamogga,Rabies,1,1
+2023-06-22,Maharashtra,Kolhapur,Dengue,79,0
+2023-06-22,Maharashtra,Kolhapur,Dengue,34,0
+2023-06-22,Meghalaya,South West Khasi Hills,Food Poisoning,14,0
+2023-06-22,Tamil Nadu,Sivaganga,Hepatitis/Jaundice,12,0
+2023-06-22,Uttar Pradesh,Barabanki,Acute Diarrheal Disease,35,0
+2023-06-23,Assam,Dibrugarh,Food Poisoning,7,0
+2023-06-23,Gujarat,Gandhinagar,Cholera,160,0
+2023-06-23,Jharkhand,West Singhbhum,Chickenpox,7,0
+2023-06-23,Madhya Pradesh,Morena,Fever With Rash,6,0
+2023-06-23,Maharashtra,Gadchiroli,Malaria,37,1
+2023-06-23,Maharashtra,Hingoli,Acute Diarrheal Disease,64,0
+2023-06-23,Meghalaya,East Khasi Hills,Food Poisoning,9,0
+2023-06-23,Tamil Nadu,Coimbatore,Acute Diarrheal Disease,19,0
+2023-06-24,Madhya Pradesh,Narsinghpur,Malaria,6,0
+2023-06-25,Rajasthan,Udaipur,Acute Diarrheal Disease,95,0
+2023-06-30,Kerala,Kozhikode,Nipah,6,2
+2023-07-01,Uttarakhand,Dehradun,Dengue,1084,13
+2023-07-13,Madhya Pradesh,Chhindwara,Acute Diarrheal Disease,44,0
+2023-07-15,Chandigarh,Chandigarh,Cholera,16,0
+2023-07-18,Bihar,Katihar,Measles,14,0
+2023-07-18,Kerala,Kannur,Melioidosis,2,0
+2023-07-19,Jammu And Kashmir,Kupwara,Chickenpox,7,0
+2023-07-19,Jammu And Kashmir,Kupwara,Chickenpox,17,0
+2023-07-22,Rajasthan,Kota,Dengue,362,1
+2023-07-24,Kerala,Palakkad,Chickenpox,11,0
+2023-07-24,Uttar Pradesh,Sonbhadra,Acute Diarrheal Disease,40,3
+2023-07-25,Madhya Pradesh,Jabalpur,Food Poisoning,46,0
+2023-07-27,Uttar Pradesh,Sonbhadra,Dengue,15,0
+2023-07-30,Kerala,Thrissur,Hepatitis/Jaundice,13,0
+2023-07-31,Kerala,Palakkad,Hepatitis/Jaundice,17,0
+2023-07-31,Madhya Pradesh,Agar Malwa,Acute Diarrheal Disease,69,0
+2023-08-01,Odisha,Rayagada,Acute Diarrheal Disease,34,0
+2023-08-02,Kerala,Malappuram,Hepatitis/Jaundice,10,0
+2023-08-03,Kerala,Thiruvanantha Puram,Hepatitis/Jaundice,7,0
+2023-08-04,Andhra Pradesh,Eluru,Acute Diarrheal Disease,93,0
+2023-08-05,Rajasthan,Dholpur,Acute Diarrheal Disease,56,0
+2023-08-05,Uttar Pradesh,Ballia,Scrub Typhus,14,0
+2023-08-06,Kerala,Palakkad,Hepatitis/Jaundice,7,0
+2023-08-06,Madhya Pradesh,Barwani,Measles,6,0
+2023-08-08,Madhya Pradesh,Indore,Chikungunya,9,0
+2023-08-08,Uttar Pradesh,Kanpur Dehat,Malaria,60,0
+2023-08-10,Haryana,Karnal,Scrub Typhus,28,0
+2023-08-10,Kerala,Ernakulam,Dengue,19,0
+2023-08-10,Madhya Pradesh,Damoh,Acute Diarrheal Disease,50,1
+2023-08-10,Maharashtra,Mumbai Suburban,Zika Virus,1,0
+2023-08-10,Mizoram,Mamit,Food Poisoning,63,0
+2023-08-10,Rajasthan,Tonk,Scrub Typhus,98,0
+2023-08-10,Uttar Pradesh,Farrukhabad,Dengue,67,0
+2023-08-10,Uttar Pradesh,Mirzapur,Acute Diarrheal Disease,20,0
+2023-08-11,Odisha,Sundargarh,Malaria,22,0
+2023-08-12,Assam,Cachar,Encephalitis Sydrome / JE,1,1
+2023-08-12,Assam,Darrang,Acute Diarrheal Disease,41,0
+2023-08-12,Jammu And Kashmir,Kathua,Dengue,81,0
+2023-08-12,Maharashtra,Jalna,Dengue,5,1
+2023-08-12,Manipur,Tamenglong,Acute Diarrheal Disease,24,0
+2023-08-13,Assam,South Salmar Mancachar,Food Poisoning,5,0
+2023-08-13,Chhattisgarh,Bilaspur,Acute Diarrheal Disease,15,0
+2023-08-13,Kerala,Malappuram,Dengue,24,0
+2023-08-13,Mizoram,Hnahthial,Food Poisoning,23,0
+2023-08-13,Odisha,Sambalpur,Acute Diarrheal Disease,32,0
+2023-08-14,Assam,Goalpara,Food Poisoning,3,1
+2023-08-14,Bihar,Jamui,Fever With Rash,7,0
+2023-08-14,D&N Haveli,Dadra And Nagar Haveli,Acute Diarrheal Disease,13,0
+2023-08-14,Jammu And Kashmir,Baramulla,Mumps,11,0
+2023-08-14,Kerala,Palakkad,Hepatitis/Jaundice,8,0
+2023-08-14,Madhya Pradesh,Satna,Malaria,6,0
+2023-08-14,Nagaland,Peren,Acute Diarrheal Disease,12,0
+2023-08-14,Uttar Pradesh,Chandauli,Acute Diarrheal Disease,18,0
+2023-08-14,Uttar Pradesh,Fatehpur,Dengue,8,0
+2023-08-15,Gujarat,Surendranagar,Acute Diarrheal Disease,119,0
+2023-08-15,Karnataka,Vijayapura,Acute Diarrheal Disease,41,0
+2023-08-15,Maharashtra,Thane,Leptospirosis,1,1
+2023-08-15,Tamil Nadu,Ariyalur,Mumps,10,0
+2023-08-15,Tamil Nadu,Thanjavur,Diphtheria,4,0
+2023-08-15,Uttar Pradesh,Siddharth Nagar,Acute Diarrheal Disease,15,0
+2023-08-16,Jammu And Kashmir,Anantnag,Mumps,49,0
+2023-08-16,Jammu And Kashmir,Kathua,Dengue,17,0
+2023-08-16,Jammu And Kashmir,Kupwara,Chickenpox,20,0
+2023-08-16,Jammu And Kashmir,Pulwama,Hepatitis/Jaundice,12,0
+2023-08-16,Jharkhand,Deoghar,Dengue,15,0
+2023-08-16,Jharkhand,Lohardaga,Acute Diarrheal Disease,11,0
+2023-08-16,Karnataka,Chikkaballapura,Food Poisoning,29,0
+2023-08-16,Madhya Pradesh,Morena,Dengue,44,0
+2023-08-16,Odisha,Balasore,Food Poisoning,11,0
+2023-08-16,Uttar Pradesh,Kaushambi,Food Poisoning,13,0
+2023-08-16,Uttar Pradesh,Mirzapur,Acute Diarrheal Disease,27,0
+2023-08-16,West Bengal,Purulia,Acute Diarrheal Disease,12,0
+2023-08-17,Assam,Dhemaji,Acute Diarrheal Disease,7,0
+2023-08-17,Assam,Karbi Anglong,Acute Diarrheal Disease,14,0
+2023-08-17,Chhattisgarh,Bijapur,Chickenpox,10,0
+2023-08-17,Delhi,South Delhi,Dengue,40,0
+2023-08-17,Karnataka,Mysuru,Mumps,6,0
+2023-08-17,Madhya Pradesh,Ratlam,Dengue,48,0
+2023-08-17,Maharashtra,Beed,Dengue,17,1
+2023-08-17,Maharashtra,Beed,Dengue,7,1
+2023-08-17,Maharashtra,Gadchiroli,Dengue,34,0
+2023-08-17,Maharashtra,Gadchiroli,Dengue,11,0
+2023-08-17,Tamil Nadu,Tiruchirappalli,Acute Diarrheal Disease,41,0
+2023-08-17,Uttar Pradesh,Mirzapur,Acute Diarrheal Disease,12,1
+2023-08-18,Andaman & Nicobar Islands,South Andaman’S,Acute Diarrheal Disease,18,0
+2023-08-18,Chhattisgarh,Raigarh,Dengue,14,0
+2023-08-18,Jammu And Kashmir,Shopian,Hepatitis/Jaundice,9,0
+2023-08-18,Jammu And Kashmir,Srinagar,Mumps,16,0
+2023-08-18,Jharkhand,Chatra,Acute Diarrheal Disease,12,0
+2023-08-18,Madhya Pradesh,Bhopal,Measles,27,0
+2023-08-18,Madhya Pradesh,Dhar,Dengue,92,0
+2023-08-18,Madhya Pradesh,Harda,Dengue,30,0
+2023-08-18,Maharashtra,Gadchiroli,Malaria,2,1
+2023-08-18,Tamil Nadu,Erode,Rabies,13,0
+2023-08-18,Uttar Pradesh,Mirzapur,Acute Diarrheal Disease,15,0
+2023-08-19,Bihar,Patna,Acute Diarrheal Disease,11,0
+2023-08-19,Gujarat,Dohad,Food Poisoning,23,0
+2023-08-19,Gujarat,Patan,Hepatitis/Jaundice,18,0
+2023-08-19,Jammu And Kashmir,Anantnag,Mumps,65,0
+2023-08-19,Jammu And Kashmir,Shopian,Measles,6,0
+2023-08-19,Jharkhand,West Singhbhum,Acute Diarrheal Disease,5,0
+2023-08-19,Kerala,Thrissur,Typhoid,37,0
+2023-08-19,Rajasthan,Ganganagar,Dengue,219,0
+2023-08-19,Tamil Nadu,Villupuram,Acute Diarrheal Disease,52,0
+2023-08-19,Uttar Pradesh,Budaun,Dengue,76,0
+2023-08-19,Uttarakhand,Nainital,Acute Diarrheal Disease,35,0
+2023-08-20,Jharkhand,Sahebganj,Acute Diarrheal Disease,24,0
+2023-08-20,Rajasthan,Udaipur,Acute Diarrheal Disease,20,0
+2023-08-20,Uttar Pradesh,Jaunpur,Measles,12,0
+2023-08-20,Uttar Pradesh,Jaunpur,Scrub Typhus,9,0
+2023-08-20,Uttarakhand,Nainital,Hepatitis/Jaundice,12,0
+2023-08-21,Arunachal Pradesh,Papumpare,Scrub Typhus,7,0
+2023-08-21,Bihar,Aurangabad,Acute Diarrheal Disease,19,0
+2023-08-21,Chhattisgarh,Balod,Acute Diarrheal Disease,22,0
+2023-08-21,Karnataka,Ballari,Leptospirosis,11,0
+2023-08-21,Madhya Pradesh,Jhabua,Dengue,11,0
+2023-08-21,Madhya Pradesh,Seoni,Acute Diarrheal Disease,96,0
+2023-08-21,Maharashtra,Bhandara,Malaria,4,2
+2023-08-21,Maharashtra,Parbhani,Acute Diarrheal Disease,47,0
+2023-08-21,Uttar Pradesh,Fatehpur,Dengue,10,0
+2023-08-21,Uttar Pradesh,Lalitpur,Acute Diarrheal Disease,8,1
+2023-08-22,Arunachal Pradesh,Tawang,Scrub Typhus,5,2
+2023-08-22,Assam,Kamrup,Acute Diarrheal Disease,24,0
+2023-08-22,Bihar,Jehanabad,Acute Diarrheal Disease,15,0
+2023-08-22,Jammu And Kashmir,Srinagar,Mumps,13,0
+2023-08-22,Karnataka,Yadgir,Cholera,19,0
+2023-08-22,Madhya Pradesh,Barwani,Dengue,8,0
+2023-08-22,Madhya Pradesh,Seoni,Acute Diarrheal Disease,82,1
+2023-08-22,Odisha,Balangir,Acute Diarrheal Disease,47,0
+2023-08-22,Odisha,Nuapada,Acute Diarrheal Disease,23,0
+2023-08-22,Odisha,Sambalpur,Acute Diarrheal Disease,32,0
+2023-08-23,D&N Haveli,Dadra And Nagar Haveli,Fever of Unknown Origin,101,0
+2023-08-23,Maharashtra,Kolhapur,Dengue,43,0
+2023-08-23,Tamil Nadu,Tiruchirappalli,Hepatitis/Jaundice,128,0
+2023-08-23,Uttar Pradesh,Bhadohi,Acute Diarrheal Disease,20,0
+2023-08-24,Jammu And Kashmir,Shopian,Mumps,6,0
+2023-08-24,Karnataka,Bengaluru Urban,Chikungunya,8,0
+2023-08-24,Maharashtra,Aurangabad,Dengue,19,0
+2023-08-24,Maharashtra,Bhandara,Acute Diarrheal Disease,49,0
+2023-08-24,Odisha,Balangir,Acute Diarrheal Disease,13,0
+2023-08-24,Tamil Nadu,Ariyalur,Acute Diarrheal Disease,52,0
+2023-08-24,Tamil Nadu,Thanjavur,Hepatitis/Jaundice,12,0
+2023-08-24,Uttar Pradesh,Ballia,Scrub Typhus,27,0
+2023-08-24,Uttar Pradesh,Hardoi,Malaria,35,0
+2023-08-25,Andhra Pradesh,Nandyal,Acute Diarrheal Disease,27,0
+2023-08-25,Chhattisgarh,Surajpur,Acute Diarrheal Disease,20,0
+2023-08-25,Jammu And Kashmir,Pulwama,Mumps,18,0
+2023-08-25,Jharkhand,Deoghar,Malaria,10,0
+2023-08-25,Karnataka,Yadgir,Acute Diarrheal Disease,12,0
+2023-08-25,Kerala,Ernakulam,Acute Diarrheal Disease,42,0
+2023-08-25,Kerala,Palakkad,Mumps,15,0
+2023-08-25,Odisha,Deogarh,Fever of Unknown Origin,113,0
+2023-08-25,Rajasthan,Baran,Hepatitis/Jaundice,36,0
+2023-08-25,Tamil Nadu,Sivaganga,Dengue,49,0
+2023-08-25,Uttar Pradesh,Chandauli,Acute Diarrheal Disease,20,0
+2023-08-26,Assam,Jorhat,Food Poisoning,148,0
+2023-08-26,Bihar,Madhubani,Acute Diarrheal Disease,11,1
+2023-08-26,Madhya Pradesh,Rewa,Acute Diarrheal Disease,52,2
+2023-08-26,Maharashtra,Washim,Fever of Unknown Origin,5,0
+2023-08-26,Maharashtra,Washim,Fever of Unknown Origin,6,0
+2023-08-27,Madhya Pradesh,Ashoknagar,Fever With Rash,7,0
+2023-08-27,Madhya Pradesh,Dewas,Dengue,17,0
+2023-08-28,Chhattisgarh,Durg,Acute Diarrheal Disease,31,0
+2023-08-28,Chhattisgarh,Kondagaon,Acute Diarrheal Disease,4,3
+2023-08-28,D&N Haveli,Dadra And Nagar Haveli,Fever of Unknown Origin,32,0
+2023-08-28,Jammu And Kashmir,Pulwama,Mumps,22,0
+2023-08-28,Jammu And Kashmir,Pulwama,Mumps,31,0
+2023-08-28,Karnataka,Yadgir,Acute Diarrheal Disease,11,0
+2023-08-28,Madhya Pradesh,Agar Malwa,Acute Diarrheal Disease,9,0
+2023-08-28,Madhya Pradesh,Ashoknagar,Measles,5,0
+2023-08-28,Madhya Pradesh,Dewas,Diphtheria,1,1
+2023-08-28,Madhya Pradesh,Raisen,Acute Diarrheal Disease,23,0
+2023-08-28,Maharashtra,Gadchiroli,Scrub Typhus,2,0
+2023-08-28,Maharashtra,Kolhapur,Fever of Unknown Origin,19,0
+2023-08-28,Maharashtra,Kolhapur,Dengue,56,0
+2023-08-28,Maharashtra,Raigad,Dengue,10,1
+2023-08-28,Maharashtra,Sangli,Acute Diarrheal Disease,173,0
+2023-08-28,Maharashtra,Sindhudurg,Malaria,15,0
+2023-08-28,Maharashtra,Solapur,Acute Diarrheal Disease,16,0
+2023-08-28,Maharashtra,Wardha,Fever of Unknown Origin,16,0
+2023-08-28,Mizoram,Aizawl,Scrub Typhus,42,0
+2023-08-28,Odisha,Kandhamal,Mumps,36,0
+2023-08-28,Odisha,Sambalpur,Acute Diarrheal Disease,9,0
+2023-08-28,Tamil Nadu,Tiruchirappalli,Cholera,5,0
+2023-08-28,Uttar Pradesh,Fatehpur,Dengue,12,0
+2023-08-29,Assam,Dhemaji,Food Poisoning,77,0
+2023-08-29,Bihar,Pashchim Champaran,Measles,7,0
+2023-08-29,Gujarat,Amreli,Crimean-Congo Hemorrhagic Fever,1,0
+2023-08-29,Karnataka,Belagavi,Acute Diarrheal Disease,218,1
+2023-08-29,Madhya Pradesh,Satna,Scrub Typhus,13,0
+2023-08-29,Maharashtra,Nanded,Scrub Typhus,10,1
+2023-08-29,Meghalaya,West Garo Hills,Dengue,29,0
+2023-08-29,Tamil Nadu,Villupuram,Acute Diarrheal Disease,43,1
+2023-08-29,Uttar Pradesh,Bijnor,Food Poisoning,12,0
+2023-08-29,Uttar Pradesh,Jaunpur,Scrub Typhus,13,0
+2023-08-30,Jammu And Kashmir,Rajauri,Dengue,8,0
+2023-08-30,Karnataka,Bengaluru Urban,Acute Diarrheal Disease,16,0
+2023-08-30,Karnataka,Kolar,Acute Diarrheal Disease,31,0
+2023-08-30,Kerala,Thrissur,Food Poisoning,37,0
+2023-08-30,Maharashtra,Osmanabad,Dengue,10,1
+2023-08-30,Maharashtra,Osmanabad,Dengue,18,0
+2023-08-30,Meghalaya,East Khasi Hills,Mumps,41,0
+2023-08-30,Uttar Pradesh,Jhansi,Measles,16,0
+2023-08-30,Uttar Pradesh,Lalitpur,Acute Diarrheal Disease,16,0
+2023-08-31,Assam,Darrang,Acute Diarrheal Disease,37,0
+2023-08-31,Chhattisgarh,Janjgir- Champa,Acute Diarrheal Disease,24,0
+2023-08-31,Gujarat,Amreli,Crimean-Congo Hemorrhagic Fever,1,0
+2023-08-31,Jammu And Kashmir,Shopian,Mumps,7,0
+2023-08-31,Karnataka,Hassan,Acute Diarrheal Disease,13,0
+2023-08-31,Karnataka,Vijayapura,Rabies,1,1
+2023-08-31,Tamil Nadu,Ramanathapur Am,Acute Diarrheal Disease,15,0
+2023-09-01,Bihar,Gaya,Acute Diarrheal Disease,5,0
+2023-09-01,Jammu And Kashmir,Jammu,Chikungunya,9,0
+2023-09-01,Jammu And Kashmir,Samba,Dengue,287,0
+2023-09-01,Jharkhand,Chatra,Measles,12,0
+2023-09-01,Jharkhand,West Singhbhum,Malaria,11,0
+2023-09-01,Karnataka,Chikballapur,Rabies,1,1
+2023-09-01,Kerala,Wayanad,Acute Diarrheal Disease,12,0
+2023-09-01,Madhya Pradesh,Bhopal,Acute Diarrheal Disease,23,0
+2023-09-01,Maharashtra,Nanded,Encephalitis Sydrome / JE,21,1
+2023-09-01,Maharashtra,Pune,Dengue,29,1
+2023-09-01,Maharashtra,Wardha,Scrub Typhus,21,1
+2023-09-01,Odisha,Sambalpur,Acute Diarrheal Disease,13,0
+2023-09-01,Odisha,Sambalpur,Acute Diarrheal Disease,20,0
+2023-09-01,Uttar Pradesh,Farrukhabad,Dengue,41,1
+2023-09-01,Uttar Pradesh,Mirzapur,Acute Diarrheal Disease,25,0
+2023-09-02,Jharkhand,Garhwa,Acute Diarrheal Disease,18,0
+2023-09-02,Jharkhand,Godda,Chikungunya,10,0
+2023-09-02,Kerala,Ernakulam,Dengue,39,0
+2023-09-02,Kerala,Thrissur,Food Poisoning,71,0
+2023-09-02,Madhya Pradesh,Chhindwara,Acute Diarrheal Disease,24,1
+2023-09-02,Maharashtra,Wardha,Scrub Typhus,10,1
+2023-09-03,Arunachal Pradesh,Changlang,Acute Diarrheal Disease,94,0
+2023-09-03,Madhya Pradesh,Mandsaur,Scrub Typhus,45,0
+2023-09-03,Odisha,Koraput,Acute Diarrheal Disease,19,0
+2023-09-04,Jharkhand,Deoghar,Dengue,24,0
+2023-09-04,Madhya Pradesh,Rajgarh,Dengue,20,0
+2023-09-04,Maharashtra,Akola,Acute Diarrheal Disease,136,0
+2023-09-04,Maharashtra,Jalna,Dengue,6,1
+2023-09-04,Maharashtra,Kolhapur,Zika Virus,3,0
+2023-09-04,Manipur,Imphal West,Acute Diarrheal Disease,35,0
+2023-09-04,Punjab,Gurdaspur,Acute Diarrheal Disease,161,6
+2023-09-05,Bihar,Jamui,Dengue,58,0
+2023-09-05,Jammu And Kashmir,Baramulla,Mumps,16,0
+2023-09-05,Jharkhand,Dumka,Dengue,10,0
+2023-09-05,Maharashtra,Kolhapur,Dengue,22,0
+2023-09-05,Odisha,Bargarh,Acute Diarrheal Disease,14,0
+2023-09-05,Uttar Pradesh,Sonbhadra,Measles,11,0
+2023-09-06,Karnataka,Davangere,Acute Diarrheal Disease,42,0
+2023-09-06,Tamil Nadu,Tiruchirappalli,Acute Diarrheal Disease,22,0
+2023-09-06,Tamil Nadu,Villupuram,Cholera,43,1
+2023-09-07,Arunachal Pradesh,Lower Dibang Valley,Rabies,1,1
+2023-09-07,Assam,Dhemaji,Acute Diarrheal Disease,60,0
+2023-09-07,Chhattisgarh,Mahasamund,Typhoid,23,0
+2023-09-07,Madhya Pradesh,Burhanpur,Dengue,52,0
+2023-09-07,Madhya Pradesh,Satna,Acute Diarrheal Disease,23,2
+2023-09-07,Odisha,Sambalpur,Acute Diarrheal Disease,28,0
+2023-09-08,Andhra Pradesh,Nandyal,Acute Diarrheal Disease,127,0
+2023-09-08,Jammu And Kashmir,Ganderbal,Mumps,15,0
+2023-09-08,Jharkhand,Chatra,Acute Diarrheal Disease,9,0
+2023-09-08,Kerala,Alappuzha,Chickenpox,14,0
+2023-09-08,Kerala,Kottayam,Fever of Unknown Origin,36,0
+2023-09-08,Maharashtra,Pune,Chikungunya,9,0
+2023-09-09,Bihar,Munger,Dengue,107,0
+2023-09-09,Bihar,Rohtas,Acute Diarrheal Disease,12,0
+2023-09-09,Chhattisgarh,Korba,Acute Diarrheal Disease,14,0
+2023-09-09,Jammu And Kashmir,Udhampur,Rabies,1,1
+2023-09-09,Jharkhand,Latehar,Fever of Unknown Origin,36,0
+2023-09-09,Jharkhand,Lohardaga,Dengue,52,0
+2023-09-09,Madhya Pradesh,Alirajpur,Acute Diarrheal Disease,24,0
+2023-09-09,Maharashtra,Raigad,Dengue,3,1
+2023-09-09,Maharashtra,Yavatmal,Dengue,7,0
+2023-09-09,Tamil Nadu,Tiruppur,Dengue,11,0
+2023-09-10,Chhattisgarh,Bemetara,Acute Diarrheal Disease,6,0
+2023-09-10,Gujarat,Junagadh,Acute Diarrheal Disease,39,0
+2023-09-10,Kerala,Kottayam,Food Poisoning,19,0
+2023-09-10,Kerala,Malappuram,Hepatitis/Jaundice,22,0
+2023-09-11,Assam,Baksa,Food Poisoning,45,0
+2023-09-11,Assam,Charaideo,Acute Diarrheal Disease,36,0
+2023-09-11,Maharashtra,Amravati,Dengue,10,1
+2023-09-11,Maharashtra,Beed,Dengue,5,1
+2023-09-11,Maharashtra,Latur,Dengue,4,0
+2023-09-11,Maharashtra,Parbhani,Dengue,24,1
+2023-09-11,Manipur,Imphal West,Encephalitis Sydrome / JE,1,1
+2023-09-11,Uttar Pradesh,Sonbhadra,Malaria,46,0
+2023-09-12,Chhattisgarh,Raigarh,Acute Diarrheal Disease,37,0
+2023-09-12,Jammu And Kashmir,Udhampur,Dengue,157,0
+2023-09-12,Karnataka,Chitradurga,Acute Diarrheal Disease,18,0
+2023-09-12,Maharashtra,Nashik,Food Poisoning,40,0
+2023-09-12,Maharashtra,Raigad,Malaria,4,1
+2023-09-12,Manipur,Imphal West,Chickenpox,0,0
+2023-09-13,Assam,Karbi Anglong,Dengue,23,0
+2023-09-13,Bihar,Banka,Dengue,60,0
+2023-09-13,Bihar,Jehanabad,Measles,10,0
+2023-09-13,Bihar,Sitamarhi,Acute Diarrheal Disease,75,0
+2023-09-13,Chhattisgarh,Bilaspur,Cholera,14,0
+2023-09-13,Jharkhand,Deoghar,Dengue,60,0
+2023-09-14,Arunachal Pradesh,Papum Pare,Rabies,1,1
+2023-09-14,Bihar,Jehanabad,Dengue,35,0
+2023-09-14,Jammu And Kashmir,Kupwara,Hepatitis/Jaundice,8,0
+2023-09-14,Madhya Pradesh,Guna,Chickenpox,6,0
+2023-09-14,Maharashtra,Aurangabad,Fever of Unknown Origin,14,1
+2023-09-14,Maharashtra,Beed,Fever of Unknown Origin,5,1
+2023-09-14,Maharashtra,Thane,Malaria,3,1
+2023-09-14,Meghalaya,East Khasi Hills,Measles,63,0
+2023-09-14,Odisha,Ganjam,Mumps,36,0
+2023-09-15,Jharkhand,Khunti,Chickenpox,17,0
+2023-09-15,Madhya Pradesh,Dhar,Typhoid,6,0
+2023-09-15,Madhya Pradesh,Tikamgarh,Acute Diarrheal Disease,58,3
+2023-09-15,Maharashtra,Jalgaon,Dengue,40,1
+2023-09-15,Maharashtra,Thane,Dengue,7,1
+2023-09-15,Maharashtra,Washim,Dengue,9,0
+2023-09-15,Nagaland,Kiphire,Dengue,59,0
+2023-09-15,Odisha,Koraput,Food Poisoning,12,0
+2023-09-15,Odisha,Sambalpur,Acute Diarrheal Disease,7,0
+2023-09-16,Assam,Dibrugarh,Chickenpox,5,1
+2023-09-16,Assam,Golaghat,Acute Diarrheal Disease,6,0
+2023-09-16,Jammu And Kashmir,Baramulla,Hepatitis/Jaundice,24,0
+2023-09-16,Jammu And Kashmir,Shopian,Mumps,26,0
+2023-09-16,Karnataka,Ballari,Acute Diarrheal Disease,43,0
+2023-09-16,Maharashtra,Chandrapur,Dengue,9,1
+2023-09-17,Andhra Pradesh,Tirupati,Acute Diarrheal Disease,143,0
+2023-09-17,Karnataka,Yadgir,Acute Diarrheal Disease,11,0
+2023-09-17,Madhya Pradesh,Rewa,Acute Diarrheal Disease,16,1
+2023-09-17,Tamil Nadu,Namakkal,Acute Diarrheal Disease,63,1
+2023-09-18,Assam,Dibrugarh,Measles,27,0
+2023-09-18,Assam,Lakhimpur,Acute Diarrheal Disease,105,0
+2023-09-18,Assam,Majuli,Acute Diarrheal Disease,43,0
+2023-09-18,Jammu And Kashmir,Pulwama,Hepatitis/Jaundice,16,0
+2023-09-18,Jammu And Kashmir,Rajouri,Dengue,35,0
+2023-09-18,Maharashtra,Chandrapur,Malaria,14,1
+2023-09-18,Odisha,Balangir,Acute Diarrheal Disease,15,0
+2023-09-19,Assam,Dhemaji,Acute Diarrheal Disease,74,0
+2023-09-19,Chhattisgarh,Durg,Cholera,46,0
+2023-09-19,Meghalaya,West Jaintia Hills,Rabies,1,1
+2023-09-20,Assam,Goalpara,Acute Diarrheal Disease,60,0
+2023-09-20,Assam,Marigaon,Acute Diarrheal Disease,36,0
+2023-09-20,Assam,Udalguri,Acute Diarrheal Disease,39,0
+2023-09-20,Bihar,Samastipur,Acute Diarrheal Disease,100,0
+2023-09-20,Chhattisgarh,Janjgir- Champa,Acute Diarrheal Disease,22,0
+2023-09-20,Chhattisgarh,Raipur,Cholera,49,0
+2023-09-20,Jammu And Kashmir,Kupwara,Hepatitis/Jaundice,11,0
+2023-09-20,Jharkhand,Dumka,Dengue,20,0
+2023-09-20,Karnataka,Raichur,Dengue,15,0
+2023-09-20,Kerala,Thrissur,Measles,34,0
+2023-09-20,Maharashtra,Nanded,Dengue,12,0
+2023-09-20,Maharashtra,Parbhani,Dengue,6,1
+2023-09-20,Odisha,Baleshwar,Acute Diarrheal Disease,27,0
+2023-09-20,Odisha,Boudh,Acute Diarrheal Disease,57,0
+2023-09-21,Assam,Nalbari,Acute Diarrheal Disease,111,0
+2023-09-21,Karnataka,Davangere,Acute Diarrheal Disease,25,0
+2023-09-21,Maharashtra,Beed,Dengue,5,1
+2023-09-21,Maharashtra,Parbhani,Dengue,13,1
+2023-09-21,Odisha,Kendujhar,Food Poisoning,11,0
+2023-09-21,Tamil Nadu,Tiruvannamal Ai,Fever With Rash,8,0
+2023-09-22,Assam,Golaghat,Acute Diarrheal Disease,24,0
+2023-09-22,Kerala,Palakkad,Hepatitis/Jaundice,10,0
+2023-09-22,Maharashtra,Nanded,Dengue,10,0
+2023-09-22,Maharashtra,Thane,Dengue,5,1
+2023-09-22,Odisha,Koraput,Acute Diarrheal Disease,14,0
+2023-09-23,Gujarat,Chhotaudepur,Acute Diarrheal Disease,15,0
+2023-09-23,Madhya Pradesh,Sehore,Scrub Typhus,6,0
+2023-09-24,Kerala,Palakkad,Hepatitis/Jaundice,11,1
+2023-09-26,Madhya Pradesh,Hoshangabad,Leptospirosis,8,0
+2023-09-27,Madhya Pradesh,Satna,Measles,9,0
+2023-09-27,Maharashtra,Nanded,Dengue,6,1
+2023-09-30,Assam,Nalbari,Acute Diarrheal Disease,8,0
+2023-10-03,Manipur,Jiribam,Malaria,6,0
+2023-10-04,Bihar,Gopalganj,Typhoid,10,0
+2023-10-04,Kerala,Kozhikode,Acute Diarrheal Disease,120,0
+2023-10-04,Kerala,Palakkad,Mumps,11,0
+2023-10-09,Andhra Pradesh,Visakhapatan Am,Food Poisoning,13,0
+2023-10-09,Madhya Pradesh,Katni,Acute Diarrheal Disease,7,0
+2023-10-10,Madhya Pradesh,Shahdol,Acute Diarrheal Disease,5,0
+2023-10-10,Maharashtra,Nanded,Dengue,11,0
+2023-10-11,Maharashtra,Nanded,Dengue,12,0
+2023-10-11,Maharashtra,Thane,Dengue,10,0
+2023-10-12,Jharkhand,Sahebganj,Acute Diarrheal Disease,13,0
+2023-10-12,Madhya Pradesh,Rajgarh,Dengue,15,0
+2023-10-12,Madhya Pradesh,Rajgarh,Dengue,5,0
+2023-10-13,Chhattisgarh,Raigarh,Acute Diarrheal Disease,27,0
+2023-10-13,Jammu And Kashmir,Kathua,Chikungunya,39,0
+2023-10-13,Kerala,Malappuram,Chickenpox,15,0
+2023-10-13,Madhya Pradesh,Bhopal,Dengue,22,0
+2023-10-13,Punjab,Faridkot,Chickenpox,44,0
+2023-10-14,Assam,Udalguri,Food Poisoning,7,0
+2023-10-14,Maharashtra,Aurangabad,Dengue,5,0
+2023-10-14,Odisha,Kendujhar,Food Poisoning,39,0
+2023-10-15,Arunachal Pradesh,Papumpare,Scrub Typhus,34,0
+2023-10-15,Karnataka,Chikkamagalu Ru,Fever of Unknown Origin,17,0
+2023-10-16,Chhattisgarh,Kabirdham,Acute Diarrheal Disease,14,0
+2023-10-16,Jharkhand,West Singhbhum,Malaria,64,0
+2023-10-16,Madhya Pradesh,Morena,Dengue,71,0
+2023-10-16,Maharashtra,Beed,Dengue,5,0
+2023-10-16,Maharashtra,Dhule,Dengue,18,1
+2023-10-16,Maharashtra,Nanded,Dengue,8,0
+2023-10-16,Maharashtra,Nanded,Dengue,6,0
+2023-10-16,Maharashtra,Parbhani,Dengue,19,1
+2023-10-17,Jharkhand,Dumka,Dengue,9,0
+2023-10-17,Kerala,Malappuram,Food Poisoning,25,0
+2023-10-17,Maharashtra,Dhule,Dengue,12,1
+2023-10-17,Maharashtra,Osmanabad,Dengue,11,1
+2023-10-18,Arunachal Pradesh,Papum Pare,Rabies,4,1
+2023-10-18,Chhattisgarh,Bemetara,Acute Diarrheal Disease,44,0
+2023-10-18,Chhattisgarh,Mohla Manpur Ambagarh Chouki,Acute Diarrheal Disease,38,0
+2023-10-18,Karnataka,Raichur,Dengue,27,0
+2023-10-18,Kerala,Palakkad,Measles,10,0
+2023-10-18,Madhya Pradesh,Morena,Dengue,18,0
+2023-10-18,Madhya Pradesh,Neemuch,Dengue,29,0
+2023-10-18,Maharashtra,Kolhapur,Chikungunya,145,0
+2023-10-18,Maharashtra,Nagpur,Dengue,9,1
+2023-10-18,Maharashtra,Thane,Dengue,1,1
+2023-10-18,Odisha,Sambalpur,Acute Diarrheal Disease,46,0
+2023-10-19,Gujarat,Valsad,Food Poisoning,7,0
+2023-10-19,Haryana,Palwal,Diphtheria,8,4
+2023-10-19,Jammu And Kashmir,Baramulla,Acute Diarrheal Disease,79,0
+2023-10-19,Kerala,Palakkad,Hepatitis/Jaundice,24,0
+2023-10-19,Madhya Pradesh,Barwani,Acute Diarrheal Disease,5,0
+2023-10-19,Maharashtra,Beed,Dengue,5,1
+2023-10-19,Odisha,Koraput,Measles,6,0
+2023-10-20,Jharkhand,Pakur,Acute Diarrheal Disease,15,0
+2023-10-20,Karnataka,Uttar Kannad,Leptospirosis,1,1
+2023-10-20,Madhya Pradesh,Bhopal,Fever of Unknown Origin,26,0
+2023-10-20,Madhya Pradesh,Mandla,Dengue,8,0
+2023-10-20,Maharashtra,Gadchiroli,Dengue,3,1
+2023-10-21,Jammu And Kashmir,Srinagar,Mumps,11,0
+2023-10-21,Jharkhand,Koderma,Food Poisoning,54,0
+2023-10-21,Jharkhand,Simdega,Dengue,49,0
+2023-10-21,Karnataka,Chitradurga,Chikungunya,36,0
+2023-10-23,Maharashtra,Nandurbar,Dengue,16,0
+2023-10-25,Bihar,Saran,Dengue,8,0
+2023-10-25,Bihar,Siwan,Dengue,25,0
+2023-10-26,Chhattisgarh,Bilaspur,Acute Diarrheal Disease,10,0
+2023-10-26,Jharkhand,Khunti,Fever With Rash,15,0
+2023-10-27,Kerala,Palakkad,Mumps,74,0
+2023-10-27,Maharashtra,Ahmednagar,Dengue,26,1
+2023-10-27,Meghalaya,West Jaintia Hills,Dengue,42,0
+2023-10-28,Kerala,Ernakulam,Acute Diarrheal Disease,34,0
+2023-10-29,Madhya Pradesh,Indore,Dengue,96,0
+2023-10-29,Uttar Pradesh,Jhansi,Food Poisoning,649,0
+2023-10-30,Bihar,Jehanabad,Dengue,39,0
+2023-10-30,Haryana,Nuh,Encephalitis Sydrome / JE,10,4
+2023-10-30,Karnataka,Bengaluru Rural,Rabies,1,1
+2023-10-30,Karnataka,Raichur,Dengue,20,0
+2023-10-30,Maharashtra,Beed,Dengue,5,1
+2023-10-30,Maharashtra,Thane,Dengue,3,1
+2023-10-31,Kerala,Kannur,Zika Virus,5,0
+2023-10-31,Kerala,Kottayam,Acute Diarrheal Disease,18,0
+2023-10-31,Kerala,Pathanamthitt A,Dengue,12,0
+2023-10-31,Madhya Pradesh,Indore,Fever of Unknown Origin,25,0
+2023-10-31,Madhya Pradesh,Shivpuri,Dengue,38,0
+2023-10-31,Mizoram,Serchhip,Food Poisoning,36,0
+2023-10-31,West Bengal,Birbhum,Acute Diarrheal Disease,43,0
+2023-11-01,Jharkhand,West Singhbhum,Malaria,7,0
+2023-11-01,Kerala,Ernakulam,Shigellosis,11,0
+2023-11-01,Kerala,Malappuram,Hepatitis/Jaundice,4,0
+2023-11-01,Maharashtra,Nandurbar,Dengue,11,0
+2023-11-01,Meghalaya,South West Khasi Hills,Hepatitis/Jaundice,15,0
+2023-11-02,Jammu And Kashmir,Kupwara,Mumps,14,0
+2023-11-02,Karnataka,Mandya,Rabies,1,1
+2023-11-02,Madhya Pradesh,Khargone,Measles,5,0
+2023-11-02,Madhya Pradesh,Rajgarh,Dengue,9,0
+2023-11-02,Maharashtra,Kolhapur,Zika Virus,5,0
+2023-11-02,Manipur,Bishnupur,Acute Diarrheal Disease,23,0
+2023-11-02,Tamil Nadu,Sivaganga,Mumps,15,0
+2023-11-03,Jharkhand,Jamtara,Acute Diarrheal Disease,67,0
+2023-11-03,Karnataka,Vijayapura,Rabies,1,1
+2023-11-03,Maharashtra,Sangli,Dengue,6,0
+2023-11-04,Andhra Pradesh,Chittoor,Acute Diarrheal Disease,36,0
+2023-11-04,Assam,Biswanath,Rabies,1,1
+2023-11-04,Haryana,Panchkula,Acute Diarrheal Disease,151,1
+2023-11-04,Jharkhand,Jamtara,Chickenpox,10,0
+2023-11-04,Maharashtra,Beed,Dengue,5,1
+2023-11-04,Manipur,Imphal West,Measles,9,0
+2023-11-05,Jharkhand,Dumka,Dengue,9,0
+2023-11-05,Maharashtra,Ahmednagar,Acute Diarrheal Disease,179,0
+2023-11-05,Odisha,Cuttack,Acute Diarrheal Disease,14,0
+2023-11-05,Odisha,Dhenkanal,Acute Diarrheal Disease,7,0
+2023-11-05,Uttar Pradesh,Chandauli,Chickenpox,14,0
+2023-11-06,Assam,Darrang,Measles,6,0
+2023-11-06,Gujarat,Sabarkantha,Hepatitis/Jaundice,26,0
+2023-11-06,Kerala,Thiruvananth Apuram,Hepatitis/Jaundice,9,0
+2023-11-06,Meghalaya,West Khasi Hills,Scrub Typhus,17,0
+2023-11-06,Odisha,Bargarh,Food Poisoning,30,0
+2023-11-06,West Bengal,Birbhum,Acute Diarrheal Disease,65,1
+2023-11-07,Assam,Dibrugarh,Acute Diarrheal Disease,36,0
+2023-11-07,Karnataka,Hassan,Acute Diarrheal Disease,21,0
+2023-11-07,Madhya Pradesh,Shajapur,Measles,14,0
+2023-11-08,Assam,Chirang,Measles,6,0
+2023-11-08,Assam,Jorhat,Acute Diarrheal Disease,14,0
+2023-11-08,Chhattisgarh,Kabirdham,Acute Diarrheal Disease,13,0
+2023-11-08,Gujarat,Gandhinagar,Acute Diarrheal Disease,29,0
+2023-11-08,Gujarat,Mahisagar,Acute Diarrheal Disease,6,0
+2023-11-08,Jharkhand,Saraikela Kharsawan,Acute Diarrheal Disease,16,0
+2023-11-08,Karnataka,Bengaluru Rural,Acute Diarrheal Disease,28,0
+2023-11-08,Kerala,Ernakulam,Hepatitis/Jaundice,10,0
+2023-11-08,Kerala,Palakkad,Acute Diarrheal Disease,13,0
+2023-11-08,Madhya Pradesh,Satna,Acute Diarrheal Disease,27,0
+2023-11-08,Maharashtra,Nagpur,Scrub Typhus,3,1
+2023-11-08,Maharashtra,Satara,Dengue,16,0
+2023-11-09,Kerala,Pathanamthitt A,Food Poisoning,18,0
+2023-11-09,Madhya Pradesh,Bhopal,Scrub Typhus,11,0
+2023-11-09,Maharashtra,Osmanabad,Dengue,31,1
+2023-11-10,Jammu And Kashmir,Udhampur,Chikungunya,5,0
+2023-11-10,Jharkhand,Khunti,Measles,7,0
+2023-11-10,Karnataka,Ramanagara,Acute Diarrheal Disease,15,0
+2023-11-10,Kerala,Kasaragod,Hepatitis/Jaundice,81,0
+2023-11-10,Odisha,Bargarh,Acute Diarrheal Disease,8,0
+2023-11-10,Odisha,Mayurbhanj,Acute Diarrheal Disease,13,0
+2023-11-11,Chhattisgarh,Raigarh,Acute Diarrheal Disease,18,0
+2023-11-11,Madhya Pradesh,Chhatarpur,Chickenpox,6,0
+2023-11-13,Kerala,Kollam,Acute Diarrheal Disease,14,0
+2023-11-13,Kerala,Kozhikode,Hepatitis/Jaundice,21,1
+2023-11-13,Kerala,Thiruvananth Apuram,Zika Virus,1,0
+2023-11-13,Odisha,Deogarh,Acute Diarrheal Disease,38,0
+2023-11-14,Jammu And Kashmir,Baramulla,Chickenpox,8,0
+2023-11-14,Odisha,Cuttack,Acute Diarrheal Disease,24,0
+2023-11-14,Tamil Nadu,Virudhunagar,Leptospirosis,13,0
+2023-11-14,West Bengal,Purba Bardhaman,Acute Diarrheal Disease,40,0
+2023-11-16,Jharkhand,Saraikela Kharsawan,Chickenpox,7,0
+2023-11-17,Kerala,Kozhikode,Hepatitis/Jaundice,14,1
+2023-11-18,Jammu And Kashmir,Srinagar,Hepatitis/Jaundice,11,0
+2023-11-18,Mizoram,Lunglei,Food Poisoning,11,0
+2023-11-19,Chhattisgarh,Raigarh,Acute Diarrheal Disease,127,0
