@@ -1,17 +1,19 @@
 import joblib
 import pandas as pd
+from app.config import RF_SPATIAL_MODEL_PATH, LABEL_ENCODER_PATH, FINAL_ML_DATASET_PATH
 
 def load_model():
-    model = joblib.load("model/rf_spatial.pkl")
-    encoder = joblib.load("model/label_encoder.pkl")
+    model = joblib.load(RF_SPATIAL_MODEL_PATH)
+    encoder = joblib.load(LABEL_ENCODER_PATH)
     return model, encoder
-
-
 
 def predict_risk(model, encoder, year: int):
     try:
+        if not FINAL_ML_DATASET_PATH.exists():
+            return {"error": f"Dataset not found at {FINAL_ML_DATASET_PATH}"}
         # Load dataset
-        df = pd.read_csv("data/final_ml_dataset.csv")
+        df = pd.read_csv(FINAL_ML_DATASET_PATH)
+
 
         if df.empty:
             return {"error": "Dataset is empty"}

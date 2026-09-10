@@ -5,8 +5,7 @@ import os
 
 router = APIRouter(prefix="/api", tags=["Disease Spread"])
 
-ADJACENCY_PATH = "data/district_adjacency.csv"
-CLEAN_DATA_PATH = "data/historical_cases_clean.csv"
+from app.config import ADJACENCY_PATH, CLEAN_DATA_PATH
 
 @router.get("/spread-risk")
 def get_spread_risk(disease: Optional[str] = None, year: Optional[int] = None):

@@ -6,7 +6,8 @@ import time
 import re
 
 URL = "https://idsp.mohfw.gov.in/index4.php?lang=1&level=0&linkid=406&lid=3689"
-DOWNLOAD_DIR = "idsp_pdfs"
+DATA_DIR = os.path.dirname(os.path.abspath(__file__))
+DOWNLOAD_DIR = os.path.join(os.path.dirname(DATA_DIR), "idsp_pdfs")
 
 def setup():
     if not os.path.exists(DOWNLOAD_DIR):

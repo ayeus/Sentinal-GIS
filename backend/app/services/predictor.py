@@ -1,16 +1,21 @@
 import pandas as pd
 import joblib
+from app.config import RF_DISTRICT_MODEL_PATH, DISTRICT_ENCODERS_PATH, DISTRICT_ML_PATH
 
 def load_rf_model():
-    model = joblib.load("model/rf_district_model.pkl")
-    encoders = joblib.load("model/district_encoders.pkl")
+    model = joblib.load(RF_DISTRICT_MODEL_PATH)
+    encoders = joblib.load(DISTRICT_ENCODERS_PATH)
     return model, encoders
 
 def predict_risk(year: int, disease: str = None):
     try:
         model, encoders = load_rf_model()
         
-        df = pd.read_csv("data/district_ml_dataset.csv")
+        if not DISTRICT_ML_PATH.exists():
+            return {"error": f"ML dataset not found at {DISTRICT_ML_PATH}"}
+            
+        df = pd.read_csv(DISTRICT_ML_PATH)
+
 
         if disease:
             df = df[df['Disease'].str.lower() == disease.lower()]

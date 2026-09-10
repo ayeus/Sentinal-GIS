@@ -1,4 +1,9 @@
-const API_BASE = "http://127.0.0.1:8000";
+// Dynamic API base URL: defaults to localhost in dev, relative root in prod, or custom cloud URL via env var
+const API_BASE = (
+  process.env.REACT_APP_API_BASE !== undefined
+    ? process.env.REACT_APP_API_BASE
+    : (process.env.NODE_ENV === "development" ? "http://127.0.0.1:8000" : "")
+).replace(/\/+$/, "");
 
 
 // Predict risk using ML model
@@ -153,5 +158,24 @@ export async function getLiveSignals() {
 export async function getLiveGeoAlerts() {
   const res = await fetch(`${API_BASE}/api/live/geo-alerts`);
   if (!res.ok) throw new Error("Live geo alerts API failed");
+  return res.json();
+}
+
+export async function uploadPdf(file) {
+  const formData = new FormData();
+  formData.append("file", file);
+  const res = await fetch(`${API_BASE}/api/upload-pdf`, {
+    method: "POST",
+    body: formData,
+  });
+  if (!res.ok) throw new Error("PDF upload and auto-retrain failed");
+  return res.json();
+}
+
+export async function triggerPipeline() {
+  const res = await fetch(`${API_BASE}/api/admin/trigger-pipeline`, {
+    method: "POST",
+  });
+  if (!res.ok) throw new Error("Trigger pipeline failed");
   return res.json();
 }

@@ -1,0 +1,37 @@
+[Unit]
+Description=SentinelGIS FastAPI Daemon & ML Ingestion Engine
+After=network.target
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+WorkingDirectory=/var/www/sentinelgis/backend
+
+# Environment variables
+Environment="PATH=/var/www/sentinelgis/backend/venv/bin:/usr/local/bin:/usr/bin:/bin"
+Environment="PYTHONPATH=/var/www/sentinelgis/backend"
+Environment="PORT=8000"
+Environment="HOST=127.0.0.1"
+Environment="ENVIRONMENT=production"
+Environment="ALLOWED_ORIGINS=*"
+
+# Gunicorn process manager running high-performance Uvicorn workers
+ExecStart=/var/www/sentinelgis/backend/venv/bin/gunicorn \
+    --workers 3 \
+    --worker-class uvicorn.workers.UvicornWorker \
+    --bind 127.0.0.1:8000 \
+    --timeout 180 \
+    --access-logfile /var/log/sentinelgis_access.log \
+    --error-logfile /var/log/sentinelgis_error.log \
+    app.main:app
+
+# Auto-restart on crash
+Restart=always
+RestartSec=5s
+
+# Process limits
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target

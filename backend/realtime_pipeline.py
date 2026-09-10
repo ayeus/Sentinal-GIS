@@ -47,10 +47,11 @@ def main_loop():
         run_step(CLEANER_SCRIPT, "Data Cleaner")
         
         if check_for_new_data():
-            print(f"[{datetime.now().strftime('%H:%M:%S')}] New data detected! Models and APIs will reflect changes.")
-            # Optional: Add model retrain call here if data grows significantly
-        
-        print(f"[{datetime.now().strftime('%H:%M:%S')}] Cycle complete. Sleeping for 30 minutes...")
+            print(f"[{datetime.now().strftime('%H:%M:%S')}] New data detected! Retraining ML model...")
+            retrainer_script = os.path.join(BASE_DIR, "app", "services", "ml_trainer.py")
+            run_step(retrainer_script, "ML Model Retrainer")
+            print(f"[{datetime.now().strftime('%H:%M:%S')}] ML Model retraining complete! APIs and forecasts updated.")
+
         time.sleep(1800) # Every 30 mins
 
 if __name__ == "__main__":

@@ -10,16 +10,16 @@ _DATA_CACHE = {
     "last_mtime": 0
 }
 
+from app.config import GEOJSON_PATH, CLEAN_DATA_PATH
+
 def load_geojson():
     """
     Load India states GeoJSON for frontend mapping
     """
-    geojson_path = Path("data/india_states.geojson")
+    if not GEOJSON_PATH.exists():
+        raise FileNotFoundError(f"GeoJSON not found at {GEOJSON_PATH}")
 
-    if not geojson_path.exists():
-        raise FileNotFoundError(f"GeoJSON not found at {geojson_path}")
-
-    with open(geojson_path, "r") as f:
+    with open(GEOJSON_PATH, "r") as f:
         geojson = json.load(f)
 
     return geojson
@@ -30,16 +30,15 @@ def load_historical_data():
     Checks file modification time before returning cached data.
     """
     global _DATA_CACHE
-    csv_path = Path("data/historical_cases_clean.csv")
     
-    if not csv_path.exists():
+    if not CLEAN_DATA_PATH.exists():
         return pd.DataFrame(columns=['Date', 'State', 'District', 'Disease', 'Cases', 'Deaths'])
         
-    current_mtime = os.path.getmtime(csv_path)
+    current_mtime = os.path.getmtime(CLEAN_DATA_PATH)
     
     # Reload if first time or file has changed
     if _DATA_CACHE["df"] is None or current_mtime > _DATA_CACHE["last_mtime"]:
-        df = pd.read_csv(csv_path)
+        df = pd.read_csv(CLEAN_DATA_PATH)
         df['Date'] = pd.to_datetime(df['Date'])
         _DATA_CACHE["df"] = df
         _DATA_CACHE["last_mtime"] = current_mtime

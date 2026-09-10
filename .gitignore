@@ -6,10 +6,10 @@
 # Python
 __pycache__/
 *.pyc
+# Environments
 .venv/
-
-# Notebooks
-.ipynb_checkpoints/
+backend/venv/
+backend/outputs/
 
 # OS
 .DS_Store

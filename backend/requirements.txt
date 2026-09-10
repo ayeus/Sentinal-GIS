@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+pandas
+numpy
+scikit-learn
+joblib
+feedparser
+requests
+APScheduler
+beautifulsoup4
+pdfplumber
+python-multipart
+gunicorn
+httpx

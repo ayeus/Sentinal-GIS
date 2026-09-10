@@ -261,9 +261,9 @@ Bihar,Muzaffarpur,Dengue,2023-01,2023,1,0.0,0.0,2.0,0.0,0.0,None,2.0,6,315,13,3
 Bihar,Muzaffarpur,Encephalitis Sydrome / Je,2023-04,2023,4,1.0,0.0,0.0,0.0,0.0,None,1.0,6,315,15,3
 Bihar,Muzaffarpur,Encephalitis Sydrome / Je,2023-05,2023,5,0.0,1.0,0.0,0.0,0.0,None,1.0,6,315,15,3
 Bihar,Muzaffarpur,Encephalitis Sydrome / Je,2023-06,2023,6,0.0,0.0,1.0,0.0,0.0,None,1.0,6,315,15,3
-Bihar,Nalanda,Chickenpox,2023-01,2023,1,12.0,0.0,0.0,0.0,0.0,None,12.0,6,324,8,3
-Bihar,Nalanda,Chickenpox,2023-02,2023,2,0.0,12.0,0.0,0.0,0.0,None,12.0,6,324,8,3
-Bihar,Nalanda,Chickenpox,2023-03,2023,3,0.0,0.0,12.0,0.0,0.0,None,12.0,6,324,8,3
+Bihar,Nalanda,Chickenpox,2023-01,2023,1,36.0,0.0,0.0,0.0,0.0,None,36.0,6,324,8,3
+Bihar,Nalanda,Chickenpox,2023-02,2023,2,0.0,36.0,0.0,0.0,0.0,None,36.0,6,324,8,3
+Bihar,Nalanda,Chickenpox,2023-03,2023,3,0.0,0.0,36.0,0.0,0.0,None,36.0,6,324,8,3
 Bihar,Nalanda,Dengue,2022-09,2022,9,94.0,0.0,0.0,0.0,0.0,None,94.0,6,324,13,3
 Bihar,Nalanda,Dengue,2022-10,2022,10,0.0,94.0,0.0,0.0,0.0,None,94.0,6,324,13,3
 Bihar,Nalanda,Dengue,2022-11,2022,11,0.0,0.0,94.0,0.0,0.0,None,94.0,6,324,13,3
@@ -405,9 +405,9 @@ Chhattisgarh,Janjgir- Champa,Acute Diarrheal Disease,2023-10,2023,10,0.0,22.0,24
 Chhattisgarh,Janjgir- Champa,Food Poisoning,2022-06,2022,6,53.0,0.0,0.0,0.0,0.0,None,53.0,9,216,19,3
 Chhattisgarh,Janjgir- Champa,Food Poisoning,2022-07,2022,7,0.0,53.0,0.0,0.0,0.0,None,53.0,9,216,19,3
 Chhattisgarh,Janjgir- Champa,Food Poisoning,2022-08,2022,8,0.0,0.0,53.0,0.0,0.0,None,53.0,9,216,19,3
-Chhattisgarh,Janjgir-Champa,Chickenpox,2023-01,2023,1,11.0,0.0,0.0,0.0,0.0,None,11.0,9,217,8,3
-Chhattisgarh,Janjgir-Champa,Chickenpox,2023-02,2023,2,0.0,11.0,0.0,0.0,0.0,None,11.0,9,217,8,3
-Chhattisgarh,Janjgir-Champa,Chickenpox,2023-03,2023,3,0.0,0.0,11.0,0.0,0.0,None,11.0,9,217,8,3
+Chhattisgarh,Janjgir-Champa,Chickenpox,2023-01,2023,1,33.0,0.0,0.0,0.0,0.0,None,33.0,9,217,8,3
+Chhattisgarh,Janjgir-Champa,Chickenpox,2023-02,2023,2,0.0,33.0,0.0,0.0,0.0,None,33.0,9,217,8,3
+Chhattisgarh,Janjgir-Champa,Chickenpox,2023-03,2023,3,0.0,0.0,33.0,0.0,0.0,None,33.0,9,217,8,3
 Chhattisgarh,Jashpur,Acute Diarrheal Disease,2022-06,2022,6,12.0,0.0,0.0,0.0,0.0,None,12.0,9,218,0,3
 Chhattisgarh,Jashpur,Acute Diarrheal Disease,2022-07,2022,7,0.0,12.0,0.0,0.0,0.0,None,12.0,9,218,0,3
 Chhattisgarh,Jashpur,Acute Diarrheal Disease,2022-08,2022,8,0.0,0.0,12.0,0.0,0.0,None,12.0,9,218,0,3
@@ -1298,10 +1298,10 @@ Karnataka,Hassan,Food Poisoning,2023-04,2023,4,0.0,0.0,16.0,0.0,0.0,None,16.0,22
 Karnataka,Hassan,Measles,2023-02,2023,2,60.0,0.0,0.0,0.0,0.0,None,60.0,22,186,28,3
 Karnataka,Hassan,Measles,2023-03,2023,3,0.0,60.0,0.0,0.0,0.0,None,60.0,22,186,28,3
 Karnataka,Hassan,Measles,2023-04,2023,4,0.0,0.0,60.0,0.0,0.0,None,60.0,22,186,28,3
-Karnataka,Hassan,Rabies,2023-01,2023,1,1.0,0.0,0.0,0.0,0.0,None,1.0,22,186,35,3
-Karnataka,Hassan,Rabies,2023-02,2023,2,0.0,1.0,0.0,0.0,0.0,None,1.0,22,186,35,3
-Karnataka,Hassan,Rabies,2023-03,2023,3,0.0,0.0,1.0,0.0,2.0,Low,1.0,22,186,35,1
-Karnataka,Hassan,Rabies,2023-04,2023,4,2.0,0.0,0.0,1.0,0.0,None,2.0,22,186,35,3
+Karnataka,Hassan,Rabies,2023-01,2023,1,3.0,0.0,0.0,0.0,0.0,None,3.0,22,186,35,3
+Karnataka,Hassan,Rabies,2023-02,2023,2,0.0,3.0,0.0,0.0,0.0,None,3.0,22,186,35,3
+Karnataka,Hassan,Rabies,2023-03,2023,3,0.0,0.0,3.0,0.0,2.0,Low,3.0,22,186,35,1
+Karnataka,Hassan,Rabies,2023-04,2023,4,2.0,0.0,0.0,3.0,0.0,None,2.0,22,186,35,3
 Karnataka,Hassan,Rabies,2023-05,2023,5,0.0,2.0,0.0,0.0,0.0,None,2.0,22,186,35,3
 Karnataka,Hassan,Rabies,2023-06,2023,6,0.0,0.0,2.0,0.0,0.0,None,2.0,22,186,35,3
 Karnataka,Haveri,Acute Diarrheal Disease,2022-03,2022,3,61.0,0.0,0.0,0.0,0.0,None,61.0,22,187,0,3
@@ -1769,9 +1769,9 @@ Kerala,Kannur,Food Poisoning,2023-05,2023,5,161.0,0.0,35.0,551.0,14.0,Low,196.0,
 Kerala,Kannur,Food Poisoning,2023-06,2023,6,14.0,161.0,0.0,35.0,0.0,None,175.0,23,240,19,3
 Kerala,Kannur,Food Poisoning,2023-07,2023,7,0.0,14.0,161.0,0.0,0.0,None,175.0,23,240,19,3
 Kerala,Kannur,Food Poisoning,2023-08,2023,8,0.0,0.0,14.0,161.0,0.0,None,14.0,23,240,19,3
-Kerala,Kannur,Hepatitis/Jaundice,2022-11,2022,11,12.0,0.0,0.0,0.0,0.0,None,12.0,23,240,21,3
-Kerala,Kannur,Hepatitis/Jaundice,2022-12,2022,12,0.0,12.0,0.0,0.0,0.0,None,12.0,23,240,21,3
-Kerala,Kannur,Hepatitis/Jaundice,2023-01,2023,1,0.0,0.0,12.0,0.0,0.0,None,12.0,23,240,21,3
+Kerala,Kannur,Hepatitis/Jaundice,2022-11,2022,11,36.0,0.0,0.0,0.0,0.0,None,36.0,23,240,21,3
+Kerala,Kannur,Hepatitis/Jaundice,2022-12,2022,12,0.0,36.0,0.0,0.0,0.0,None,36.0,23,240,21,3
+Kerala,Kannur,Hepatitis/Jaundice,2023-01,2023,1,0.0,0.0,36.0,0.0,0.0,None,36.0,23,240,21,3
 Kerala,Kannur,Leishmaniasis / Kala-Azar,2022-11,2022,11,1.0,0.0,0.0,0.0,0.0,None,1.0,23,240,24,3
 Kerala,Kannur,Leishmaniasis / Kala-Azar,2022-12,2022,12,0.0,1.0,0.0,0.0,0.0,None,1.0,23,240,24,3
 Kerala,Kannur,Leishmaniasis / Kala-Azar,2023-01,2023,1,0.0,0.0,1.0,0.0,0.0,None,1.0,23,240,24,3
@@ -1835,10 +1835,10 @@ Kerala,Kollam,Food Poisoning,2022-08,2022,8,8.0,0.0,0.0,0.0,85.0,Medium,8.0,23,2
 Kerala,Kollam,Food Poisoning,2022-09,2022,9,85.0,8.0,0.0,0.0,0.0,None,93.0,23,266,19,3
 Kerala,Kollam,Food Poisoning,2022-10,2022,10,0.0,85.0,8.0,0.0,0.0,None,93.0,23,266,19,3
 Kerala,Kollam,Food Poisoning,2022-11,2022,11,0.0,0.0,85.0,8.0,0.0,None,85.0,23,266,19,3
-Kerala,Kollam,Food Poisoning,2023-01,2023,1,23.0,0.0,0.0,0.0,20.0,Low,23.0,23,266,19,1
-Kerala,Kollam,Food Poisoning,2023-02,2023,2,20.0,23.0,0.0,0.0,23.0,Medium,43.0,23,266,19,2
-Kerala,Kollam,Food Poisoning,2023-03,2023,3,23.0,20.0,23.0,0.0,47.0,Medium,66.0,23,266,19,2
-Kerala,Kollam,Food Poisoning,2023-04,2023,4,47.0,23.0,20.0,23.0,39.0,Medium,90.0,23,266,19,2
+Kerala,Kollam,Food Poisoning,2023-01,2023,1,69.0,0.0,0.0,0.0,20.0,Low,69.0,23,266,19,1
+Kerala,Kollam,Food Poisoning,2023-02,2023,2,20.0,69.0,0.0,0.0,23.0,Medium,89.0,23,266,19,2
+Kerala,Kollam,Food Poisoning,2023-03,2023,3,23.0,20.0,69.0,0.0,47.0,Medium,112.0,23,266,19,2
+Kerala,Kollam,Food Poisoning,2023-04,2023,4,47.0,23.0,20.0,69.0,39.0,Medium,90.0,23,266,19,2
 Kerala,Kollam,Food Poisoning,2023-05,2023,5,39.0,47.0,23.0,20.0,13.0,Low,109.0,23,266,19,1
 Kerala,Kollam,Food Poisoning,2023-06,2023,6,13.0,39.0,47.0,23.0,0.0,None,99.0,23,266,19,3
 Kerala,Kollam,Food Poisoning,2023-07,2023,7,0.0,13.0,39.0,47.0,0.0,None,52.0,23,266,19,3
@@ -1901,11 +1901,11 @@ Kerala,Malappuram,Dengue,2023-10,2023,10,0.0,0.0,24.0,0.0,0.0,None,24.0,23,298,1
 Kerala,Malappuram,Food Poisoning,2022-09,2022,9,24.0,0.0,0.0,0.0,172.0,High,24.0,23,298,19,0
 Kerala,Malappuram,Food Poisoning,2022-10,2022,10,172.0,24.0,0.0,0.0,0.0,None,196.0,23,298,19,3
 Kerala,Malappuram,Food Poisoning,2022-11,2022,11,0.0,172.0,24.0,0.0,0.0,None,196.0,23,298,19,3
-Kerala,Malappuram,Food Poisoning,2022-12,2022,12,0.0,0.0,172.0,24.0,20.0,Low,172.0,23,298,19,1
-Kerala,Malappuram,Food Poisoning,2023-01,2023,1,20.0,0.0,0.0,172.0,0.0,None,20.0,23,298,19,3
-Kerala,Malappuram,Food Poisoning,2023-02,2023,2,0.0,20.0,0.0,0.0,0.0,None,20.0,23,298,19,3
-Kerala,Malappuram,Food Poisoning,2023-03,2023,3,0.0,0.0,20.0,0.0,113.0,High,20.0,23,298,19,0
-Kerala,Malappuram,Food Poisoning,2023-04,2023,4,113.0,0.0,0.0,20.0,135.0,High,113.0,23,298,19,0
+Kerala,Malappuram,Food Poisoning,2022-12,2022,12,0.0,0.0,172.0,24.0,60.0,Medium,172.0,23,298,19,2
+Kerala,Malappuram,Food Poisoning,2023-01,2023,1,60.0,0.0,0.0,172.0,0.0,None,60.0,23,298,19,3
+Kerala,Malappuram,Food Poisoning,2023-02,2023,2,0.0,60.0,0.0,0.0,0.0,None,60.0,23,298,19,3
+Kerala,Malappuram,Food Poisoning,2023-03,2023,3,0.0,0.0,60.0,0.0,113.0,High,60.0,23,298,19,0
+Kerala,Malappuram,Food Poisoning,2023-04,2023,4,113.0,0.0,0.0,60.0,135.0,High,113.0,23,298,19,0
 Kerala,Malappuram,Food Poisoning,2023-05,2023,5,135.0,113.0,0.0,0.0,175.0,High,248.0,23,298,19,0
 Kerala,Malappuram,Food Poisoning,2023-06,2023,6,175.0,135.0,113.0,0.0,0.0,None,423.0,23,298,19,3
 Kerala,Malappuram,Food Poisoning,2023-07,2023,7,0.0,175.0,135.0,113.0,0.0,None,310.0,23,298,19,3
@@ -2045,10 +2045,10 @@ Kerala,Thrissur,Acute Diarrheal Disease,2022-05,2022,5,32.0,0.0,7.0,0.0,0.0,None
 Kerala,Thrissur,Acute Diarrheal Disease,2022-06,2022,6,0.0,32.0,0.0,7.0,0.0,None,32.0,23,475,0,3
 Kerala,Thrissur,Acute Diarrheal Disease,2022-07,2022,7,0.0,0.0,32.0,0.0,0.0,None,32.0,23,475,0,3
 Kerala,Thrissur,Acute Diarrheal Disease,2022-11,2022,11,66.0,0.0,0.0,0.0,22.0,Medium,66.0,23,475,0,2
-Kerala,Thrissur,Acute Diarrheal Disease,2022-12,2022,12,22.0,66.0,0.0,0.0,30.0,Medium,88.0,23,475,0,2
-Kerala,Thrissur,Acute Diarrheal Disease,2023-01,2023,1,30.0,22.0,66.0,0.0,0.0,None,118.0,23,475,0,3
-Kerala,Thrissur,Acute Diarrheal Disease,2023-02,2023,2,0.0,30.0,22.0,66.0,0.0,None,52.0,23,475,0,3
-Kerala,Thrissur,Acute Diarrheal Disease,2023-03,2023,3,0.0,0.0,30.0,22.0,0.0,None,30.0,23,475,0,3
+Kerala,Thrissur,Acute Diarrheal Disease,2022-12,2022,12,22.0,66.0,0.0,0.0,90.0,Medium,88.0,23,475,0,2
+Kerala,Thrissur,Acute Diarrheal Disease,2023-01,2023,1,90.0,22.0,66.0,0.0,0.0,None,178.0,23,475,0,3
+Kerala,Thrissur,Acute Diarrheal Disease,2023-02,2023,2,0.0,90.0,22.0,66.0,0.0,None,112.0,23,475,0,3
+Kerala,Thrissur,Acute Diarrheal Disease,2023-03,2023,3,0.0,0.0,90.0,22.0,0.0,None,90.0,23,475,0,3
 Kerala,Thrissur,Acute Meningoence Phalitis (Naegleria Fowleri),2022-08,2022,8,1.0,0.0,0.0,0.0,0.0,None,1.0,23,475,3,3
 Kerala,Thrissur,Acute Meningoence Phalitis (Naegleria Fowleri),2022-09,2022,9,0.0,1.0,0.0,0.0,0.0,None,1.0,23,475,3,3
 Kerala,Thrissur,Acute Meningoence Phalitis (Naegleria Fowleri),2022-10,2022,10,0.0,0.0,1.0,0.0,0.0,None,1.0,23,475,3,3
@@ -2112,9 +2112,9 @@ Kerala,Trivandrum,Food Poisoning,2021-03,2021,3,0.0,0.0,28.0,0.0,0.0,None,28.0,2
 Kerala,Trivandrum,Zika Virus,2023-05,2023,5,2.0,0.0,0.0,0.0,0.0,None,2.0,23,484,41,3
 Kerala,Trivandrum,Zika Virus,2023-06,2023,6,0.0,2.0,0.0,0.0,0.0,None,2.0,23,484,41,3
 Kerala,Trivandrum,Zika Virus,2023-07,2023,7,0.0,0.0,2.0,0.0,0.0,None,2.0,23,484,41,3
-Kerala,Wayanad,Acute Diarrheal Disease,2023-01,2023,1,98.0,0.0,0.0,0.0,0.0,None,98.0,23,518,0,3
-Kerala,Wayanad,Acute Diarrheal Disease,2023-02,2023,2,0.0,98.0,0.0,0.0,0.0,None,98.0,23,518,0,3
-Kerala,Wayanad,Acute Diarrheal Disease,2023-03,2023,3,0.0,0.0,98.0,0.0,0.0,None,98.0,23,518,0,3
+Kerala,Wayanad,Acute Diarrheal Disease,2023-01,2023,1,294.0,0.0,0.0,0.0,0.0,None,294.0,23,518,0,3
+Kerala,Wayanad,Acute Diarrheal Disease,2023-02,2023,2,0.0,294.0,0.0,0.0,0.0,None,294.0,23,518,0,3
+Kerala,Wayanad,Acute Diarrheal Disease,2023-03,2023,3,0.0,0.0,294.0,0.0,0.0,None,294.0,23,518,0,3
 Kerala,Wayanad,Acute Diarrheal Disease,2023-05,2023,5,45.0,0.0,0.0,0.0,0.0,None,45.0,23,518,0,3
 Kerala,Wayanad,Acute Diarrheal Disease,2023-06,2023,6,0.0,45.0,0.0,0.0,0.0,None,45.0,23,518,0,3
 Kerala,Wayanad,Acute Diarrheal Disease,2023-07,2023,7,0.0,0.0,45.0,0.0,0.0,None,45.0,23,518,0,3
@@ -2950,9 +2950,9 @@ Odisha,Cuttack,Food Poisoning,2023-07,2023,7,0.0,0.0,28.0,114.0,0.0,None,28.0,32
 Odisha,Cuttack,Hepatitis/Jaundice,2022-08,2022,8,13.0,0.0,0.0,0.0,0.0,None,13.0,32,109,21,3
 Odisha,Cuttack,Hepatitis/Jaundice,2022-09,2022,9,0.0,13.0,0.0,0.0,0.0,None,13.0,32,109,21,3
 Odisha,Cuttack,Hepatitis/Jaundice,2022-10,2022,10,0.0,0.0,13.0,0.0,0.0,None,13.0,32,109,21,3
-Odisha,Deogarh,Acute Diarrheal Disease,2023-01,2023,1,20.0,0.0,0.0,0.0,0.0,None,20.0,32,123,0,3
-Odisha,Deogarh,Acute Diarrheal Disease,2023-02,2023,2,0.0,20.0,0.0,0.0,0.0,None,20.0,32,123,0,3
-Odisha,Deogarh,Acute Diarrheal Disease,2023-03,2023,3,0.0,0.0,20.0,0.0,0.0,None,20.0,32,123,0,3
+Odisha,Deogarh,Acute Diarrheal Disease,2023-01,2023,1,60.0,0.0,0.0,0.0,0.0,None,60.0,32,123,0,3
+Odisha,Deogarh,Acute Diarrheal Disease,2023-02,2023,2,0.0,60.0,0.0,0.0,0.0,None,60.0,32,123,0,3
+Odisha,Deogarh,Acute Diarrheal Disease,2023-03,2023,3,0.0,0.0,60.0,0.0,0.0,None,60.0,32,123,0,3
 Odisha,Deogarh,Chickenpox,2023-02,2023,2,28.0,0.0,0.0,0.0,0.0,None,28.0,32,123,8,3
 Odisha,Deogarh,Chickenpox,2023-03,2023,3,0.0,28.0,0.0,0.0,0.0,None,28.0,32,123,8,3
 Odisha,Deogarh,Chickenpox,2023-04,2023,4,0.0,0.0,28.0,0.0,0.0,None,28.0,32,123,8,3
@@ -3250,9 +3250,9 @@ Rajasthan,Bikaner,Acute Diarrheal Disease,2022-07,2022,7,0.0,0.0,27.0,0.0,0.0,No
 Rajasthan,Dausa,Acute Diarrheal Disease,2022-05,2022,5,137.0,0.0,0.0,0.0,0.0,None,137.0,36,119,0,3
 Rajasthan,Dausa,Acute Diarrheal Disease,2022-06,2022,6,0.0,137.0,0.0,0.0,0.0,None,137.0,36,119,0,3
 Rajasthan,Dausa,Acute Diarrheal Disease,2022-07,2022,7,0.0,0.0,137.0,0.0,0.0,None,137.0,36,119,0,3
-Rajasthan,Dausa,Food Poisoning,2023-01,2023,1,103.0,0.0,0.0,0.0,0.0,None,103.0,36,119,19,3
-Rajasthan,Dausa,Food Poisoning,2023-02,2023,2,0.0,103.0,0.0,0.0,0.0,None,103.0,36,119,19,3
-Rajasthan,Dausa,Food Poisoning,2023-03,2023,3,0.0,0.0,103.0,0.0,0.0,None,103.0,36,119,19,3
+Rajasthan,Dausa,Food Poisoning,2023-01,2023,1,309.0,0.0,0.0,0.0,0.0,None,309.0,36,119,19,3
+Rajasthan,Dausa,Food Poisoning,2023-02,2023,2,0.0,309.0,0.0,0.0,0.0,None,309.0,36,119,19,3
+Rajasthan,Dausa,Food Poisoning,2023-03,2023,3,0.0,0.0,309.0,0.0,0.0,None,309.0,36,119,19,3
 Rajasthan,Dholpur,Acute Diarrheal Disease,2023-08,2023,8,56.0,0.0,0.0,0.0,0.0,None,56.0,36,134,0,3
 Rajasthan,Dholpur,Acute Diarrheal Disease,2023-09,2023,9,0.0,56.0,0.0,0.0,0.0,None,56.0,36,134,0,3
 Rajasthan,Dholpur,Acute Diarrheal Disease,2023-10,2023,10,0.0,0.0,56.0,0.0,0.0,None,56.0,36,134,0,3
@@ -3494,9 +3494,9 @@ Tamil Nadu,Tiruchirappalli,Chickenpox,2022-10,2022,10,0.0,0.0,7.0,0.0,0.0,None,7
 Tamil Nadu,Tiruchirappalli,Cholera,2022-06,2022,6,17.0,0.0,0.0,0.0,0.0,None,17.0,38,477,10,3
 Tamil Nadu,Tiruchirappalli,Cholera,2022-07,2022,7,0.0,17.0,0.0,0.0,0.0,None,17.0,38,477,10,3
 Tamil Nadu,Tiruchirappalli,Cholera,2022-08,2022,8,0.0,0.0,17.0,0.0,0.0,None,17.0,38,477,10,3
-Tamil Nadu,Tiruchirappalli,Cholera,2023-01,2023,1,6.0,0.0,0.0,0.0,0.0,None,6.0,38,477,10,3
-Tamil Nadu,Tiruchirappalli,Cholera,2023-02,2023,2,0.0,6.0,0.0,0.0,0.0,None,6.0,38,477,10,3
-Tamil Nadu,Tiruchirappalli,Cholera,2023-03,2023,3,0.0,0.0,6.0,0.0,0.0,None,6.0,38,477,10,3
+Tamil Nadu,Tiruchirappalli,Cholera,2023-01,2023,1,18.0,0.0,0.0,0.0,0.0,None,18.0,38,477,10,3
+Tamil Nadu,Tiruchirappalli,Cholera,2023-02,2023,2,0.0,18.0,0.0,0.0,0.0,None,18.0,38,477,10,3
+Tamil Nadu,Tiruchirappalli,Cholera,2023-03,2023,3,0.0,0.0,18.0,0.0,0.0,None,18.0,38,477,10,3
 Tamil Nadu,Tiruchirappalli,Cholera,2023-08,2023,8,5.0,0.0,0.0,0.0,0.0,None,5.0,38,477,10,3
 Tamil Nadu,Tiruchirappalli,Cholera,2023-09,2023,9,0.0,5.0,0.0,0.0,0.0,None,5.0,38,477,10,3
 Tamil Nadu,Tiruchirappalli,Cholera,2023-10,2023,10,0.0,0.0,5.0,0.0,0.0,None,5.0,38,477,10,3
@@ -3807,9 +3807,9 @@ Uttar Pradesh,Mirzapur,Food Poisoning,2023-04,2023,4,0.0,0.0,21.0,0.0,0.0,None,2
 Uttar Pradesh,Muzaffarnagar,Dengue,2022-11,2022,11,10.0,0.0,0.0,0.0,0.0,None,10.0,41,314,13,3
 Uttar Pradesh,Muzaffarnagar,Dengue,2022-12,2022,12,0.0,10.0,0.0,0.0,0.0,None,10.0,41,314,13,3
 Uttar Pradesh,Muzaffarnagar,Dengue,2023-01,2023,1,0.0,0.0,10.0,0.0,0.0,None,10.0,41,314,13,3
-Uttar Pradesh,Pilibhit,Acute Diarrheal Disease,2023-01,2023,1,25.0,0.0,0.0,0.0,0.0,None,25.0,41,366,0,3
-Uttar Pradesh,Pilibhit,Acute Diarrheal Disease,2023-02,2023,2,0.0,25.0,0.0,0.0,0.0,None,25.0,41,366,0,3
-Uttar Pradesh,Pilibhit,Acute Diarrheal Disease,2023-03,2023,3,0.0,0.0,25.0,0.0,0.0,None,25.0,41,366,0,3
+Uttar Pradesh,Pilibhit,Acute Diarrheal Disease,2023-01,2023,1,75.0,0.0,0.0,0.0,0.0,None,75.0,41,366,0,3
+Uttar Pradesh,Pilibhit,Acute Diarrheal Disease,2023-02,2023,2,0.0,75.0,0.0,0.0,0.0,None,75.0,41,366,0,3
+Uttar Pradesh,Pilibhit,Acute Diarrheal Disease,2023-03,2023,3,0.0,0.0,75.0,0.0,0.0,None,75.0,41,366,0,3
 Uttar Pradesh,Pratapgarh,Chickenpox,2023-01,2023,1,18.0,0.0,0.0,0.0,0.0,None,18.0,41,370,8,3
 Uttar Pradesh,Pratapgarh,Chickenpox,2023-02,2023,2,0.0,18.0,0.0,0.0,0.0,None,18.0,41,370,8,3
 Uttar Pradesh,Pratapgarh,Chickenpox,2023-03,2023,3,0.0,0.0,18.0,0.0,0.0,None,18.0,41,370,8,3

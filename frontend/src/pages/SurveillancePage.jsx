@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Globe, Loader2 } from "lucide-react";
+import { Loader2 } from "lucide-react";
 
 import MapView from "../components/MapView";
 import RiskCard from "../components/RiskCard";

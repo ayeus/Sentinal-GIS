@@ -842,6 +842,8 @@ Date,State,District,Disease,Cases,Deaths
 2022-11-15,Kerala,Kasaragod,Food Poisoning,33,0
 2022-11-17,Karnataka,Koppal,Food Poisoning,45,0
 2022-11-17,Kerala,Kannur,Hepatitis/Jaundice,12,0
+2022-11-17,Kerala,Kannur,Hepatitis/Jaundice,12,0
+2022-11-17,Kerala,Kannur,Hepatitis/Jaundice,12,0
 2022-11-18,Karnataka,Davangere,Leptospirosis,1,1
 2022-11-18,Kerala,Malappuram,Leishmaniasis / Kala-Azar,2,0
 2022-11-19,Gujarat,Valsad,Acute Diarrheal Disease,34,0
@@ -943,24 +945,46 @@ Date,State,District,Disease,Cases,Deaths
 2023-01-21,Chhattisgarh,Baloda Bazar,Chickenpox,52,0
 2023-01-21,Karnataka,Chikkamagaluru,Kyasanur Forest Disease,1,0
 2023-01-21,Karnataka,Hassan,Rabies,1,1
+2023-01-21,Karnataka,Hassan,Rabies,1,1
+2023-01-21,Karnataka,Hassan,Rabies,1,1
 2023-01-21,Karnataka,Tumkur,Fever of Unknown Origin,16,0
 2023-01-21,Kerala,Malappuram,Food Poisoning,20,0
 2023-01-21,Kerala,Malappuram,Acute Diarrheal Disease,20,0
+2023-01-21,Kerala,Malappuram,Food Poisoning,20,0
+2023-01-21,Kerala,Malappuram,Food Poisoning,20,0
+2023-01-21,Uttar Pradesh,Pilibhit,Acute Diarrheal Disease,25,0
+2023-01-21,Uttar Pradesh,Pilibhit,Acute Diarrheal Disease,25,0
 2023-01-21,Uttar Pradesh,Pilibhit,Acute Diarrheal Disease,25,0
 2023-01-23,Bihar,Nalanda,Chickenpox,12,0
+2023-01-23,Bihar,Nalanda,Chickenpox,12,0
+2023-01-23,Bihar,Nalanda,Chickenpox,12,0
+2023-01-23,Chhattisgarh,Janjgir-Champa,Chickenpox,11,0
+2023-01-23,Chhattisgarh,Janjgir-Champa,Chickenpox,11,0
 2023-01-23,Chhattisgarh,Janjgir-Champa,Chickenpox,11,0
 2023-01-23,Karnataka,Davangere,Chickenpox,13,0
 2023-01-23,Karnataka,Tumkur,Dengue,20,0
 2023-01-24,Bihar,Madhubani,Chickenpox,28,0
 2023-01-24,Kerala,Wayanad,Acute Diarrheal Disease,98,0
+2023-01-24,Kerala,Wayanad,Acute Diarrheal Disease,98,0
+2023-01-24,Kerala,Wayanad,Acute Diarrheal Disease,98,0
 2023-01-25,Chhattisgarh,Baloda Bazar,Chickenpox,21,0
+2023-01-25,Rajasthan,Dausa,Food Poisoning,103,0
+2023-01-25,Rajasthan,Dausa,Food Poisoning,103,0
 2023-01-25,Rajasthan,Dausa,Food Poisoning,103,0
 2023-01-26,Kerala,Palakkad,Influenza,23,0
 2023-01-26,Kerala,Palakkad,Chickenpox,19,0
 2023-01-26,Kerala,Thrissur,Acute Diarrheal Disease,30,0
+2023-01-26,Kerala,Thrissur,Acute Diarrheal Disease,30,0
+2023-01-26,Kerala,Thrissur,Acute Diarrheal Disease,30,0
+2023-01-27,Kerala,Kollam,Food Poisoning,23,0
+2023-01-27,Kerala,Kollam,Food Poisoning,23,0
 2023-01-27,Kerala,Kollam,Food Poisoning,23,0
 2023-01-27,Maharashtra,Sangli,Food Poisoning,34,0
 2023-01-27,Odisha,Deogarh,Acute Diarrheal Disease,20,0
+2023-01-27,Odisha,Deogarh,Acute Diarrheal Disease,20,0
+2023-01-27,Odisha,Deogarh,Acute Diarrheal Disease,20,0
+2023-01-27,Tamil Nadu,Tiruchirappalli,Cholera,6,0
+2023-01-27,Tamil Nadu,Tiruchirappalli,Cholera,6,0
 2023-01-27,Tamil Nadu,Tiruchirappalli,Cholera,6,0
 2023-01-27,Uttar Pradesh,Fatehpur,Chickenpox,24,0
 2023-01-28,Karnataka,Davangere,Food Poisoning,12,0

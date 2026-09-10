@@ -4,8 +4,11 @@ import pandas as pd
 import pdfplumber
 import time
 
-PDF_DIR = "idsp_pdfs"
-OUTPUT_CSV = "historical_cases_raw.csv"
+DATA_DIR = os.path.dirname(os.path.abspath(__file__))
+BACKEND_DIR = os.path.dirname(DATA_DIR)
+PDF_DIR = os.path.join(BACKEND_DIR, "idsp_pdfs")
+OUTPUT_CSV = os.path.join(DATA_DIR, "historical_cases_raw.csv")
+PROCESSED_FILE = os.path.join(BACKEND_DIR, "processed_pdfs.txt")
 
 def extract_tables_from_pdf(pdf_path):
     print(f"Extracting: {os.path.basename(pdf_path)}")
@@ -35,76 +38,57 @@ def extract_tables_from_pdf(pdf_path):
         
     return all_data
 
+def extract_batch():
+    print(f"Starting Batch PDF Extraction from {PDF_DIR}...")
+    
+    processed_files = set()
+    if os.path.exists(PROCESSED_FILE):
+        with open(PROCESSED_FILE, 'r') as f:
+            processed_files = set(f.read().splitlines())
+
+    pdf_files = glob.glob(os.path.join(PDF_DIR, "*.pdf"))
+    new_pdfs = [f for f in pdf_files if os.path.basename(f) not in processed_files]
+    
+    if not new_pdfs:
+        print(f"[{len(processed_files)} processed] No new PDFs found.")
+        return 0
+
+    print(f"Found {len(new_pdfs)} new PDFs to process. Parsing now...")
+    all_extracted_rows = []
+    
+    for pdf_path in new_pdfs:
+        rows = extract_tables_from_pdf(pdf_path)
+        if rows is None:
+            continue
+            
+        if rows:
+            all_extracted_rows.extend(rows)
+            
+        with open(PROCESSED_FILE, 'a') as f:
+            f.write(os.path.basename(pdf_path) + '\n')
+
+    if all_extracted_rows:
+        max_cols = max(len(row) for row in all_extracted_rows)
+        cols = [f"Col_{i}" for i in range(max_cols)]
+        padded_rows = [row + [""] * (max_cols - len(row)) for row in all_extracted_rows]
+        df = pd.DataFrame(padded_rows, columns=cols)
+        
+        if os.path.exists(OUTPUT_CSV):
+            df.to_csv(OUTPUT_CSV, mode='a', header=False, index=False)
+        else:
+            df.to_csv(OUTPUT_CSV, index=False)
+            
+        print(f"Added {len(all_extracted_rows)} rows into {OUTPUT_CSV}!")
+        return len(all_extracted_rows)
+    else:
+        print("No valid tables found in this batch.")
+        return 0
+
 def main():
     print(f"Starting Continuous PDF Extraction from {PDF_DIR} (waiting for up to 150 files)...")
-    
     while True:
-        # Processed tracking to avoid re-running on the same PDFs repeatedly
-        processed_files = set()
-        if os.path.exists('processed_pdfs.txt'):
-            with open('processed_pdfs.txt', 'r') as f:
-                processed_files = set(f.read().splitlines())
-
-        if len(processed_files) >= 150:
-            print(f"Completed! {len(processed_files)} PDFs have been successfully parsed.")
-            break
-
-        pdf_files = glob.glob(os.path.join(PDF_DIR, "*.pdf"))
-        # Some downloaded files might end with .part or be incomplete if they are actively downloading,
-        # but requests/urllib usually saves the full .pdf when complete. So we just filter based on name.
-        new_pdfs = [f for f in pdf_files if os.path.basename(f) not in processed_files]
-        
-        if not new_pdfs:
-            print(f"[{len(processed_files)}/150 processed] Waiting for new PDFs to download... (sleeping for 5s)")
-            time.sleep(5)
-            continue
-
-        print(f"Found {len(new_pdfs)} new PDFs to process. Parsing now...")
-        all_extracted_rows = []
-        
-        for pdf_path in new_pdfs:
-            # SAFETY CHECK: If the file was modified in the last 2 seconds, 
-            # the scraper is probably still writing it. Skip it for this loop.
-            try:
-                if time.time() - os.path.getmtime(pdf_path) < 2:
-                    continue
-            except Exception:
-                continue
-
-            rows = extract_tables_from_pdf(pdf_path)
-            
-            # If rows is None, pdfplumber crashed (usually file corruption or mid-download)
-            # We skip adding it to processed_pdfs.txt so it tries again next loop!
-            if rows is None:
-                continue
-                
-            if rows:
-                all_extracted_rows.extend(rows)
-                
-            with open('processed_pdfs.txt', 'a') as f:
-                f.write(os.path.basename(pdf_path) + '\n')
-
-        if all_extracted_rows:
-            # Standardize columns by finding the maximum row length
-            max_cols = max(len(row) for row in all_extracted_rows)
-            cols = [f"Col_{i}" for i in range(max_cols)]
-            
-            # Pad shorter rows with empty strings so pandas doesn't crash
-            padded_rows = [row + [""] * (max_cols - len(row)) for row in all_extracted_rows]
-            
-            df = pd.DataFrame(padded_rows, columns=cols)
-            
-            # Append to csv
-            if os.path.exists(OUTPUT_CSV):
-                df.to_csv(OUTPUT_CSV, mode='a', header=False, index=False)
-            else:
-                df.to_csv(OUTPUT_CSV, index=False)
-                
-            print(f"Added {len(all_extracted_rows)} rows into {OUTPUT_CSV}! Continuing to monitor...")
-        else:
-            print("No valid tables found in this batch. Continuing to monitor...")
-            
-        time.sleep(1) # Small pause before next check
+        extract_batch()
+        time.sleep(5)
 
 if __name__ == "__main__":
     main()

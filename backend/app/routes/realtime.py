@@ -8,7 +8,7 @@ router = APIRouter(prefix="/api/live", tags=["Real-Time Feed"])
 
 # Trusted news feeds for disease alerts
 FEEDS = [
-    "https://news.google.com/rss/search?q=disease+outbreak+India&hl=en-IN&gl=IN&ceid=IN:en",
+    "https://news.google.com/rss/search?q=disease+outbreak+(Kerala+OR+Maharashtra+OR+Delhi+OR+Karnataka+OR+Tamil+Nadu+OR+Gujarat+OR+Bengaluru+OR+Mumbai+OR+Pune)+when:14d&hl=en-IN&gl=IN&ceid=IN:en",
     "https://www.who.int/rss-feeds/news-english.xml"
 ]
 
@@ -20,6 +20,15 @@ STATES = [
     "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand", "West Bengal",
     "Delhi", "Jammu & Kashmir", "Ladakh"
 ]
+
+CITY_TO_STATE = {
+    "bengaluru": "Karnataka", "bangalore": "Karnataka", "mumbai": "Maharashtra",
+    "pune": "Maharashtra", "nagpur": "Maharashtra", "chennai": "Tamil Nadu",
+    "kolkata": "West Bengal", "hyderabad": "Telangana", "kochi": "Kerala",
+    "trivandrum": "Kerala", "ahmedabad": "Gujarat", "surat": "Gujarat",
+    "lucknow": "Uttar Pradesh", "kanpur": "Uttar Pradesh", "patna": "Bihar",
+    "bhopal": "Madhya Pradesh", "jaipur": "Rajasthan"
+}
 
 @router.get("/alerts")
 def get_live_alerts() -> List[Dict]:
@@ -43,6 +52,10 @@ def get_live_alerts() -> List[Dict]:
                     for s in STATES:
                         if s.lower() in title_desc:
                             found_locations.append(s)
+                            
+                    for city, state in CITY_TO_STATE.items():
+                        if city in title_desc and state not in found_locations:
+                            found_locations.append(state)
                     
                     # Highlight if it mentions India
                     is_india = "india" in title_desc or "india" in entry.link.lower() or len(found_locations) > 0

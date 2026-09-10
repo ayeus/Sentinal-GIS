@@ -4,8 +4,9 @@ import re
 import os
 
 # Define input and output paths
-RAW_CSV_PATH = 'historical_cases_raw.csv'
-CLEAN_CSV_PATH = 'historical_cases_clean.csv'
+DATA_DIR = os.path.dirname(os.path.abspath(__file__))
+RAW_CSV_PATH = os.path.join(DATA_DIR, 'historical_cases_raw.csv')
+CLEAN_CSV_PATH = os.path.join(DATA_DIR, 'historical_cases_clean.csv')
 
 def clean_cases(val):
     if pd.isna(val):
@@ -141,6 +142,7 @@ def main():
     # Print sample of the clean data
     print("\nSAMPLE DATA:")
     print(clean_df.head(10))
+    return len(clean_df)
 
 if __name__ == "__main__":
     main()

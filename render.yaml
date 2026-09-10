@@ -1,0 +1,15 @@
+services:
+  # Option 1: Unified Full-Stack Service (Recommended: Runs both API and React UI on 1 port)
+  - type: web
+    name: sentinelgis-app
+    env: docker
+    dockerfilePath: Dockerfile
+    plan: free
+    region: oregon
+    envVars:
+      - key: PORT
+        value: 8000
+      - key: ENVIRONMENT
+        value: production
+      - key: ALLOWED_ORIGINS
+        value: "*"
