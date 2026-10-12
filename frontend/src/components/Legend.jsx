@@ -1,35 +1,27 @@
-const Legend = () => {
-  const levels = [
-    { label: "High Risk", colors: ["#fb7185", "#f43f5e", "#e11d48", "#be123c"] },
-    { label: "Medium Risk", colors: ["#fbbf24", "#f59e0b", "#d97706", "#b45309"] },
-    { label: "Low Risk", colors: ["#34d399", "#10b981", "#059669", "#047857"] },
-  ];
-  
-  return (
-    <div className="glass-panel p-5 mt-4">
-      <h3 className="text-xs font-bold uppercase tracking-widest mb-4 flex justify-between items-center text-gray-700">
-        <span className="flex items-center gap-2">
-          <span className="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
-          Risk Intensity Legend
+import { RISK_COLORS, NO_DATA_COLOR } from "../config";
+
+/**
+ * Map legend. `items` is [{ risk, label, hint }]; colors come from the shared
+ * palette so the legend can never drift from the map.
+ */
+const Legend = ({ title, items, emptyLabel = "Nothing reported", note }) => (
+  <div className="glass-panel p-4">
+    <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+      <span className="text-xs font-bold uppercase tracking-widest text-gray-700">{title}</span>
+      {items.map(({ risk, label, hint }) => (
+        <span key={risk} className="flex items-center gap-2 text-xs text-gray-700">
+          <span className="w-3.5 h-3.5 rounded-sm" style={{ backgroundColor: RISK_COLORS[risk] }} />
+          <span className="font-bold">{label}</span>
+          {hint && <span className="text-gray-500">{hint}</span>}
         </span>
-        <span className="text-[10px] text-gray-500 font-bold normal-case flex items-center gap-1">
-          Lighter <span className="text-gray-400">&rarr;</span> Darker (Confidence)
-        </span>
-      </h3>
-      <div className="flex flex-col gap-3">
-        {levels.map((level) => (
-          <div key={level.label} className="flex items-center gap-4">
-            <span className="text-xs font-bold w-24 text-gray-600 tracking-wider">{level.label}</span>
-            <div className="flex flex-1 h-3 rounded-full overflow-hidden border border-gray-200">
-              {level.colors.map((c, i) => (
-                <div key={i} className="flex-1" style={{ backgroundColor: c }} />
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
+      ))}
+      <span className="flex items-center gap-2 text-xs text-gray-500">
+        <span className="w-3.5 h-3.5 rounded-sm border border-gray-300" style={{ backgroundColor: NO_DATA_COLOR }} />
+        {emptyLabel}
+      </span>
     </div>
-  );
-};
+    {note && <p className="text-[11px] text-gray-500 mt-2 leading-relaxed">{note}</p>}
+  </div>
+);
 
 export default Legend;

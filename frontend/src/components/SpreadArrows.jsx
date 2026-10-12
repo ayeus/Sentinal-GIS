@@ -1,12 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useMap } from "react-leaflet";
 import L from "leaflet";
-
-const RISK_COLORS = {
-  High: "#be123c",
-  Medium: "#d97706",
-  Low: "#059669",
-};
+import { SPREAD_COLORS, SPREAD_FALLBACK_COLOR } from "../config";
 
 /**
  * SpreadArrows renders animated arrow lines (polylines with arrowheads) on a Leaflet map
@@ -27,7 +22,7 @@ const SpreadArrows = ({ vectors = [] }) => {
     }
 
     vectors.forEach((v) => {
-      const color = RISK_COLORS[v.spread_risk] || "#64748b";
+      const color = SPREAD_COLORS[v.spread_risk] || SPREAD_FALLBACK_COLOR;
       const origin = [v.origin_lat, v.origin_lon];
       const dest = [v.dest_lat, v.dest_lon];
 

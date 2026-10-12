@@ -1,29 +1,35 @@
+# Template: deploy/setup_vps.sh fills in the __PLACEHOLDERS__ and installs the
+# result as /etc/systemd/system/sentinelgis.service. Do not copy this file as-is.
 [Unit]
 Description=SentinelGIS FastAPI Daemon & ML Ingestion Engine
 After=network.target
 
 [Service]
 Type=simple
-User=www-data
-Group=www-data
-WorkingDirectory=/var/www/sentinelgis/backend
+User=__APP_USER__
+Group=__APP_USER__
+WorkingDirectory=__INSTALL_DIR__/backend
 
-# Environment variables
-Environment="PATH=/var/www/sentinelgis/backend/venv/bin:/usr/local/bin:/usr/bin:/bin"
-Environment="PYTHONPATH=/var/www/sentinelgis/backend"
-Environment="PORT=8000"
+# Environment variables (see backend/app/config.py for everything that can be set here)
+Environment="PATH=__INSTALL_DIR__/backend/venv/bin:/usr/local/bin:/usr/bin:/bin"
+Environment="PYTHONPATH=__INSTALL_DIR__/backend"
+Environment="PORT=__APP_PORT__"
 Environment="HOST=127.0.0.1"
 Environment="ENVIRONMENT=production"
-Environment="ALLOWED_ORIGINS=*"
+Environment="ALLOWED_ORIGINS=__ALLOWED_ORIGINS__"
+Environment="MAX_UPLOAD_MB=__MAX_UPLOAD_MB__"
+# Optional overrides (e.g. ADMIN_API_KEY=...) without editing this unit
+EnvironmentFile=-__INSTALL_DIR__/backend/.env
 
-# Gunicorn process manager running high-performance Uvicorn workers
-ExecStart=/var/www/sentinelgis/backend/venv/bin/gunicorn \
-    --workers 3 \
+# Gunicorn process manager running high-performance Uvicorn workers.
+# Logs go to stdout/stderr, i.e. journald: journalctl -u sentinelgis -f
+ExecStart=__INSTALL_DIR__/backend/venv/bin/gunicorn \
+    --workers __WORKERS__ \
     --worker-class uvicorn.workers.UvicornWorker \
-    --bind 127.0.0.1:8000 \
+    --bind 127.0.0.1:__APP_PORT__ \
     --timeout 180 \
-    --access-logfile /var/log/sentinelgis_access.log \
-    --error-logfile /var/log/sentinelgis_error.log \
+    --access-logfile - \
+    --error-logfile - \
     app.main:app
 
 # Auto-restart on crash

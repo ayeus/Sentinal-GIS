@@ -1,0 +1,290 @@
+{
+  "model": "Gradient-boosted decision trees (scikit-learn HistGradientBoostingClassifier)",
+  "target": "At least one outbreak of the disease reported by IDSP for the district within 4 weeks",
+  "horizon_weeks": 4,
+  "trained_at": "2026-10-12T12:08:28+00:00",
+  "diseases_modelled": [
+    "Acute Diarrheal Disease",
+    "Chickenpox",
+    "Cholera",
+    "Dengue",
+    "Fever With Rash",
+    "Fever of Unknown Origin",
+    "Food Poisoning",
+    "Hepatitis / Jaundice",
+    "Malaria",
+    "Measles"
+  ],
+  "districts": 735,
+  "training": {
+    "rows": 845250,
+    "outbreak_periods": 9197,
+    "base_rate": 0.0109,
+    "reference_weeks": 115,
+    "first_week": "2022-W01",
+    "last_week": "2026-W04",
+    "hyperparameters": {
+      "max_iter": 600,
+      "learning_rate": 0.02,
+      "max_leaf_nodes": 7,
+      "min_samples_leaf": 300,
+      "l2_regularization": 10.0
+    },
+    "tuning": [
+      {
+        "params": {
+          "max_iter": 200,
+          "learning_rate": 0.05,
+          "max_leaf_nodes": 15,
+          "min_samples_leaf": 100,
+          "l2_regularization": 1.0
+        },
+        "validation_average_precision": 0.0944
+      },
+      {
+        "params": {
+          "max_iter": 400,
+          "learning_rate": 0.03,
+          "max_leaf_nodes": 15,
+          "min_samples_leaf": 200,
+          "l2_regularization": 5.0
+        },
+        "validation_average_precision": 0.0957
+      },
+      {
+        "params": {
+          "max_iter": 150,
+          "learning_rate": 0.08,
+          "max_leaf_nodes": 7,
+          "min_samples_leaf": 200,
+          "l2_regularization": 10.0
+        },
+        "validation_average_precision": 0.1044
+      },
+      {
+        "params": {
+          "max_iter": 600,
+          "learning_rate": 0.02,
+          "max_leaf_nodes": 7,
+          "min_samples_leaf": 300,
+          "l2_regularization": 10.0
+        },
+        "validation_average_precision": 0.1077
+      }
+    ]
+  },
+  "evaluation": {
+    "method": "Tuned on earlier weeks by forward-chaining validation; scored once on the most recent labelled weeks, which were excluded from tuning and fitting.",
+    "holdout_first_week": "2025-W41",
+    "holdout_last_week": "2026-W04",
+    "holdout_rows": 117600,
+    "holdout_outbreak_periods": 1672,
+    "holdout_base_rate": 0.0142,
+    "model": {
+      "average_precision": 0.1598,
+      "roc_auc": 0.8582,
+      "brier": 0.01286,
+      "precision_top_1pct": 0.2772,
+      "recall_top_1pct": 0.195
+    },
+    "baselines": [
+      {
+        "name": "Historical frequency of the disease in the district",
+        "average_precision": 0.1068,
+        "roc_auc": 0.7691,
+        "brier": 0.01367,
+        "precision_top_1pct": 0.2126,
+        "recall_top_1pct": 0.1495
+      },
+      {
+        "name": "Frequency over the last 52 weeks",
+        "average_precision": 0.109,
+        "roc_auc": 0.7249,
+        "brier": 0.01338,
+        "precision_top_1pct": 0.2457,
+        "recall_top_1pct": 0.1728
+      },
+      {
+        "name": "Seasonal frequency of the disease in the state",
+        "average_precision": 0.0618,
+        "roc_auc": 0.7841,
+        "brier": 0.03172,
+        "precision_top_1pct": 0.1514,
+        "recall_top_1pct": 0.1065
+      }
+    ],
+    "lift_over_best_baseline": 1.47,
+    "tiers": [
+      {
+        "tier": "High",
+        "min_probability": 0.2,
+        "share_of_forecasts": 0.0048,
+        "forecasts": 561,
+        "observed_outbreak_rate": 0.3422,
+        "mean_forecast_probability": 0.3437,
+        "share_of_outbreaks_captured": 0.1148
+      },
+      {
+        "tier": "Medium",
+        "min_probability": 0.08,
+        "share_of_forecasts": 0.0174,
+        "forecasts": 2050,
+        "observed_outbreak_rate": 0.1478,
+        "mean_forecast_probability": 0.1149,
+        "share_of_outbreaks_captured": 0.1812
+      },
+      {
+        "tier": "Low",
+        "min_probability": 0.03,
+        "share_of_forecasts": 0.066,
+        "forecasts": 7757,
+        "observed_outbreak_rate": 0.0553,
+        "mean_forecast_probability": 0.0466,
+        "share_of_outbreaks_captured": 0.2566
+      },
+      {
+        "tier": "Minimal",
+        "min_probability": 0.0,
+        "share_of_forecasts": 0.9118,
+        "forecasts": 107232,
+        "observed_outbreak_rate": 0.007,
+        "mean_forecast_probability": 0.006,
+        "share_of_outbreaks_captured": 0.4474
+      }
+    ],
+    "per_disease": [
+      {
+        "disease": "Acute Diarrheal Disease",
+        "outbreak_periods": 401,
+        "average_precision": 0.1845,
+        "roc_auc": 0.7581,
+        "base_rate": 0.0341
+      },
+      {
+        "disease": "Chickenpox",
+        "outbreak_periods": 312,
+        "average_precision": 0.227,
+        "roc_auc": 0.8703,
+        "base_rate": 0.0265
+      },
+      {
+        "disease": "Cholera",
+        "outbreak_periods": 28,
+        "average_precision": 0.0074,
+        "roc_auc": 0.7804,
+        "base_rate": 0.0024
+      },
+      {
+        "disease": "Dengue",
+        "outbreak_periods": 70,
+        "average_precision": 0.105,
+        "roc_auc": 0.8208,
+        "base_rate": 0.006
+      },
+      {
+        "disease": "Fever With Rash",
+        "outbreak_periods": 33,
+        "average_precision": 0.01,
+        "roc_auc": 0.7256,
+        "base_rate": 0.0028
+      },
+      {
+        "disease": "Fever of Unknown Origin",
+        "outbreak_periods": 70,
+        "average_precision": 0.0311,
+        "roc_auc": 0.7036,
+        "base_rate": 0.006
+      },
+      {
+        "disease": "Food Poisoning",
+        "outbreak_periods": 316,
+        "average_precision": 0.138,
+        "roc_auc": 0.8102,
+        "base_rate": 0.0269
+      },
+      {
+        "disease": "Hepatitis / Jaundice",
+        "outbreak_periods": 184,
+        "average_precision": 0.3833,
+        "roc_auc": 0.9023,
+        "base_rate": 0.0156
+      },
+      {
+        "disease": "Malaria",
+        "outbreak_periods": 43,
+        "average_precision": 0.1962,
+        "roc_auc": 0.7378,
+        "base_rate": 0.0037
+      },
+      {
+        "disease": "Measles",
+        "outbreak_periods": 215,
+        "average_precision": 0.1034,
+        "roc_auc": 0.8257,
+        "base_rate": 0.0183
+      }
+    ]
+  },
+  "drivers": [
+    {
+      "factor": "Season (time of year)",
+      "share": 0.305
+    },
+    {
+      "factor": "Past outbreaks of this disease in the district",
+      "share": 0.199
+    },
+    {
+      "factor": "Disease",
+      "share": 0.169
+    },
+    {
+      "factor": "All outbreaks reported by the district",
+      "share": 0.149
+    },
+    {
+      "factor": "Time since the last outbreak",
+      "share": 0.078
+    },
+    {
+      "factor": "Outbreaks elsewhere in the state",
+      "share": 0.059
+    },
+    {
+      "factor": "Geography",
+      "share": 0.038
+    },
+    {
+      "factor": "Outbreaks in neighbouring districts",
+      "share": 0.003
+    },
+    {
+      "factor": "National activity of the disease",
+      "share": 0.0
+    },
+    {
+      "factor": "Recent case counts",
+      "share": 0.0
+    }
+  ],
+  "forecast": {
+    "based_on_week": "2026-W08",
+    "based_on_week_end": "2026-02-22",
+    "window_start": "2026-02-23",
+    "window_end": "2026-03-22",
+    "tier_counts": {
+      "Minimal": 6322,
+      "Low": 731,
+      "Medium": 238,
+      "High": 59
+    }
+  },
+  "limitations": [
+    "Trained on outbreaks that states reported to IDSP. Unreported or late-reported outbreaks are invisible to it.",
+    "It predicts reporting, which mixes true disease activity with how thoroughly a state reports. States that report many outbreaks (Kerala, for example) are rated higher partly for that reason; a low rating in a state that reports little is weak evidence of safety.",
+    "A forecast is a probability, not a certainty: most High-tier flags are not followed by a reported outbreak, and some outbreaks occur where risk was rated Minimal.",
+    "Weeks without an ingested bulletin are excluded, so long gaps weaken seasonal and year-on-year signals.",
+    "Rare diseases and diseases new to a district are predicted poorly; diseases with too few reports are not modelled at all.",
+    "Decision support only. It does not replace field surveillance or the judgement of public-health officers."
+  ]
+}

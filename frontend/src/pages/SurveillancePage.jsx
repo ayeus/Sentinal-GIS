@@ -1,109 +1,121 @@
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
 import { Loader2 } from "lucide-react";
 
 import MapView from "../components/MapView";
 import RiskCard from "../components/RiskCard";
 import Legend from "../components/Legend";
+import StatCard from "../components/StatCard";
 import DistrictDetailPanel from "../components/DistrictDetailPanel";
-import { getCurrentStatus, getDiseases, getDistrictGeoJSON, getAvailableYears } from "../services/api";
+import FilterBar from "../components/FilterBar";
+import useSurveillanceFilters from "../hooks/useSurveillanceFilters";
+import useDataStatus from "../hooks/useDataStatus";
+import { getCurrentStatus, getDistrictGeoJSON } from "../services/api";
+import { formatDate, formatNumber } from "../config";
+
+const describe = (row) => [
+  `${formatNumber(row.Cases)} cases reported`,
+  `${row.Outbreaks} outbreak${row.Outbreaks === 1 ? "" : "s"} · ${formatNumber(row.Deaths)} deaths`,
+  row.Diseases,
+  `Latest report: week of ${formatDate(row.LatestWeek)}`,
+];
 
 const SurveillancePage = () => {
-  const [year, setYear] = useState(null);
-  const [disease, setDisease] = useState("Dengue");
-  const [diseasesList, setDiseasesList] = useState([]);
-  const [yearsList, setYearsList] = useState([]);
-  const [predictions, setPredictions] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const filters = useSurveillanceFilters();
+  const { disease, period } = filters;
+  const { status } = useDataStatus();
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
   const [errorMsg, setErrorMsg] = useState("");
   const [districtGeoData, setDistrictGeoData] = useState(null);
   const [selectedDistrict, setSelectedDistrict] = useState(null);
 
   useEffect(() => {
     getDistrictGeoJSON().then(setDistrictGeoData).catch(console.error);
-    getDiseases().then(res => setDiseasesList(res.diseases || [])).catch(console.error);
-    getAvailableYears().then(res => {
-      const years = res.years || [];
-      setYearsList(years);
-      if (years.length > 0) setYear(years[years.length - 1]);
-    }).catch(console.error);
   }, []);
 
   useEffect(() => {
-    if (!year) return;
+    if (!period) return;
+    // Ignore responses that arrive after the filters changed again
+    let cancelled = false;
     setLoading(true);
     setErrorMsg("");
-    getCurrentStatus(disease, year)
-      .then(data => {
-        if (data.region_data?.length > 0) setPredictions(data.region_data);
-        else setErrorMsg("No outbreaks found for these filters.");
+    getCurrentStatus(disease, period)
+      .then(res => {
+        if (cancelled) return;
+        setData(res);
+        if (!res.region_data?.length) setErrorMsg("No outbreaks were reported for these filters.");
       })
-      .catch(err => setErrorMsg(err.message))
-      .finally(() => setLoading(false));
-  }, [year, disease]);
+      .catch(err => {
+        if (cancelled) return;
+        setData(null);
+        setErrorMsg(err.message);
+      })
+      .finally(() => { if (!cancelled) setLoading(false); });
+    return () => { cancelled = true; };
+  }, [period, disease]);
 
-  const highCount = predictions.filter(p => p.risk === "High").length;
-  const medCount = predictions.filter(p => p.risk === "Medium").length;
-  const lowCount = predictions.filter(p => p.risk === "Low").length;
+  const rows = data?.region_data || [];
+  const bands = status?.burden_bands;
 
   return (
     <div className="container mx-auto px-6 py-8">
-      {/* Filters */}
-      <div className="flex flex-wrap items-center gap-4 mb-6">
-        <h2 className="text-xl font-bold text-gray-900 flex-1">🗺️ District Surveillance</h2>
-        {diseasesList.length > 0 && (
-          <select value={disease} onChange={e => setDisease(e.target.value)}
-            className="bg-white border border-gray-300 rounded-lg px-4 py-2.5 text-sm font-medium focus:ring-2 focus:ring-blue-500/50 focus:outline-none">
-            <option value="">All Diseases</option>
-            {diseasesList.map(d => <option key={d} value={d}>{d}</option>)}
-          </select>
-        )}
-        <select value={year || ""} onChange={e => setYear(Number(e.target.value))}
-          className="bg-white border border-gray-300 rounded-lg px-4 py-2.5 text-sm font-medium focus:ring-2 focus:ring-blue-500/50 focus:outline-none">
-          {yearsList.map(y => <option key={y} value={y}>{y}</option>)}
-        </select>
+      <div className="flex flex-wrap items-center gap-4 mb-2">
+        <h2 className="text-xl font-bold text-gray-900 flex-1">Reported outbreaks by district</h2>
+        <FilterBar {...filters} />
+      </div>
+      <p className="text-sm text-gray-500 mb-6">
+        What States and UTs reported to IDSP
+        {data?.period?.from ? <> between <strong>{formatDate(data.period.from)}</strong> and <strong>{formatDate(data.period.to)}</strong></> : null}.
+        These are recorded facts, not predictions.
+      </p>
+
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+        <StatCard label="Outbreaks reported" value={formatNumber(data?.total_outbreaks)} border="border-blue-400" tone="text-blue-700" />
+        <StatCard label="Districts affected" value={formatNumber(rows.length)} border="border-indigo-400" tone="text-indigo-700" />
+        <StatCard label="Cases" value={formatNumber(data?.total_cases)} border="border-amber-400" tone="text-amber-700" />
+        <StatCard label="Deaths" value={formatNumber(data?.total_deaths)} border="border-rose-400" tone="text-rose-700" />
       </div>
 
-      {/* Stats */}
-      {predictions.length > 0 && (
-        <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          {[
-            { label: "High Risk", count: highCount, color: "text-red-600", border: "border-red-400", bg: "bg-red-50" },
-            { label: "Elevated Risk", count: medCount, color: "text-amber-600", border: "border-amber-400", bg: "bg-amber-50" },
-            { label: "Low Risk", count: lowCount, color: "text-emerald-600", border: "border-emerald-400", bg: "bg-emerald-50" },
-          ].map(stat => (
-            <div key={stat.label} className={`glass-panel p-5 border-l-[4px] ${stat.border}`}>
-              <p className="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-1">{stat.label}</p>
-              <span className={`text-4xl font-bold ${stat.color}`}>{stat.count}</span>
-            </div>
-          ))}
-        </motion.div>
-      )}
-
-      {/* Map + Sidebar */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         <div className="lg:col-span-8 flex flex-col gap-4">
           <div className="glass-panel overflow-hidden p-1 shadow-sm">
-            <MapView predictions={predictions} geoData={districtGeoData} viewMode="current"
-              spreadVectors={[]} onDistrictClick={(s, d) => setSelectedDistrict({ state: s, district: d })} />
+            <MapView rows={rows} geoData={districtGeoData} describe={describe}
+              emptyLabel="No outbreak reported in this period"
+              onDistrictClick={(state, district) => setSelectedDistrict({ state, district })} />
           </div>
-          <Legend />
+          <Legend
+            title="Cases reported"
+            emptyLabel="None reported"
+            items={[
+              { risk: "High", label: bands ? `More than ${bands.high_above_cases}` : "High" },
+              { risk: "Medium", label: bands ? `${bands.medium_above_cases + 1} to ${bands.high_above_cases}` : "Medium" },
+              { risk: "Low", label: bands ? `1 to ${bands.medium_above_cases}` : "Low" },
+            ]}
+            note="Colour shows the total number of cases reported for the district in the selected period. A district without colour had no outbreak reported, which is not proof that none occurred."
+          />
         </div>
+
         <div className="lg:col-span-4">
           <h3 className="text-lg font-bold text-gray-900 mb-3 border-b border-gray-200 pb-2">
-            Assessment Log <span className="text-xs font-medium text-gray-400 ml-2">{predictions.length} regions</span>
+            Districts <span className="text-xs font-medium text-gray-400 ml-1">{rows.length} · most cases first</span>
           </h3>
           {loading ? (
             <div className="flex justify-center py-20"><Loader2 className="w-8 h-8 text-blue-500 animate-spin" /></div>
           ) : errorMsg ? (
-            <p className="text-sm text-red-600 bg-red-50 p-3 rounded-lg border border-red-100">{errorMsg}</p>
+            <p className="text-sm text-gray-600 bg-gray-50 p-3 rounded-lg border border-gray-200">{errorMsg}</p>
           ) : (
-            <div className="space-y-3 max-h-[600px] overflow-y-auto pr-2 custom-scrollbar">
-              {predictions.map((p, i) => (
-                <RiskCard key={p.State + (p.District || "")}
-                  state={`${p.District || "Unknown"}, ${p.State}`}
-                  risk={p.risk} confidence={p.confidence} index={i} />
+            <div className="space-y-2.5 max-h-[640px] overflow-y-auto pr-2 custom-scrollbar">
+              {rows.map(row => (
+                <RiskCard key={`${row.State}|${row.District}`}
+                  title={row.District} subtitle={row.State} risk={row.risk}
+                  caption={row.Diseases}
+                  value={formatNumber(row.Cases)} valueLabel="cases"
+                  facts={[
+                    `${row.Outbreaks} outbreak${row.Outbreaks === 1 ? "" : "s"}`,
+                    `${formatNumber(row.Deaths)} deaths`,
+                    `latest: week of ${formatDate(row.LatestWeek)}`,
+                  ]}
+                  onClick={() => setSelectedDistrict({ state: row.State, district: row.District })} />
               ))}
             </div>
           )}

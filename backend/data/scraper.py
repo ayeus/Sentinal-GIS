@@ -1,13 +1,26 @@
+import sys
+from pathlib import Path
+
+# Allow running this file directly (python data/scraper.py) as well as importing it
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
 import os
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 import time
-import re
 
-URL = "https://idsp.mohfw.gov.in/index4.php?lang=1&level=0&linkid=406&lid=3689"
-DATA_DIR = os.path.dirname(os.path.abspath(__file__))
-DOWNLOAD_DIR = os.path.join(os.path.dirname(DATA_DIR), "idsp_pdfs")
+from app.config import (
+    IDSP_BULLETIN_URL,
+    PDF_DIR,
+    SCRAPER_DELAY_SECONDS,
+    SCRAPER_MAX_DOCUMENTS,
+    SCRAPER_TIMEOUT_SECONDS,
+)
+
+URL = IDSP_BULLETIN_URL
+DOWNLOAD_DIR = str(PDF_DIR)
+HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; SentinelGIS/1.0; public-health surveillance research)"}
 
 def setup():
     if not os.path.exists(DOWNLOAD_DIR):
@@ -33,12 +46,24 @@ def download_file(url, filename, folder):
     try:
         # Note: Google Drive links might require gdown or manual extraction
         # This handles standard direct PDF downloads
-        response = requests.get(url, stream=True, timeout=15)
+        response = requests.get(url, stream=True, timeout=SCRAPER_TIMEOUT_SECONDS, headers=HEADERS)
         response.raise_for_status()
         
-        with open(filepath, 'wb') as f:
+        # Download to a temp name so the PDF watcher never picks up a partial file
+        tmp_path = filepath + ".part"
+        with open(tmp_path, 'wb') as f:
             for chunk in response.iter_content(chunk_size=8192):
                 f.write(chunk)
+        # Error pages and truncated downloads must not enter the dataset
+        with open(tmp_path, 'rb') as f:
+            head = f.read(5)
+            f.seek(max(0, os.path.getsize(tmp_path) - 1024))
+            tail = f.read()
+        if head != b"%PDF-" or b"%%EOF" not in tail:
+            os.remove(tmp_path)
+            print(f"Discarded {filename}: not a complete PDF")
+            return None
+        os.replace(tmp_path, filepath)
         print(f"Saved: {filename}")
         return filepath
     except Exception as e:
@@ -48,15 +73,18 @@ def download_file(url, filename, folder):
 def main():
     setup()
     print(f"Fetching page: {URL}")
-    response = requests.get(URL)
+    response = requests.get(URL, timeout=SCRAPER_TIMEOUT_SECONDS, headers=HEADERS)
+    response.raise_for_status()
     soup = BeautifulSoup(response.content, 'html.parser')
     
     links = get_pdf_links(soup)
     print(f"Found {len(links)} outbreak document links.")
     
-    print(f"Filtering to download the {len(links[:150])} most recent weeks...")
+    links = links[:SCRAPER_MAX_DOCUMENTS]  # Most recent bulletins only
+    print(f"Filtering to download the {len(links)} most recent weeks...")
     
-    for i, link in enumerate(links[:150]): # Limiting to 150 (latest 3 years) per user request
+    downloaded = 0
+    for i, link in enumerate(links):
         filename = f"week_doc_{i+1}.pdf"
         
         # If it's a direct PDF link with a real name, try to extract it
@@ -65,11 +93,14 @@ def main():
             if parts[-1].endswith('.pdf'):
                 filename = parts[-1]
                 
-        download_file(link, filename, DOWNLOAD_DIR)
-        time.sleep(1) # Be polite to the server
+        if os.path.exists(os.path.join(DOWNLOAD_DIR, filename)):
+            continue  # Already have it: no request needed
+        if download_file(link, filename, DOWNLOAD_DIR):
+            downloaded += 1
+        time.sleep(SCRAPER_DELAY_SECONDS) # Be polite to the server
         
-    print(f"Done! Check the '{DOWNLOAD_DIR}' folder.")
-    print("Next step: We will use 'pdfplumber' to extract tables from these PDFs.")
+    print(f"Done! {downloaded} new bulletin(s) saved to '{DOWNLOAD_DIR}'.")
+    return {"links_found": len(links), "downloaded": downloaded}
 
 if __name__ == "__main__":
     main()

@@ -1,41 +1,28 @@
-import { useState, useEffect, useCallback } from "react";
-import { getDistrictDetail, getHealthAdvisor } from "../services/api";
-import {
-  AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer
-} from "recharts";
-import { X, MapPin, Skull, Activity, Percent, BrainCircuit, ShieldAlert, Sparkles, AlertCircle } from "lucide-react";
+import { useState, useEffect } from "react";
+import { getDistrictDetail } from "../services/api";
+import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
+import { X, MapPin, Skull, Activity, Percent, BookOpen } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import GuidancePanel from "./GuidancePanel";
+import { formatDate, formatNumber } from "../config";
 
 const DistrictDetailPanel = ({ state, district, onClose }) => {
   const [detail, setDetail] = useState(null);
-  const [advisor, setAdvisor] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const fetchDetail = useCallback(async () => {
+  useEffect(() => {
     if (!state || !district) return;
+    let cancelled = false;
     setLoading(true);
-    try {
-      const res = await getDistrictDetail(state, district);
-      setDetail(res.detail || null);
-      
-      // Fetch AI Advisor for the top disease
-      if (res.detail?.disease_breakdown?.length > 0) {
-        const topDisease = res.detail.disease_breakdown[0].Disease;
-        const advRes = await getHealthAdvisor(topDisease, district);
-        setAdvisor(advRes);
-      }
-    } catch (err) {
-      console.error(err);
-    } finally {
-      setLoading(false);
-    }
+    getDistrictDetail(state, district)
+      .then(res => { if (!cancelled) setDetail(res.detail?.total_cases !== undefined ? res.detail : null); })
+      .catch(err => { console.error(err); if (!cancelled) setDetail(null); })
+      .finally(() => { if (!cancelled) setLoading(false); });
+    return () => { cancelled = true; };
   }, [state, district]);
 
-  useEffect(() => {
-    fetchDetail();
-  }, [fetchDetail]);
-
   if (!state || !district) return null;
+  const topDisease = detail?.disease_breakdown?.[0]?.Disease;
 
   return (
     <AnimatePresence>
@@ -44,7 +31,7 @@ const DistrictDetailPanel = ({ state, district, onClose }) => {
         animate={{ x: 0, opacity: 1 }}
         exit={{ x: 400, opacity: 0 }}
         transition={{ type: "spring", stiffness: 300, damping: 30 }}
-        className="fixed top-0 right-0 w-[380px] h-full bg-white shadow-2xl z-50 border-l border-gray-200 overflow-y-auto"
+        className="fixed top-0 right-0 w-full sm:w-[400px] h-full bg-white shadow-2xl z-50 border-l border-gray-200 overflow-y-auto"
       >
         {/* Header */}
         <div className="sticky top-0 bg-white border-b border-gray-100 p-4 flex items-center justify-between z-10">
@@ -55,26 +42,30 @@ const DistrictDetailPanel = ({ state, district, onClose }) => {
             </h3>
             <p className="text-xs text-gray-500">{state}</p>
           </div>
-          <button
-            onClick={onClose}
-            className="w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors"
-          >
+          <button onClick={onClose} aria-label="Close"
+            className="w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors">
             <X className="w-4 h-4 text-gray-600" />
           </button>
         </div>
 
         {loading ? (
-          <div className="p-10 text-center text-gray-400 animate-pulse">Loading district intel…</div>
+          <div className="p-10 text-center text-gray-400 animate-pulse">Loading district record…</div>
         ) : !detail ? (
-          <div className="p-10 text-center text-gray-400">No data found for this district.</div>
+          <div className="p-10 text-center text-gray-500 text-sm leading-relaxed">
+            No outbreak has been reported to IDSP for this district in the bulletins held by the system.
+          </div>
         ) : (
           <div className="p-4 space-y-5">
+            <p className="text-[11px] text-gray-500">
+              All outbreaks reported between the weeks of {formatDate(detail.first_week)} and {formatDate(detail.latest_week)}.
+            </p>
+
             {/* Key Stats */}
             <div className="grid grid-cols-3 gap-3">
               {[
-                { icon: Activity, label: "Cases", value: detail.total_cases, color: "text-blue-600", bg: "bg-blue-50" },
-                { icon: Skull, label: "Deaths", value: detail.total_deaths, color: "text-red-600", bg: "bg-red-50" },
-                { icon: Percent, label: "CFR", value: `${detail.cfr}%`, color: "text-amber-600", bg: "bg-amber-50" },
+                { icon: Activity, label: "Cases", value: formatNumber(detail.total_cases), color: "text-blue-600", bg: "bg-blue-50" },
+                { icon: Skull, label: "Deaths", value: formatNumber(detail.total_deaths), color: "text-red-600", bg: "bg-red-50" },
+                { icon: Percent, label: "Case fatality", value: `${detail.cfr}%`, color: "text-amber-600", bg: "bg-amber-50" },
               ].map((s) => (
                 <div key={s.label} className={`rounded-xl p-3 text-center ${s.bg} border border-gray-100`}>
                   <s.icon className={`w-5 h-5 mx-auto mb-1 ${s.color}`} />
@@ -86,91 +77,73 @@ const DistrictDetailPanel = ({ state, district, onClose }) => {
 
             {/* Disease Breakdown */}
             <div>
-              <h4 className="text-sm font-bold text-gray-700 mb-2">Disease Breakdown</h4>
+              <h4 className="text-sm font-bold text-gray-700 mb-2">Cases by disease</h4>
               <div className="space-y-1.5">
                 {detail.disease_breakdown?.map((d) => {
                   const maxCases = detail.disease_breakdown[0]?.Cases || 1;
                   const pct = Math.min(100, (d.Cases / maxCases) * 100);
                   return (
                     <div key={d.Disease} className="flex items-center gap-2">
-                      <span className="text-xs text-gray-600 w-24 truncate font-medium">{d.Disease}</span>
-                      <div className="flex-1 h-4 bg-gray-100 rounded-full overflow-hidden">
-                        <div
-                          className="h-full rounded-full bg-gradient-to-r from-blue-400 to-blue-600"
-                          style={{ width: `${pct}%` }}
-                        ></div>
+                      <span className="text-xs text-gray-600 w-32 truncate font-medium" title={d.Disease}>{d.Disease}</span>
+                      <div className="flex-1 h-3.5 bg-gray-100 rounded-full overflow-hidden">
+                        <div className="h-full rounded-full bg-blue-500" style={{ width: `${pct}%` }}></div>
                       </div>
-                      <span className="text-xs font-bold text-gray-800 w-12 text-right">{d.Cases}</span>
+                      <span className="text-xs font-bold text-gray-800 w-12 text-right">{formatNumber(d.Cases)}</span>
                     </div>
                   );
                 })}
               </div>
             </div>
 
-            {/* Sparkline Trend */}
-            {detail.monthly_trend?.length > 0 && (
+            {/* Monthly trend */}
+            {detail.monthly_trend?.length > 1 && (
               <div>
-                <h4 className="text-sm font-bold text-gray-700 mb-2">Monthly Trend</h4>
+                <h4 className="text-sm font-bold text-gray-700 mb-2">Cases by month of report (months with a report only)</h4>
                 <ResponsiveContainer width="100%" height={120}>
-                  <AreaChart data={detail.monthly_trend}>
-                    <defs>
-                      <linearGradient id="detailGrad" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%" stopColor="#6366f1" stopOpacity={0.3} />
-                        <stop offset="95%" stopColor="#6366f1" stopOpacity={0} />
-                      </linearGradient>
-                    </defs>
-                    <XAxis dataKey="YearMonth" tick={false} />
-                    <YAxis tick={{ fontSize: 10 }} width={30} />
+                  {/* Bars, not a line: only months with a report are listed, and nothing should be drawn between them */}
+                  <BarChart data={detail.monthly_trend}>
+                    <XAxis dataKey="YearMonth" tick={{ fontSize: 9 }} minTickGap={24} />
+                    <YAxis tick={{ fontSize: 10 }} width={30} allowDecimals={false} />
                     <Tooltip contentStyle={{ borderRadius: "8px", fontSize: "11px" }} />
-                    <Area type="monotone" dataKey="Cases" stroke="#6366f1" fill="url(#detailGrad)" strokeWidth={2} />
-                  </AreaChart>
+                    <Bar dataKey="Cases" fill="#3b82f6" radius={[2, 2, 0, 0]} />
+                  </BarChart>
                 </ResponsiveContainer>
               </div>
             )}
 
-            {/* AI Advisor Section — Phase 4 */}
-            {advisor && (
-              <div className="pt-4 border-t border-gray-100 space-y-4">
-                <div className="flex items-center gap-2 mb-1">
-                  <div className="p-1.5 bg-purple-50 rounded-lg">
-                    <BrainCircuit className="w-4 h-4 text-purple-600" />
-                  </div>
-                  <h4 className="text-sm font-bold text-gray-800">AI Health Advisor</h4>
-                </div>
-                
-                <div className="space-y-3">
-                  <div className="bg-amber-50/50 border border-amber-100 rounded-xl p-3">
-                    <div className="flex items-center gap-2 text-[10px] font-bold text-amber-700 uppercase mb-1">
-                      <AlertCircle className="w-3 h-3" /> Probable Cause
+            {/* Most recent outbreak records, with their IDSP identifiers */}
+            {detail.recent_outbreaks?.length > 0 && (
+              <div>
+                <h4 className="text-sm font-bold text-gray-700 mb-2">Most recent reports</h4>
+                <div className="space-y-1.5">
+                  {detail.recent_outbreaks.map(o => (
+                    <div key={o.outbreak_id} className="text-xs border border-gray-100 rounded-lg p-2.5 bg-gray-50/60">
+                      <div className="flex justify-between gap-2">
+                        <span className="font-bold text-gray-800">{o.disease}</span>
+                        <span className="text-gray-500 shrink-0">week of {formatDate(o.week_start)}</span>
+                      </div>
+                      <div className="text-gray-600 mt-0.5">
+                        {formatNumber(o.cases)} cases · {formatNumber(o.deaths)} deaths{o.status ? ` · ${o.status}` : ""}
+                      </div>
+                      <div className="text-[10px] text-gray-400 mt-0.5 font-mono">IDSP ID {o.outbreak_id}</div>
                     </div>
-                    <p className="text-xs text-gray-700 leading-relaxed font-medium">
-                      {advisor.causes}
-                    </p>
-                  </div>
-
-                  <div className="bg-emerald-50/50 border border-emerald-100 rounded-xl p-3">
-                    <div className="flex items-center gap-2 text-[10px] font-bold text-emerald-700 uppercase mb-1">
-                      <ShieldAlert className="w-3 h-3" /> Prevention & Safety
-                    </div>
-                    <p className="text-xs text-gray-700 leading-relaxed font-medium">
-                      {advisor.prevention}
-                    </p>
-                  </div>
-
-                  <div className="bg-blue-50 border border-blue-100 rounded-xl p-3">
-                    <div className="flex items-center gap-2 text-[10px] font-bold text-blue-700 uppercase mb-1">
-                      <Sparkles className="w-3 h-3" /> Clinical Suggestion
-                    </div>
-                    <p className="text-xs text-gray-700 leading-relaxed font-medium">
-                      {advisor.suggestion}
-                    </p>
-                  </div>
+                  ))}
                 </div>
               </div>
             )}
 
+            {/* Guidance for the most reported disease */}
+            {topDisease && (
+              <div className="pt-4 border-t border-gray-100 space-y-2">
+                <h4 className="text-sm font-bold text-gray-800 flex items-center gap-2">
+                  <BookOpen className="w-4 h-4 text-blue-600" /> Guidance for {topDisease}
+                </h4>
+                <GuidancePanel disease={topDisease} compact />
+              </div>
+            )}
+
             <p className="text-[10px] text-gray-400 text-center pt-2 border-t border-gray-100">
-              Based on {detail.data_points} historical data points • {advisor?.timestamp}
+              {detail.data_points} outbreak records from IDSP weekly outbreak reports
             </p>
           </div>
         )}

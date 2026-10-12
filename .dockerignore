@@ -1,0 +1,19 @@
+.git
+**/.DS_Store
+**/__pycache__
+*.pyc
+
+# Rebuilt inside the image
+frontend/node_modules
+frontend/build
+backend/venv
+.venv
+
+# Not needed at runtime
+notebooks
+outputs
+backend/outputs
+docs
+*.md
+.env
+backend/.env

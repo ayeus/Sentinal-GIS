@@ -1,181 +1,105 @@
-// Dynamic API base URL: defaults to localhost in dev, relative root in prod, or custom cloud URL via env var
-const API_BASE = (
-  process.env.REACT_APP_API_BASE !== undefined
-    ? process.env.REACT_APP_API_BASE
-    : (process.env.NODE_ENV === "development" ? "http://127.0.0.1:8000" : "")
-).replace(/\/+$/, "");
+import { API_BASE, ADMIN_API_KEY, DISTRICT_GEOJSON_URL, STATE_GEOJSON_URL } from "../config";
 
-
-// Predict risk using ML model
-export async function getPrediction(year, disease) {
-  const res = await fetch(`${API_BASE}/predict`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ year, disease }),
+// Shared request helper: builds the query string (skipping empty values),
+// and surfaces the backend's error detail when a call fails.
+async function request(path, { params, label = "API", ...options } = {}) {
+  const query = new URLSearchParams();
+  Object.entries(params || {}).forEach(([key, value]) => {
+    if (value !== undefined && value !== null && value !== "") query.append(key, value);
   });
+  const qs = query.toString();
 
+  const res = await fetch(`${API_BASE}${path}${qs ? `?${qs}` : ""}`, options);
   if (!res.ok) {
-    const text = await res.text();
-    throw new Error("Prediction API failed: " + text);
+    let detail = "";
+    try {
+      const body = await res.clone().json();
+      detail = typeof body.detail === "string" ? body.detail : "";
+    } catch {
+      detail = await res.text().catch(() => "");
+    }
+    throw new Error(detail || `${label} failed (${res.status})`);
   }
-
   return res.json();
 }
 
+const adminHeaders = () => (ADMIN_API_KEY ? { "X-API-Key": ADMIN_API_KEY } : {});
 
-// Fetch risk map data
-export async function getRiskMap(year) {
-  const res = await fetch(`${API_BASE}/risk-map?year=${year}`);
-
-  if (!res.ok) {
-    throw new Error("Risk map API failed");
+// Boundary files are large and never change during a session: fetch each once
+const staticCache = new Map();
+function fetchStatic(url, label) {
+  if (!staticCache.has(url)) {
+    const pending = fetch(url).then(res => {
+      if (!res.ok) throw new Error(`${label} failed to load`);
+      return res.json();
+    });
+    pending.catch(() => staticCache.delete(url));
+    staticCache.set(url, pending);
   }
-
-  return res.json();
+  return staticCache.get(url);
 }
 
 
-export async function getGeoJSON() {
-  const res = await fetch(`${API_BASE}/geojson`);
+// ─── Surveillance (reported outbreaks) ──────────────────────────────────────
+// `period` is { year } or { weeks } (latest N reporting weeks)
 
-  if (!res.ok) {
-    throw new Error("GeoJSON API failed");
-  }
+export const getDataStatus = () => request("/api/data-status", { label: "Data status API" });
+export const getDiseases = () => request("/api/diseases", { label: "Diseases API" });
+export const getAvailableYears = () => request("/api/years", { label: "Years API" });
 
-  return res.json();
-}
+export const getCurrentStatus = (disease, period) =>
+  request("/api/current-status", { params: { disease, ...period }, label: "Surveillance API" });
 
-export async function getDiseases() {
-  const res = await fetch(`${API_BASE}/api/diseases`);
-  if (!res.ok) throw new Error("Diseases API failed");
-  return res.json();
-}
+export const getDistrictGeoJSON = () => fetchStatic(DISTRICT_GEOJSON_URL, "District GeoJSON");
+export const getStateGeoJSON = () => fetchStatic(STATE_GEOJSON_URL, "State GeoJSON");
 
-export async function getAvailableYears() {
-  const res = await fetch(`${API_BASE}/api/years`);
-  if (!res.ok) throw new Error("Years API failed");
-  return res.json();
-}
+export const getSpreadRisk = (disease, period) =>
+  request("/api/spread-risk", { params: { disease, ...period }, label: "Neighbour exposure API" });
 
-export async function getCurrentStatus(disease, year) {
-  let url = `${API_BASE}/api/current-status`;
-  const params = new URLSearchParams();
-  if (disease) params.append("disease", disease);
-  if (year) params.append("year", year);
-  
-  if (params.toString()) url += `?${params.toString()}`;
-  
-  const res = await fetch(url);
-  if (!res.ok) throw new Error("Current status API failed");
-  return res.json();
-}
+// ─── Forecast ───────────────────────────────────────────────────────────────
 
-export async function getDistrictGeoJSON() {
-  const res = await fetch(`/india_districts.geojson`);
-  if (!res.ok) throw new Error("District GeoJSON failed to load");
-  return res.json();
-}
+export const getForecast = (disease) =>
+  request("/api/forecast", { params: { disease }, label: "Forecast API" });
 
-export async function getSpreadRisk(disease, year) {
-  let url = `${API_BASE}/api/spread-risk`;
-  const params = new URLSearchParams();
-  if (disease) params.append("disease", disease);
-  if (year) params.append("year", year);
-  if (params.toString()) url += `?${params.toString()}`;
-  const res = await fetch(url);
-  if (!res.ok) throw new Error("Spread risk API failed");
-  return res.json();
-}
+export const getModelCard = () => request("/api/model-card", { label: "Model card API" });
 
-// ─── Advanced Analytics ─────────────────────────────────────────────────────
+// ─── Analytics ──────────────────────────────────────────────────────────────
 
-export async function getTrends(disease, state, district) {
-  const params = new URLSearchParams();
-  if (disease) params.append("disease", disease);
-  if (state) params.append("state", state);
-  if (district) params.append("district", district);
-  const res = await fetch(`${API_BASE}/api/trends?${params.toString()}`);
-  if (!res.ok) throw new Error("Trends API failed");
-  return res.json();
-}
+export const getTrends = (disease, state, district) =>
+  request("/api/trends", { params: { disease, state, district }, label: "Trends API" });
 
-export async function getAnomalies(disease, year) {
-  const params = new URLSearchParams();
-  if (disease) params.append("disease", disease);
-  if (year) params.append("year", year);
-  const res = await fetch(`${API_BASE}/api/anomalies?${params.toString()}`);
-  if (!res.ok) throw new Error("Anomalies API failed");
-  return res.json();
-}
+export const getAnomalies = (disease, period) =>
+  request("/api/anomalies", { params: { disease, ...period }, label: "Anomalies API" });
 
-export async function getCoOccurrence(year) {
-  const params = new URLSearchParams();
-  if (year) params.append("year", year);
-  const res = await fetch(`${API_BASE}/api/co-occurrence?${params.toString()}`);
-  if (!res.ok) throw new Error("Co-occurrence API failed");
-  return res.json();
-}
+export const getCoOccurrence = (period) =>
+  request("/api/co-occurrence", { params: { ...period }, label: "Co-occurrence API" });
 
-export async function getCFR(disease, year) {
-  const params = new URLSearchParams();
-  if (disease) params.append("disease", disease);
-  if (year) params.append("year", year);
-  const res = await fetch(`${API_BASE}/api/cfr?${params.toString()}`);
-  if (!res.ok) throw new Error("CFR API failed");
-  return res.json();
-}
+export const getCFR = (disease, period) =>
+  request("/api/cfr", { params: { disease, ...period }, label: "CFR API" });
 
-export async function getDistrictDetail(state, district) {
-  const params = new URLSearchParams({ state, district });
-  const res = await fetch(`${API_BASE}/api/district-detail?${params.toString()}`);
-  if (!res.ok) throw new Error("District detail API failed");
-  return res.json();
-}
+export const getDistrictDetail = (state, district) =>
+  request("/api/district-detail", { params: { state, district }, label: "District detail API" });
 
-// ─── Phase 4 Real-Time ──────────────────────────────────────────────────────
+// ─── Live signals ───────────────────────────────────────────────────────────
 
-export async function getLiveAlerts() {
-  const res = await fetch(`${API_BASE}/api/live/alerts`);
-  if (!res.ok) throw new Error("Live alerts API failed");
-  return res.json();
-}
+export const getLiveAlerts = () => request("/api/live/alerts", { label: "Live alerts API" });
+export const getLiveGeoAlerts = () => request("/api/live/geo-alerts", { label: "Live geo alerts API" });
 
-export async function getHealthAdvisor(disease, location) {
-  const params = new URLSearchParams({ disease, location });
-  const res = await fetch(`${API_BASE}/api/live/advisor?${params.toString()}`);
-  if (!res.ok) throw new Error("Health advisor API failed");
-  return res.json();
-}
+export const getGuidance = (disease) =>
+  request("/api/live/guidance", { params: { disease }, label: "Guidance API" });
 
-export async function getLiveSignals() {
-  const res = await fetch(`${API_BASE}/api/live/signals`);
-  if (!res.ok) throw new Error("Live signals API failed");
-  return res.json();
-}
+// ─── Admin ──────────────────────────────────────────────────────────────────
 
-export async function getLiveGeoAlerts() {
-  const res = await fetch(`${API_BASE}/api/live/geo-alerts`);
-  if (!res.ok) throw new Error("Live geo alerts API failed");
-  return res.json();
-}
-
-export async function uploadPdf(file) {
+export function uploadPdf(file) {
   const formData = new FormData();
   formData.append("file", file);
-  const res = await fetch(`${API_BASE}/api/upload-pdf`, {
+  return request("/api/upload-pdf", {
+    label: "PDF upload and auto-retrain",
     method: "POST",
+    headers: adminHeaders(),
     body: formData,
   });
-  if (!res.ok) throw new Error("PDF upload and auto-retrain failed");
-  return res.json();
 }
 
-export async function triggerPipeline() {
-  const res = await fetch(`${API_BASE}/api/admin/trigger-pipeline`, {
-    method: "POST",
-  });
-  if (!res.ok) throw new Error("Trigger pipeline failed");
-  return res.json();
-}
+export const triggerPipeline = () =>
+  request("/api/admin/trigger-pipeline", { label: "Trigger pipeline", method: "POST", headers: adminHeaders() });

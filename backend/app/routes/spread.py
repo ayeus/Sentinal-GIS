@@ -1,66 +1,59 @@
 from fastapi import APIRouter
 from typing import Optional
+
 import pandas as pd
-import os
+
+from app.config import SPREAD_MIN_CASES, load_realtime_config
+from app.data_loader import filter_period, load_adjacency, load_historical_data
+from app.services.risk import spread_risk
 
 router = APIRouter(prefix="/api", tags=["Disease Spread"])
 
-from app.config import ADJACENCY_PATH, CLEAN_DATA_PATH
-
 @router.get("/spread-risk")
-def get_spread_risk(disease: Optional[str] = None, year: Optional[int] = None):
+def get_spread_risk(disease: Optional[str] = None, year: Optional[int] = None, weeks: Optional[int] = None):
     """
-    Returns spread vectors showing which districts are at risk of receiving
-    a disease from an actively infected neighboring district.
-    
-    Response format:
-    {
-      "vectors": [
-        {
-          "origin_district": ..., "origin_state": ...,
-          "origin_lat": ..., "origin_lon": ...,
-          "dest_district": ..., "dest_state": ...,
-          "dest_lat": ..., "dest_lon": ...,
-          "origin_cases": ..., "spread_risk": "High|Medium|Low"
-        }, ...
-      ]
-    }
+    Geographic exposure, not a prediction: for every district that reported an
+    outbreak in the period, the districts that share a border with it. Only
+    meaningful for diseases that can move between districts, so diseases
+    listed as non-transmissible in app/resources/realtime.json are excluded.
     """
-    if not os.path.exists(ADJACENCY_PATH):
+    adj = load_adjacency()
+    if adj is None:
         return {"vectors": [], "error": "Adjacency matrix not found. Run build_adjacency.py first."}
 
-    if not os.path.exists(CLEAN_DATA_PATH):
+    hist = load_historical_data()
+    if hist.empty:
         return {"vectors": [], "error": "Historical data not found."}
 
-    adj = pd.read_csv(ADJACENCY_PATH)
-    hist = pd.read_csv(CLEAN_DATA_PATH)
-    hist['Date'] = pd.to_datetime(hist['Date'])
+    # The adjacency frame is a shared cache: work on a copy
+    adj = adj.copy()
 
-    # Filter by disease/year
+    non_transmissible = {d.lower() for d in load_realtime_config().get("non_transmissible_diseases", [])}
+    if disease and disease.lower() in non_transmissible:
+        return {"vectors": [], "applicable": False,
+                "message": f"{disease} does not spread from district to district, so neighbouring districts are not at added risk."}
+
+    # Filter by disease/period
+    hist = filter_period(hist, year=year, weeks=weeks)
     if disease:
         hist = hist[hist['Disease'].str.lower() == disease.lower()]
-    if year:
-        hist = hist[hist['Date'].dt.year == year]
+    else:
+        hist = hist[~hist['Disease'].str.lower().isin(non_transmissible)]
 
     if hist.empty:
-        return {"vectors": [], "message": f"No outbreaks found for {disease}/{year}"}
+        return {"vectors": [], "message": "No outbreaks of a transmissible disease were reported for these filters."}
 
-    # Sum all cases per district (the "source" of potential spread)
-    # Normalize district names for joining
-    def norm(s):
-        return str(s).strip().title() if s else ""
-
-    hist['District'] = hist['District'].apply(norm)
-    hist['State'] = hist['State'].apply(norm)
-
+    # Sum all cases per district (the "source" of potential spread). Outbreak
+    # records and the adjacency table share the gazetteer's district names.
     district_cases = hist.groupby(['State', 'District'])['Cases'].sum().reset_index()
     district_cases.columns = ['State', 'District', 'TotalCases']
 
-    # Merge origin cases into adjacency table
-    adj['origin_district'] = adj['origin_district'].apply(norm)
-    adj['origin_state'] = adj['origin_state'].apply(norm)
-    adj['dest_district'] = adj['dest_district'].apply(norm)
-    adj['dest_state'] = adj['dest_state'].apply(norm)
+    # Adjacency is stored once per pair: both ends can be the source
+    reverse = adj.rename(columns={
+        'origin_district': 'dest_district', 'origin_state': 'dest_state', 'origin_lat': 'dest_lat', 'origin_lon': 'dest_lon',
+        'dest_district': 'origin_district', 'dest_state': 'origin_state', 'dest_lat': 'origin_lat', 'dest_lon': 'origin_lon',
+    })
+    adj = pd.concat([adj, reverse], ignore_index=True)
 
     merged = adj.merge(
         district_cases,
@@ -70,19 +63,15 @@ def get_spread_risk(disease: Optional[str] = None, year: Optional[int] = None):
     )
 
     # Only generate spread vectors where source has a non-trivial outbreak
-    merged = merged[merged['TotalCases'] > 5]
+    merged = merged[merged['TotalCases'] > SPREAD_MIN_CASES]
 
     if merged.empty:
         return {"vectors": [], "message": "No significant outbreaks to propagate spread from."}
 
     # Assign spread risk levels based on origin case count
-    def spread_risk(cases):
-        if cases > 100: return "High"
-        if cases > 15: return "Medium"
-        return "Low"
-
     merged['spread_risk'] = merged['TotalCases'].apply(spread_risk)
-    merged['origin_cases'] = merged['TotalCases']
+    merged['origin_cases'] = merged['TotalCases'].astype(int)
+    merged = merged.sort_values('origin_cases', ascending=False)
 
     vectors = merged[[
         'origin_district', 'origin_state', 'origin_lat', 'origin_lon',
