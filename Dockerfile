@@ -41,4 +41,4 @@ ENV HOST=0.0.0.0
 ENV ENVIRONMENT=production
 
 # Start Uvicorn ASGI server
-CMD ["sh", "-c", "uvicorn backend.app.main:app --host 0.0.0.0 --port ${PORT}"]
+CMD ["sh", "-c", "uvicorn backend.app.main:app --host ${HOST} --port ${PORT}"]

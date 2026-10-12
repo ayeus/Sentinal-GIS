@@ -1,3 +1,5 @@
+> **Note (October 2026):** this report describes an earlier version of SentinelGIS. The data pipeline, district boundaries and forecasting model have since been rebuilt, and the accuracy figures below no longer apply. Current methods and test results are in `README.md` and `backend/data/model_card.json`.
+
 # 1 INTRODUCTION
 
 ## 1.1 Introduction to Project

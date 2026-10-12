@@ -2,21 +2,25 @@ import { useState, useEffect } from "react";
 import { getCoOccurrence } from "../services/api";
 import { Grid3x3 } from "lucide-react";
 
-const CoOccurrenceHeatmap = ({ year }) => {
+const CoOccurrenceHeatmap = ({ period }) => {
   const [diseases, setDiseases] = useState([]);
   const [matrix, setMatrix] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    if (!period) return;
+    let cancelled = false;
     setLoading(true);
-    getCoOccurrence(year)
+    getCoOccurrence(period)
       .then((res) => {
+        if (cancelled) return;
         setDiseases(res.diseases || []);
         setMatrix(res.matrix || []);
       })
-      .catch(console.error)
-      .finally(() => setLoading(false));
-  }, [year]);
+      .catch((err) => { console.error(err); if (!cancelled) setDiseases([]); })
+      .finally(() => { if (!cancelled) setLoading(false); });
+    return () => { cancelled = true; };
+  }, [period]);
 
   if (loading) {
     return <div className="glass-panel p-6 text-center text-gray-400 text-sm animate-pulse">Computing correlations…</div>;
@@ -25,7 +29,7 @@ const CoOccurrenceHeatmap = ({ year }) => {
   if (!diseases.length) {
     return (
       <div className="glass-panel p-5 text-center text-gray-400 text-sm">
-        Not enough disease variety for co-occurrence analysis.
+        Too few diseases were reported in this period to compare them.
       </div>
     );
   }
@@ -51,8 +55,12 @@ const CoOccurrenceHeatmap = ({ year }) => {
     <div className="glass-panel p-5">
       <h3 className="text-base font-bold text-gray-800 flex items-center gap-2 mb-4">
         <Grid3x3 className="w-4 h-4 text-purple-600" />
-        Disease Co-occurrence Matrix
+        Diseases reported in the same districts
       </h3>
+      <p className="text-[11px] text-gray-500 mb-3 leading-relaxed">
+        Pearson correlation of district case totals between pairs of diseases in the period. Correlation shows that
+        two diseases tend to be reported from the same districts; it does not show that one causes the other.
+      </p>
       <div className="overflow-x-auto">
         <table className="w-full text-[10px]" style={{ borderCollapse: "separate", borderSpacing: "2px" }}>
           <thead>

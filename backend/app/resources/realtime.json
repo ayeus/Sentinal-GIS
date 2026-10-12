@@ -1,0 +1,428 @@
+{
+  "feeds": [
+    {
+      "name": "WHO Disease Outbreak News",
+      "type": "who_don",
+      "official": true,
+      "url": "https://www.who.int/api/news/diseaseoutbreaknews?$top=30&$orderby=PublicationDate%20desc",
+      "item_url": "https://www.who.int/emergencies/disease-outbreak-news/item/{id}"
+    },
+    {
+      "name": "Google News",
+      "type": "rss",
+      "official": false,
+      "url": "https://news.google.com/rss/search?q=(outbreak+OR+epidemic)+(disease+OR+dengue+OR+cholera+OR+measles+OR+malaria+OR+nipah+OR+diarrhoea+OR+hepatitis)+India+when:14d&hl=en-IN&gl=IN&ceid=IN:en"
+    }
+  ],
+  "country_keyword": "india",
+  "states": [
+    "Andaman and Nicobar Islands",
+    "Andhra Pradesh",
+    "Arunachal Pradesh",
+    "Assam",
+    "Bihar",
+    "Chandigarh",
+    "Chhattisgarh",
+    "Dadra and Nagar Haveli and Daman and Diu",
+    "Delhi",
+    "Goa",
+    "Gujarat",
+    "Haryana",
+    "Himachal Pradesh",
+    "Jammu and Kashmir",
+    "Jharkhand",
+    "Karnataka",
+    "Kerala",
+    "Ladakh",
+    "Lakshadweep",
+    "Madhya Pradesh",
+    "Maharashtra",
+    "Manipur",
+    "Meghalaya",
+    "Mizoram",
+    "Nagaland",
+    "Odisha",
+    "Puducherry",
+    "Punjab",
+    "Rajasthan",
+    "Sikkim",
+    "Tamil Nadu",
+    "Telangana",
+    "Tripura",
+    "Uttar Pradesh",
+    "Uttarakhand",
+    "West Bengal"
+  ],
+  "city_to_state": {
+    "bengaluru": "Karnataka",
+    "bangalore": "Karnataka",
+    "mumbai": "Maharashtra",
+    "pune": "Maharashtra",
+    "nagpur": "Maharashtra",
+    "chennai": "Tamil Nadu",
+    "kolkata": "West Bengal",
+    "hyderabad": "Telangana",
+    "kochi": "Kerala",
+    "trivandrum": "Kerala",
+    "ahmedabad": "Gujarat",
+    "surat": "Gujarat",
+    "lucknow": "Uttar Pradesh",
+    "kanpur": "Uttar Pradesh",
+    "patna": "Bihar",
+    "bhopal": "Madhya Pradesh",
+    "jaipur": "Rajasthan",
+    "thiruvananthapuram": "Kerala",
+    "kozhikode": "Kerala",
+    "bhubaneswar": "Odisha",
+    "guwahati": "Assam",
+    "ranchi": "Jharkhand",
+    "raipur": "Chhattisgarh",
+    "dehradun": "Uttarakhand",
+    "srinagar": "Jammu and Kashmir",
+    "jammu": "Jammu and Kashmir",
+    "chandigarh": "Chandigarh",
+    "indore": "Madhya Pradesh",
+    "nashik": "Maharashtra",
+    "thane": "Maharashtra",
+    "coimbatore": "Tamil Nadu",
+    "madurai": "Tamil Nadu",
+    "visakhapatnam": "Andhra Pradesh",
+    "vijayawada": "Andhra Pradesh",
+    "mysuru": "Karnataka",
+    "mangaluru": "Karnataka",
+    "varanasi": "Uttar Pradesh",
+    "noida": "Uttar Pradesh",
+    "gurugram": "Haryana",
+    "ludhiana": "Punjab",
+    "amritsar": "Punjab",
+    "shimla": "Himachal Pradesh",
+    "imphal": "Manipur",
+    "shillong": "Meghalaya",
+    "aizawl": "Mizoram",
+    "kohima": "Nagaland",
+    "agartala": "Tripura",
+    "gangtok": "Sikkim",
+    "panaji": "Goa",
+    "leh": "Ladakh"
+  },
+  "alert_keywords": [
+    "outbreak",
+    "cases",
+    "virus",
+    "infection",
+    "alert",
+    "health",
+    "epidemic",
+    "fever",
+    "nipah",
+    "dengue",
+    "cholera"
+  ],
+  "generic_outbreak_keywords": [
+    "outbreak",
+    "epidemic",
+    "virus",
+    "infection",
+    "fever",
+    "disease"
+  ],
+  "generic_outbreak_label": "Outbreak Alert",
+  "default_danger_label": "General Health Alert",
+  "disease_keywords": {
+    "Dengue": [
+      "dengue"
+    ],
+    "Malaria": [
+      "malaria"
+    ],
+    "Cholera": [
+      "cholera"
+    ],
+    "Nipah": [
+      "nipah"
+    ],
+    "COVID-19": [
+      "covid",
+      "covid-19",
+      "coronavirus",
+      "sars-cov",
+      "sars-cov-2"
+    ],
+    "Influenza": [
+      "influenza",
+      "flu",
+      "h1n1",
+      "h5n1",
+      "bird flu",
+      "avian flu"
+    ],
+    "Typhoid": [
+      "typhoid"
+    ],
+    "Chikungunya": [
+      "chikungunya"
+    ],
+    "Tuberculosis": [
+      "tuberculosis",
+      "tb"
+    ],
+    "Zika": [
+      "zika"
+    ],
+    "Hepatitis": [
+      "hepatitis"
+    ],
+    "Measles": [
+      "measles"
+    ],
+    "Leptospirosis": [
+      "leptospirosis",
+      "lepto"
+    ],
+    "Japanese Encephalitis": [
+      "japanese encephalitis",
+      "je"
+    ],
+    "Plague": [
+      "plague"
+    ],
+    "Ebola": [
+      "ebola"
+    ],
+    "HMPV": [
+      "hmpv",
+      "metapneumovirus"
+    ],
+    "Mpox": [
+      "mpox",
+      "monkeypox"
+    ],
+    "Chickenpox": [
+      "chickenpox",
+      "chicken pox"
+    ],
+    "Diarrhoeal Disease": [
+      "diarrhoea",
+      "diarrhea",
+      "gastroenteritis"
+    ],
+    "Rabies": [
+      "rabies"
+    ],
+    "Scrub Typhus": [
+      "scrub typhus"
+    ],
+    "Kyasanur Forest Disease": [
+      "kyasanur",
+      "kfd",
+      "monkey fever"
+    ],
+    "Diphtheria": [
+      "diphtheria"
+    ],
+    "Mumps": [
+      "mumps"
+    ]
+  },
+  "severity_levels": [
+    {
+      "key": "critical",
+      "label": "Critical",
+      "min_alerts": 5,
+      "color": "#dc2626"
+    },
+    {
+      "key": "high",
+      "label": "High",
+      "min_alerts": 3,
+      "color": "#ea580c"
+    },
+    {
+      "key": "medium",
+      "label": "Medium",
+      "min_alerts": 2,
+      "color": "#d97706"
+    },
+    {
+      "key": "low",
+      "label": "Low",
+      "min_alerts": 1,
+      "color": "#eab308"
+    }
+  ],
+  "state_aliases": {
+    "Jammu & Kashmir": "Jammu and Kashmir",
+    "J&K": "Jammu and Kashmir",
+    "Orissa": "Odisha",
+    "Pondicherry": "Puducherry",
+    "Andaman": "Andaman and Nicobar Islands",
+    "New Delhi": "Delhi"
+  },
+  "non_transmissible_diseases": [
+    "Food Poisoning",
+    "Animal Bite",
+    "Rabies",
+    "Mushroom Poisoning",
+    "Chemical Gas Poisoning",
+    "Jatropha Poisoning",
+    "Fever of Unknown Origin",
+    "Leptospirosis",
+    "Scrub Typhus",
+    "Kyasanur Forest Disease",
+    "Anthrax",
+    "Melioidosis",
+    "Acute Flaccid Paralysis",
+    "Allergic Conjunctivitis",
+    "Convulsions Of Unknown Cause"
+  ],
+  "guidance_disclaimer": "General public-health information summarised from the cited source. It is not medical advice and not specific to any location: follow the protocols of NCDC/IDSP and the State Health Department.",
+  "guidance": {
+    "Dengue": {
+      "transmission": "Spread by the bite of infected Aedes mosquitoes, which bite mainly in the daytime and breed in clean standing water in and around homes.",
+      "prevention": "Empty, cover or scrub water-holding containers every week; use repellents, window screens and clothing that covers arms and legs.",
+      "response": "Intensify mosquito breeding-source reduction around reported cases and make sure clinics watch for warning signs of severe dengue. There is no specific antiviral; care is supportive, and aspirin and ibuprofen should be avoided.",
+      "source_name": "WHO fact sheet: Dengue and severe dengue",
+      "source_url": "https://www.who.int/news-room/fact-sheets/detail/dengue-and-severe-dengue"
+    },
+    "Chikungunya": {
+      "transmission": "Spread by the same day-biting Aedes mosquitoes that transmit dengue.",
+      "prevention": "Remove standing water where mosquitoes breed and prevent daytime bites with repellents, screens and covering clothing.",
+      "response": "Source reduction around cases and supportive care for fever and joint pain; there is no specific antiviral treatment.",
+      "source_name": "WHO fact sheet: Chikungunya",
+      "source_url": "https://www.who.int/news-room/fact-sheets/detail/chikungunya"
+    },
+    "Malaria": {
+      "transmission": "Spread by the bite of infected female Anopheles mosquitoes, which bite mainly between dusk and dawn.",
+      "prevention": "Sleep under insecticide-treated nets; indoor residual spraying in affected areas.",
+      "response": "Test every suspected case (rapid test or microscopy) and treat confirmed cases promptly according to the national drug policy.",
+      "source_name": "WHO fact sheet: Malaria",
+      "source_url": "https://www.who.int/news-room/fact-sheets/detail/malaria"
+    },
+    "Cholera": {
+      "transmission": "Caused by eating food or drinking water contaminated with Vibrio cholerae.",
+      "prevention": "Safe drinking water (chlorinated or boiled), sanitation and handwashing with soap; oral cholera vaccine in hotspots.",
+      "response": "Give oral rehydration solution immediately; severe dehydration needs intravenous fluids and antibiotics. Find and treat the contaminated water source.",
+      "source_name": "WHO fact sheet: Cholera",
+      "source_url": "https://www.who.int/news-room/fact-sheets/detail/cholera"
+    },
+    "Acute Diarrheal Disease": {
+      "transmission": "Usually spread through water or food contaminated with faeces, and from person to person where hygiene is poor.",
+      "prevention": "Safe drinking water, improved sanitation, handwashing with soap, and rotavirus vaccination for infants.",
+      "response": "Rehydrate with ORS, with zinc supplements for children; test and disinfect the suspected water source.",
+      "source_name": "WHO fact sheet: Diarrhoeal disease",
+      "source_url": "https://www.who.int/news-room/fact-sheets/detail/diarrhoeal-disease"
+    },
+    "Food Poisoning": {
+      "transmission": "Caused by food contaminated with bacteria, viruses, parasites, toxins or chemicals; it does not spread between districts.",
+      "prevention": "WHO's five keys to safer food: keep clean, separate raw and cooked, cook thoroughly, keep food at safe temperatures, use safe water and raw materials.",
+      "response": "Identify and withdraw the implicated food, collect food and stool samples, and rehydrate those affected.",
+      "source_name": "WHO fact sheet: Food safety",
+      "source_url": "https://www.who.int/news-room/fact-sheets/detail/food-safety"
+    },
+    "Measles": {
+      "transmission": "A highly contagious airborne virus spread by coughing, sneezing and close contact.",
+      "prevention": "Two doses of measles-containing vaccine for every child.",
+      "response": "Outbreak-response vaccination, isolation of cases, and two doses of vitamin A, 24 hours apart, for children with measles.",
+      "source_name": "WHO fact sheet: Measles",
+      "source_url": "https://www.who.int/news-room/fact-sheets/detail/measles"
+    },
+    "Rubella": {
+      "transmission": "Spread by airborne droplets when infected people cough or sneeze.",
+      "prevention": "Rubella-containing vaccine (given with measles vaccine).",
+      "response": "Infection in early pregnancy can cause miscarriage or congenital rubella syndrome: protect and follow up pregnant contacts.",
+      "source_name": "WHO fact sheet: Rubella",
+      "source_url": "https://www.who.int/news-room/fact-sheets/detail/rubella"
+    },
+    "Hepatitis / Jaundice": {
+      "transmission": "Outbreaks of jaundice are usually hepatitis A or E, spread by the faecal-oral route through contaminated water or food.",
+      "prevention": "Safe drinking water, proper sewage disposal and hand hygiene; hepatitis A vaccine where recommended.",
+      "response": "Test and chlorinate water supplies. Hepatitis E is particularly dangerous in pregnancy, so refer pregnant women with jaundice early.",
+      "source_name": "WHO fact sheets: Hepatitis A and Hepatitis E",
+      "source_url": "https://www.who.int/news-room/fact-sheets/detail/hepatitis-e"
+    },
+    "Typhoid": {
+      "transmission": "Caused by Salmonella Typhi, spread through contaminated food and water.",
+      "prevention": "Safe water, sanitation and food hygiene; typhoid conjugate vaccine.",
+      "response": "Treat with antibiotics guided by local resistance patterns, which are worsening, and trace the contaminated source.",
+      "source_name": "WHO fact sheet: Typhoid",
+      "source_url": "https://www.who.int/news-room/fact-sheets/detail/typhoid"
+    },
+    "Mumps": {
+      "transmission": "Spread by respiratory droplets and direct contact with an infected person.",
+      "prevention": "Mumps-containing vaccine (MMR).",
+      "response": "Isolate cases while infectious; care is supportive.",
+      "source_name": "WHO fact sheet: Mumps",
+      "source_url": "https://www.who.int/news-room/fact-sheets/detail/mumps"
+    },
+    "Chickenpox": {
+      "transmission": "Spreads easily from people with chickenpox to anyone who has not had the disease or the vaccine. A person is contagious from 1 to 2 days before the rash appears until all the blisters have crusted over.",
+      "prevention": "Chickenpox (varicella) vaccine; keep cases away from school, work and vulnerable people until every blister has crusted over.",
+      "response": "Most cases need only supportive care. Antiviral medicine is recommended for people at higher risk of serious illness, who should see a healthcare provider early.",
+      "source_name": "CDC: About chickenpox",
+      "source_url": "https://www.cdc.gov/chickenpox/about/index.html"
+    },
+    "Rabies": {
+      "transmission": "Spread by the bite or scratch of an infected animal, most often a dog. It does not spread between districts on its own.",
+      "prevention": "Vaccinate dogs and avoid contact with stray or wild animals.",
+      "response": "After any bite: wash the wound with soap and water for 15 minutes and start post-exposure vaccination at once, with rabies immunoglobulin when indicated. Rabies is almost always fatal once symptoms begin.",
+      "source_name": "WHO fact sheet: Rabies",
+      "source_url": "https://www.who.int/news-room/fact-sheets/detail/rabies"
+    },
+    "Leptospirosis": {
+      "transmission": "Caught through contact with water or soil contaminated by the urine of infected animals, especially rodents, often after flooding.",
+      "prevention": "Avoid wading in floodwater, wear protective footwear and control rodents.",
+      "response": "Treat early with antibiotics; alert clinicians to fever cases after floods.",
+      "source_name": "WHO fact sheet: Leptospirosis",
+      "source_url": "https://www.who.int/news-room/fact-sheets/detail/leptospirosis"
+    },
+    "Acute Encephalitis Syndrome / JE": {
+      "transmission": "Japanese encephalitis is spread by Culex mosquitoes, with pigs and water birds as the main hosts of the virus.",
+      "prevention": "JE vaccination in endemic districts and protection from mosquito bites, especially at dusk and at night.",
+      "response": "There is no antiviral treatment: refer suspected cases quickly for supportive hospital care.",
+      "source_name": "WHO fact sheet: Japanese encephalitis",
+      "source_url": "https://www.who.int/news-room/fact-sheets/detail/japanese-encephalitis"
+    },
+    "Diphtheria": {
+      "transmission": "Spread by respiratory droplets and close contact.",
+      "prevention": "Diphtheria-containing vaccine with all recommended booster doses.",
+      "response": "Give diphtheria antitoxin and antibiotics without waiting for laboratory confirmation; trace close contacts for antibiotic prophylaxis and vaccination.",
+      "source_name": "WHO fact sheet: Diphtheria",
+      "source_url": "https://www.who.int/news-room/fact-sheets/detail/diphtheria"
+    },
+    "Nipah": {
+      "transmission": "Passed to people from fruit bats (for example through contaminated fruit or raw date-palm sap) or pigs, and from person to person through close contact.",
+      "prevention": "Do not drink raw date-palm sap; wash and peel fruit; use gloves and masks when caring for the sick.",
+      "response": "Isolate suspected cases, trace contacts and apply strict infection control. There is no specific treatment; care is supportive.",
+      "source_name": "WHO fact sheet: Nipah virus",
+      "source_url": "https://www.who.int/news-room/fact-sheets/detail/nipah-virus"
+    },
+    "Zika Virus": {
+      "transmission": "Spread mainly by Aedes mosquitoes; also from mother to fetus and through sexual contact.",
+      "prevention": "Prevent mosquito bites and remove breeding sites; pregnant women need particular protection.",
+      "response": "Infection in pregnancy can cause microcephaly and other birth defects: follow up pregnant women in affected areas.",
+      "source_name": "WHO fact sheet: Zika virus",
+      "source_url": "https://www.who.int/news-room/fact-sheets/detail/zika-virus"
+    },
+    "Mpox": {
+      "transmission": "Spread by close contact with an infected person's skin lesions or body fluids, or with contaminated materials.",
+      "prevention": "Avoid close physical contact with people who have mpox; vaccination for those at risk, according to national policy.",
+      "response": "Isolate cases until lesions have healed and monitor their contacts.",
+      "source_name": "WHO fact sheet: Mpox",
+      "source_url": "https://www.who.int/news-room/fact-sheets/detail/mpox"
+    },
+    "Influenza": {
+      "transmission": "Spread by respiratory droplets when infected people cough or sneeze.",
+      "prevention": "Annual vaccination for high-risk groups; hand hygiene and covering coughs.",
+      "response": "Antiviral treatment for severe illness and for people at high risk of complications.",
+      "source_name": "WHO fact sheet: Influenza (seasonal)",
+      "source_url": "https://www.who.int/news-room/fact-sheets/detail/influenza-(seasonal)"
+    },
+    "Scrub Typhus": {
+      "transmission": "Spread by the bite of infected chiggers (larval mites) found in scrub vegetation. It does not spread from person to person.",
+      "prevention": "No vaccine exists: avoid areas of heavy scrub, use insect repellent and wear protective clothing.",
+      "response": "Treat early with doxycycline, without waiting for laboratory confirmation when suspicion is high.",
+      "source_name": "CDC: About scrub typhus",
+      "source_url": "https://www.cdc.gov/typhus/about/scrub.html"
+    }
+  }
+}

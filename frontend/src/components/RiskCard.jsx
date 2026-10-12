@@ -1,51 +1,46 @@
-import { motion } from "framer-motion";
-import { Shield, AlertTriangle, CheckCircle, Radio } from "lucide-react";
+import { AlertTriangle, Shield, CheckCircle, MinusCircle } from "lucide-react";
 
 const riskConfig = {
-  High: { icon: AlertTriangle, colorClass: "text-red-600", bgClass: "bg-red-50", borderClass: "border-red-400" },
+  High: { icon: AlertTriangle, colorClass: "text-rose-600", bgClass: "bg-rose-50", borderClass: "border-rose-400" },
   Medium: { icon: Shield, colorClass: "text-amber-600", bgClass: "bg-amber-50", borderClass: "border-amber-400" },
   Low: { icon: CheckCircle, colorClass: "text-emerald-600", bgClass: "bg-emerald-50", borderClass: "border-emerald-400" },
+  Minimal: { icon: MinusCircle, colorClass: "text-gray-500", bgClass: "bg-gray-100", borderClass: "border-gray-300" },
 };
 
-const RiskCard = ({ state, risk, confidence, index, hasLiveSignal }) => {
-  const config = riskConfig[risk] || riskConfig["Low"];
+/**
+ * One district row in a side list: name, a risk-coloured caption, a headline
+ * figure on the right and optional supporting facts underneath.
+ */
+const RiskCard = ({ title, subtitle, risk, caption, value, valueLabel, facts = [], onClick }) => {
+  const config = riskConfig[risk] || riskConfig.Minimal;
   const Icon = config.icon;
 
   return (
-    <motion.div
-      initial={{ opacity: 0, x: 10 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.2, delay: index * 0.03 }}
-      className={`glass-panel p-4 border-l-[4px] hover:bg-gray-50 transition-all cursor-pointer group relative overflow-hidden ${config.borderClass}`}
+    <button
+      type="button"
+      onClick={onClick}
+      className={`glass-panel w-full text-left p-3.5 border-l-[4px] hover:bg-gray-50 transition-colors ${config.borderClass}`}
     >
-      {hasLiveSignal && (
-        <div className="absolute top-0 right-0 px-2 py-0.5 bg-red-500 text-white text-[9px] font-bold rounded-bl-lg flex items-center gap-1">
-          <Radio className="w-3 h-3 animate-pulse" /> NEWS VERIFIED
-        </div>
-      )}
-
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-4">
-          <div className={`p-2.5 rounded-lg ${config.bgClass} group-hover:scale-105 transition-transform`}>
-            <Icon className={`w-5 h-5 ${config.colorClass}`} />
+      <div className="flex items-center justify-between gap-3">
+        <div className="flex items-center gap-3 min-w-0">
+          <div className={`p-2 rounded-lg shrink-0 ${config.bgClass}`}>
+            <Icon className={`w-4 h-4 ${config.colorClass}`} />
           </div>
-          <div>
-            <p className="font-bold text-gray-900 text-sm tracking-wide">{state}</p>
-            <p className={`text-xs font-bold uppercase tracking-wider mt-0.5 ${config.colorClass}`}>
-              {risk} Risk
-            </p>
+          <div className="min-w-0">
+            <p className="font-bold text-gray-900 text-sm truncate">{title}</p>
+            <p className="text-xs text-gray-500 truncate">{subtitle}</p>
+            {caption && <p className={`text-[11px] font-bold uppercase tracking-wide mt-0.5 ${config.colorClass}`}>{caption}</p>}
           </div>
         </div>
-        {!hasLiveSignal && (
-          <div className="text-right">
-            <p className="text-lg font-bold text-gray-900">
-              {(confidence * 100).toFixed(1)}<span className="text-sm text-gray-500 font-medium">%</span>
-            </p>
-            <p className="text-[10px] uppercase tracking-widest text-gray-500 mt-0.5 font-semibold">confidence</p>
-          </div>
-        )}
+        <div className="text-right shrink-0">
+          <p className="text-lg font-bold text-gray-900 leading-none">{value}</p>
+          <p className="text-[10px] uppercase tracking-widest text-gray-500 mt-1 font-semibold">{valueLabel}</p>
+        </div>
       </div>
-    </motion.div>
+      {facts.length > 0 && (
+        <p className="text-[11px] text-gray-500 mt-2 leading-relaxed">{facts.join(" · ")}</p>
+      )}
+    </button>
   );
 };
 

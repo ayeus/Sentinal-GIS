@@ -13,3 +13,11 @@ backend/outputs/
 
 # OS
 .DS_Store
+
+# Local secrets / runtime files
+.env
+backend/.env
+backend/data/.pipeline.lock
+*.part
+backend/data/scrape_status.json
+*.tmp
