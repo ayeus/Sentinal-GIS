@@ -1,16 +1,17 @@
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { NavLink, Outlet, Link } from "react-router-dom";
 import { Satellite, Map as MapIcon, BrainCircuit, BarChart3, Radio, Upload, Database, AlertTriangle, ServerCrash } from "lucide-react";
 import { uploadPdf } from "../services/api";
 import useDataStatus from "../hooks/useDataStatus";
+import DistrictSearch from "./DistrictSearch";
 import { formatDate } from "../config";
 
 const NAV_ITEMS = [
-  { to: "/", label: "Surveillance", icon: MapIcon },
-  { to: "/forecast", label: "Forecast", icon: BrainCircuit },
-  { to: "/analytics", label: "Analytics", icon: BarChart3 },
-  { to: "/live", label: "Live Signals", icon: Radio },
-  { to: "/about", label: "Data & Model", icon: Database },
+  { to: "/", label: "Reported", icon: MapIcon, hint: "Outbreaks reported so far" },
+  { to: "/forecast", label: "Forecast", icon: BrainCircuit, hint: "Where outbreaks are likely next" },
+  { to: "/analytics", label: "Trends", icon: BarChart3, hint: "Trends and unusual counts" },
+  { to: "/live", label: "News", icon: Radio, hint: "WHO notices and news headlines" },
+  { to: "/about", label: "About the data", icon: Database, hint: "Sources, coverage and model test results" },
 ];
 
 const AppLayout = () => {
@@ -37,8 +38,8 @@ const AppLayout = () => {
   return (
     <div className="min-h-screen flex flex-col selection:bg-blue-500/30">
       {/* GLOBAL HEADER */}
-      <header className="bg-white sticky top-0 z-30 border-b border-gray-200 shadow-sm">
-        <div className="container mx-auto px-6 py-3 flex flex-wrap items-center justify-between gap-3">
+      <header className="bg-white/90 backdrop-blur sticky top-0 z-30 border-b border-gray-200">
+        <div className="container mx-auto px-4 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-x-4 gap-y-3">
           {/* Brand */}
           <Link to="/" className="flex items-center gap-3">
             <div className="p-2 bg-blue-50 rounded-lg border border-blue-100">
@@ -47,20 +48,22 @@ const AppLayout = () => {
             <div>
               <h1 className="text-2xl font-bold text-gray-900 leading-tight">SentinelGIS</h1>
               <p className="text-[10px] text-gray-500 font-medium uppercase tracking-widest">
-                Outbreak Surveillance &amp; Forecasting · India
+                Disease outbreaks in India · reported &amp; forecast
               </p>
             </div>
           </Link>
 
-          <div className="flex flex-wrap items-center gap-3">
-            <nav className="flex items-center gap-1 bg-gray-100 p-1 rounded-xl border border-gray-200">
-              {NAV_ITEMS.map(({ to, label, icon: Icon }) => (
+          <div className="flex flex-wrap items-center gap-3 w-full lg:w-auto">
+            <DistrictSearch />
+            <nav aria-label="Pages" className="flex items-center gap-1 bg-gray-100 p-1 rounded-xl border border-gray-200 overflow-x-auto max-w-full">
+              {NAV_ITEMS.map(({ to, label, icon: Icon, hint }) => (
                 <NavLink
                   key={to}
                   to={to}
                   end={to === "/"}
+                  title={hint}
                   className={({ isActive }) =>
-                    `px-3.5 py-2 rounded-lg text-sm font-bold transition-all flex items-center gap-2 ${
+                    `px-3 py-2 rounded-lg text-sm font-bold transition-all flex items-center gap-2 whitespace-nowrap ${
                       isActive
                         ? "bg-white text-blue-700 shadow-sm border border-blue-100"
                         : "text-gray-500 hover:text-gray-700"
@@ -83,7 +86,7 @@ const AppLayout = () => {
               }`}
             >
               <Upload className="w-3.5 h-3.5" />
-              {uploading ? "Processing & retraining…" : "Add IDSP bulletin"}
+              {uploading ? "Uploading…" : "Add IDSP bulletin"}
               <input type="file" accept=".pdf" className="hidden" disabled={uploading} onChange={handlePdfUpload} />
             </label>
           </div>
@@ -120,7 +123,7 @@ const AppLayout = () => {
           <span className="text-gray-600">
             {status.bulletins_ingested} bulletins · {status.outbreaks.toLocaleString("en-IN")} reported outbreaks
           </span>
-          <Link to="/about" className="font-bold underline underline-offset-2 ml-auto">Sources &amp; limitations</Link>
+          <Link to="/about" className="font-bold underline underline-offset-2 ml-auto">Why? See sources &amp; limits</Link>
         </div>
       )}
 
@@ -140,14 +143,16 @@ const AppLayout = () => {
 
       {/* PAGE CONTENT */}
       <main className="flex-1">
-        <Outlet />
+        <Suspense fallback={<div className="py-32 text-center text-gray-400 text-sm">Loading…</div>}>
+          <Outlet />
+        </Suspense>
       </main>
 
       <footer className="border-t border-gray-200 bg-white">
         <div className="container mx-auto px-6 py-4 text-[11px] text-gray-500 leading-relaxed">
           Decision support only. Figures are outbreaks reported by States/UTs through the Integrated Disease Surveillance
           Programme (IDSP); unreported outbreaks are not shown. Forecasts are probabilities with known error rates
-          (see <Link to="/about" className="underline">Data &amp; Model</Link>) and do not replace field surveillance or
+          (see <Link to="/about" className="underline">About the data</Link>) and do not replace field surveillance or
           the judgement of public-health officers.
         </div>
       </footer>

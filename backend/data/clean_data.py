@@ -21,9 +21,11 @@ from datetime import date, datetime, timedelta, timezone
 import pandas as pd
 
 from app.config import (
+    BULLETINS_PATH,
     CLEAN_DATA_PATH,
     DATA_QUALITY_PATH,
     PDF_DIR,
+    PDF_MANIFEST_PATH,
     RAW_DATA_PATH,
 )
 from app.services import gazetteer
@@ -39,6 +41,8 @@ CLEAN_COLUMNS = [
 ]
 
 ID_PATTERN = re.compile(r"^([A-Z]{2})/([A-Z0-9]{2,5})/(\d{4})/(\d{1,2})/(\d{1,5})$")
+# Rows of bulletins that carry no IDSP IDs get NOID/<year>/<week>/<row> from the extractor
+SYNTHETIC_ID_PATTERN = re.compile(r"^(NOID)(/)(\d{4})/(\d{1,2})/(\d{1,5})$")
 # An outbreak can start well before it is reported, but not after, and not years before
 MAX_REPORTING_LAG_DAYS = 180
 
@@ -132,7 +136,7 @@ def build_clean_frame(raw):
     date_sources = {}
 
     for row in raw.to_dict(orient="records"):
-        match = ID_PATTERN.match(str(row.get("outbreak_id", "")))
+        match = ID_PATTERN.match(str(row.get("outbreak_id", ""))) or SYNTHETIC_ID_PATTERN.match(str(row.get("outbreak_id", "")))
         if not match:
             issues["bad_id"] += 1
             continue
@@ -150,7 +154,7 @@ def build_clean_frame(raw):
             continue
 
         reported_district = re.sub(r"\s+", " ", str(row.get("district") or "")).strip()
-        district, how = gazetteer.resolve_district(state, reported_district)
+        state, district, how = gazetteer.resolve_place(state, reported_district)
         if district is None:
             district = reported_district.title()
             label = f"{state} | {reported_district}"
@@ -199,12 +203,23 @@ def build_clean_frame(raw):
         "outbreaks": int(len(clean_df)),
         "follow_up_rows_merged": int(before - len(clean_df)),
         "rows_dropped_invalid_id": issues["bad_id"],
-        "rows_dropped_unknown_state": sorted(set(issues["unknown_state"])),
+        "rows_dropped_unknown_state": len(issues["unknown_state"]),
+        "unknown_state_values": sorted(set(issues["unknown_state"])),
         "district_match": clean_df["DistrictMatch"].value_counts().to_dict() if len(clean_df) else {},
         "unmatched_districts": dict(sorted(issues["unmatched_districts"].items(), key=lambda kv: -kv[1])),
         "date_source": date_sources,
     }
     return clean_df, quality
+
+
+def _nil_weeks():
+    """Weeks whose bulletin was read and states that no outbreaks were reported: covered, with zero outbreaks."""
+    try:
+        register = pd.read_csv(BULLETINS_PATH)
+    except (OSError, ValueError):
+        return []
+    nil = register[(register["records"] == 0) & (register["nil_reported"] == 1)].dropna(subset=["year", "week"])
+    return sorted({(int(y), int(w)) for y, w in zip(nil["year"], nil["week"])})
 
 
 def coverage_report(clean_df, raw):
@@ -214,7 +229,8 @@ def coverage_report(clean_df, raw):
         return {"weeks_covered": 0}
     # A week counts as covered only if its own bulletin was ingested (not merely
     # mentioned as a late-reported outbreak in a later one)
-    bulletin_weeks = sorted({(int(y), int(w)) for y, w in zip(raw["bulletin_year"], raw["bulletin_week"]) if y and w})
+    nil_weeks = _nil_weeks()
+    bulletin_weeks = sorted({(int(y), int(w)) for y, w in zip(raw["bulletin_year"], raw["bulletin_week"]) if y and w} | set(nil_weeks))
     first, last = _week_start(*bulletin_weeks[0]), _week_start(*bulletin_weeks[-1])
     expected, cursor = [], first
     while cursor <= last:
@@ -233,6 +249,7 @@ def coverage_report(clean_df, raw):
         "weeks_missing": len(missing),
         "missing_weeks": missing,
         "bulletin_weeks": [f"{y}-W{w:02d}" for y, w in bulletin_weeks],
+        "weeks_with_no_outbreaks_reported": [f"{y}-W{w:02d}" for y, w in nil_weeks],
     }
 
 
@@ -252,8 +269,22 @@ def main():
     clean_df, quality = build_clean_frame(raw)
 
     quality["coverage"] = coverage_report(clean_df, raw)
-    quality["pdfs_on_disk"] = len(list(Path(PDF_DIR).glob("*.pdf")))
+    # Bulletins read so far (their PDFs may have been deleted after extraction)
+    try:
+        quality["pdfs_on_disk"] = int(len(pd.read_csv(BULLETINS_PATH)))
+    except (OSError, ValueError):
+        quality["pdfs_on_disk"] = len(list(Path(PDF_DIR).glob("*.pdf")))
     quality["pdfs_with_records"] = int(raw["source_file"].nunique())
+    # Where each ingested bulletin file was obtained (recorded by the scraper)
+    try:
+        manifest = json.loads(Path(PDF_MANIFEST_PATH).read_text())
+    except (OSError, ValueError):
+        manifest = {}
+    sources = {}
+    for name in raw["source_file"].unique():
+        source = manifest.get(name, {}).get("source", "upload" if manifest else "unknown")
+        sources[source] = sources.get(source, 0) + 1
+    quality["bulletin_sources"] = sources
     quality["generated_at"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
 
     # Save atomically, the API hot-reloads these files while serving

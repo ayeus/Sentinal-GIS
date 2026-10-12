@@ -2,27 +2,34 @@
   "model": "Gradient-boosted decision trees (scikit-learn HistGradientBoostingClassifier)",
   "target": "At least one outbreak of the disease reported by IDSP for the district within 4 weeks",
   "horizon_weeks": 4,
-  "trained_at": "2026-10-12T12:08:28+00:00",
+  "trained_at": "2026-10-12T15:27:43+00:00",
   "diseases_modelled": [
     "Acute Diarrheal Disease",
+    "Acute Encephalitis Syndrome / JE",
     "Chickenpox",
+    "Chikungunya",
     "Cholera",
     "Dengue",
     "Fever With Rash",
     "Fever of Unknown Origin",
     "Food Poisoning",
     "Hepatitis / Jaundice",
+    "Leptospirosis",
     "Malaria",
-    "Measles"
+    "Measles",
+    "Mumps",
+    "Rabies",
+    "Scrub Typhus",
+    "Typhoid"
   ],
   "districts": 735,
   "training": {
-    "rows": 845250,
-    "outbreak_periods": 9197,
-    "base_rate": 0.0109,
-    "reference_weeks": 115,
-    "first_week": "2022-W01",
-    "last_week": "2026-W04",
+    "rows": 5185425,
+    "outbreak_periods": 40929,
+    "base_rate": 0.0079,
+    "reference_weeks": 415,
+    "first_week": "2018-W12",
+    "last_week": "2026-W29",
     "hyperparameters": {
       "max_iter": 600,
       "learning_rate": 0.02,
@@ -39,7 +46,7 @@
           "min_samples_leaf": 100,
           "l2_regularization": 1.0
         },
-        "validation_average_precision": 0.0944
+        "validation_average_precision": 0.1378
       },
       {
         "params": {
@@ -49,7 +56,7 @@
           "min_samples_leaf": 200,
           "l2_regularization": 5.0
         },
-        "validation_average_precision": 0.0957
+        "validation_average_precision": 0.142
       },
       {
         "params": {
@@ -59,7 +66,7 @@
           "min_samples_leaf": 200,
           "l2_regularization": 10.0
         },
-        "validation_average_precision": 0.1044
+        "validation_average_precision": 0.1411
       },
       {
         "params": {
@@ -69,197 +76,246 @@
           "min_samples_leaf": 300,
           "l2_regularization": 10.0
         },
-        "validation_average_precision": 0.1077
+        "validation_average_precision": 0.1459
       }
     ]
   },
   "evaluation": {
     "method": "Tuned on earlier weeks by forward-chaining validation; scored once on the most recent labelled weeks, which were excluded from tuning and fitting.",
-    "holdout_first_week": "2025-W41",
-    "holdout_last_week": "2026-W04",
-    "holdout_rows": 117600,
-    "holdout_outbreak_periods": 1672,
-    "holdout_base_rate": 0.0142,
+    "holdout_first_week": "2026-W14",
+    "holdout_last_week": "2026-W29",
+    "holdout_rows": 199920,
+    "holdout_outbreak_periods": 2162,
+    "holdout_base_rate": 0.0108,
     "model": {
-      "average_precision": 0.1598,
-      "roc_auc": 0.8582,
-      "brier": 0.01286,
-      "precision_top_1pct": 0.2772,
-      "recall_top_1pct": 0.195
+      "average_precision": 0.1818,
+      "roc_auc": 0.8889,
+      "brier": 0.00965,
+      "precision_top_1pct": 0.2531,
+      "recall_top_1pct": 0.234
     },
     "baselines": [
       {
         "name": "Historical frequency of the disease in the district",
-        "average_precision": 0.1068,
-        "roc_auc": 0.7691,
-        "brier": 0.01367,
-        "precision_top_1pct": 0.2126,
-        "recall_top_1pct": 0.1495
+        "average_precision": 0.1314,
+        "roc_auc": 0.8484,
+        "brier": 0.01043,
+        "precision_top_1pct": 0.1996,
+        "recall_top_1pct": 0.1846
       },
       {
         "name": "Frequency over the last 52 weeks",
-        "average_precision": 0.109,
-        "roc_auc": 0.7249,
-        "brier": 0.01338,
-        "precision_top_1pct": 0.2457,
-        "recall_top_1pct": 0.1728
+        "average_precision": 0.1175,
+        "roc_auc": 0.73,
+        "brier": 0.01018,
+        "precision_top_1pct": 0.2211,
+        "recall_top_1pct": 0.2044
       },
       {
         "name": "Seasonal frequency of the disease in the state",
-        "average_precision": 0.0618,
-        "roc_auc": 0.7841,
-        "brier": 0.03172,
-        "precision_top_1pct": 0.1514,
-        "recall_top_1pct": 0.1065
+        "average_precision": 0.0639,
+        "roc_auc": 0.8331,
+        "brier": 0.03671,
+        "precision_top_1pct": 0.099,
+        "recall_top_1pct": 0.0916
       }
     ],
-    "lift_over_best_baseline": 1.47,
+    "lift_over_best_baseline": 1.38,
     "tiers": [
       {
         "tier": "High",
         "min_probability": 0.2,
-        "share_of_forecasts": 0.0048,
-        "forecasts": 561,
-        "observed_outbreak_rate": 0.3422,
-        "mean_forecast_probability": 0.3437,
-        "share_of_outbreaks_captured": 0.1148
+        "share_of_forecasts": 0.0055,
+        "forecasts": 1103,
+        "observed_outbreak_rate": 0.3237,
+        "mean_forecast_probability": 0.329,
+        "share_of_outbreaks_captured": 0.1651
       },
       {
         "tier": "Medium",
         "min_probability": 0.08,
-        "share_of_forecasts": 0.0174,
-        "forecasts": 2050,
-        "observed_outbreak_rate": 0.1478,
-        "mean_forecast_probability": 0.1149,
-        "share_of_outbreaks_captured": 0.1812
+        "share_of_forecasts": 0.0249,
+        "forecasts": 4974,
+        "observed_outbreak_rate": 0.0945,
+        "mean_forecast_probability": 0.1161,
+        "share_of_outbreaks_captured": 0.2174
       },
       {
         "tier": "Low",
         "min_probability": 0.03,
-        "share_of_forecasts": 0.066,
-        "forecasts": 7757,
-        "observed_outbreak_rate": 0.0553,
-        "mean_forecast_probability": 0.0466,
-        "share_of_outbreaks_captured": 0.2566
+        "share_of_forecasts": 0.0628,
+        "forecasts": 12562,
+        "observed_outbreak_rate": 0.0478,
+        "mean_forecast_probability": 0.0485,
+        "share_of_outbreaks_captured": 0.2775
       },
       {
         "tier": "Minimal",
         "min_probability": 0.0,
-        "share_of_forecasts": 0.9118,
-        "forecasts": 107232,
-        "observed_outbreak_rate": 0.007,
-        "mean_forecast_probability": 0.006,
-        "share_of_outbreaks_captured": 0.4474
+        "share_of_forecasts": 0.9068,
+        "forecasts": 181281,
+        "observed_outbreak_rate": 0.0041,
+        "mean_forecast_probability": 0.0048,
+        "share_of_outbreaks_captured": 0.34
       }
     ],
     "per_disease": [
       {
         "disease": "Acute Diarrheal Disease",
-        "outbreak_periods": 401,
-        "average_precision": 0.1845,
-        "roc_auc": 0.7581,
-        "base_rate": 0.0341
+        "outbreak_periods": 507,
+        "average_precision": 0.1527,
+        "roc_auc": 0.7554,
+        "base_rate": 0.0431
+      },
+      {
+        "disease": "Acute Encephalitis Syndrome / JE",
+        "outbreak_periods": 45,
+        "average_precision": 0.1296,
+        "roc_auc": 0.8881,
+        "base_rate": 0.0038
       },
       {
         "disease": "Chickenpox",
-        "outbreak_periods": 312,
-        "average_precision": 0.227,
-        "roc_auc": 0.8703,
-        "base_rate": 0.0265
+        "outbreak_periods": 216,
+        "average_precision": 0.2444,
+        "roc_auc": 0.8485,
+        "base_rate": 0.0184
+      },
+      {
+        "disease": "Chikungunya",
+        "outbreak_periods": 17,
+        "average_precision": 0.0721,
+        "roc_auc": 0.8969,
+        "base_rate": 0.0014
       },
       {
         "disease": "Cholera",
-        "outbreak_periods": 28,
-        "average_precision": 0.0074,
-        "roc_auc": 0.7804,
-        "base_rate": 0.0024
+        "outbreak_periods": 12,
+        "average_precision": 0.0017,
+        "roc_auc": 0.6786,
+        "base_rate": 0.001
       },
       {
         "disease": "Dengue",
-        "outbreak_periods": 70,
-        "average_precision": 0.105,
-        "roc_auc": 0.8208,
-        "base_rate": 0.006
+        "outbreak_periods": 153,
+        "average_precision": 0.5096,
+        "roc_auc": 0.9355,
+        "base_rate": 0.013
       },
       {
         "disease": "Fever With Rash",
-        "outbreak_periods": 33,
-        "average_precision": 0.01,
-        "roc_auc": 0.7256,
-        "base_rate": 0.0028
+        "outbreak_periods": 75,
+        "average_precision": 0.0229,
+        "roc_auc": 0.7224,
+        "base_rate": 0.0064
       },
       {
         "disease": "Fever of Unknown Origin",
-        "outbreak_periods": 70,
-        "average_precision": 0.0311,
-        "roc_auc": 0.7036,
-        "base_rate": 0.006
+        "outbreak_periods": 48,
+        "average_precision": 0.0267,
+        "roc_auc": 0.7274,
+        "base_rate": 0.0041
       },
       {
         "disease": "Food Poisoning",
-        "outbreak_periods": 316,
-        "average_precision": 0.138,
-        "roc_auc": 0.8102,
-        "base_rate": 0.0269
+        "outbreak_periods": 369,
+        "average_precision": 0.1023,
+        "roc_auc": 0.7438,
+        "base_rate": 0.0314
       },
       {
         "disease": "Hepatitis / Jaundice",
-        "outbreak_periods": 184,
-        "average_precision": 0.3833,
-        "roc_auc": 0.9023,
-        "base_rate": 0.0156
+        "outbreak_periods": 278,
+        "average_precision": 0.3164,
+        "roc_auc": 0.8689,
+        "base_rate": 0.0236
+      },
+      {
+        "disease": "Leptospirosis",
+        "outbreak_periods": 7,
+        "average_precision": 0.0006,
+        "roc_auc": 0.3758,
+        "base_rate": 0.0006
       },
       {
         "disease": "Malaria",
-        "outbreak_periods": 43,
-        "average_precision": 0.1962,
-        "roc_auc": 0.7378,
-        "base_rate": 0.0037
+        "outbreak_periods": 67,
+        "average_precision": 0.0894,
+        "roc_auc": 0.9061,
+        "base_rate": 0.0057
       },
       {
         "disease": "Measles",
-        "outbreak_periods": 215,
-        "average_precision": 0.1034,
-        "roc_auc": 0.8257,
-        "base_rate": 0.0183
+        "outbreak_periods": 252,
+        "average_precision": 0.0842,
+        "roc_auc": 0.7487,
+        "base_rate": 0.0214
+      },
+      {
+        "disease": "Mumps",
+        "outbreak_periods": 11,
+        "average_precision": 0.2024,
+        "roc_auc": 0.9933,
+        "base_rate": 0.0009
+      },
+      {
+        "disease": "Rabies",
+        "outbreak_periods": 30,
+        "average_precision": 0.0145,
+        "roc_auc": 0.5601,
+        "base_rate": 0.0026
+      },
+      {
+        "disease": "Scrub Typhus",
+        "outbreak_periods": 13,
+        "average_precision": 0.0246,
+        "roc_auc": 0.8258,
+        "base_rate": 0.0011
+      },
+      {
+        "disease": "Typhoid",
+        "outbreak_periods": 62,
+        "average_precision": 0.2562,
+        "roc_auc": 0.879,
+        "base_rate": 0.0053
       }
     ]
   },
   "drivers": [
     {
-      "factor": "Season (time of year)",
-      "share": 0.305
-    },
-    {
       "factor": "Past outbreaks of this disease in the district",
-      "share": 0.199
-    },
-    {
-      "factor": "Disease",
-      "share": 0.169
-    },
-    {
-      "factor": "All outbreaks reported by the district",
-      "share": 0.149
-    },
-    {
-      "factor": "Time since the last outbreak",
-      "share": 0.078
+      "share": 0.293
     },
     {
       "factor": "Outbreaks elsewhere in the state",
-      "share": 0.059
+      "share": 0.262
     },
     {
-      "factor": "Geography",
-      "share": 0.038
+      "factor": "All outbreaks reported by the district",
+      "share": 0.11
     },
     {
-      "factor": "Outbreaks in neighbouring districts",
-      "share": 0.003
+      "factor": "Time since the last outbreak",
+      "share": 0.1
+    },
+    {
+      "factor": "Season (time of year)",
+      "share": 0.083
     },
     {
       "factor": "National activity of the disease",
+      "share": 0.064
+    },
+    {
+      "factor": "Disease",
+      "share": 0.044
+    },
+    {
+      "factor": "Geography",
+      "share": 0.044
+    },
+    {
+      "factor": "Outbreaks in neighbouring districts",
       "share": 0.0
     },
     {
@@ -268,15 +324,15 @@
     }
   ],
   "forecast": {
-    "based_on_week": "2026-W08",
-    "based_on_week_end": "2026-02-22",
-    "window_start": "2026-02-23",
-    "window_end": "2026-03-22",
+    "based_on_week": "2026-W33",
+    "based_on_week_end": "2026-08-16",
+    "window_start": "2026-08-17",
+    "window_end": "2026-09-13",
     "tier_counts": {
-      "Minimal": 6322,
-      "Low": 731,
-      "Medium": 238,
-      "High": 59
+      "Minimal": 11355,
+      "Low": 767,
+      "Medium": 308,
+      "High": 65
     }
   },
   "limitations": [

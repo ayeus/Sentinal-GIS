@@ -37,7 +37,7 @@ const LivePage = () => {
     <div className="container mx-auto px-6 py-8">
       <div className="flex items-center gap-3 mb-2">
         <Radio className="w-6 h-6 text-red-500" />
-        <h2 className="text-xl font-bold text-gray-900">Live signals</h2>
+        <h2 className="text-2xl font-bold text-gray-900">News &amp; official notices</h2>
       </div>
       <p className="text-sm text-gray-500 mb-6 max-w-4xl">
         Outbreak notices from the World Health Organization and recent news headlines, refreshed every few minutes.

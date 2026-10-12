@@ -5,6 +5,14 @@ import { getModelCard } from "../services/api";
 import StatCard from "../components/StatCard";
 import { RISK_COLORS, formatDate, formatNumber, formatPercent } from "../config";
 
+const SOURCE_LABELS = {
+  portal: "the official IDSP / NCDC site",
+  google_drive: "IDSP's Google Drive links",
+  archive: "Internet Archive copies of the IDSP files",
+  upload: "manual upload",
+  unknown: "earlier downloads",
+};
+
 const Section = ({ icon: Icon, title, children }) => (
   <section className="glass-panel p-6">
     <h3 className="text-lg font-bold text-gray-900 flex items-center gap-2 mb-4">
@@ -50,6 +58,39 @@ const CoverageGrid = ({ weeks }) => {
   );
 };
 
+// Plain-language account of the last automatic check for new bulletins
+const portalCheckText = (check) => {
+  if (!check) {
+    return <strong className="text-amber-700">No automatic check has run on this server yet.</strong>;
+  }
+  const when = formatDate(check.checked_at);
+  if (!check.ok) {
+    return (
+      <strong className="text-red-700">
+        Last check {when} failed ({check.error}): neither the official site nor its Internet Archive copy could be
+        read. New bulletins must be uploaded by hand until this is resolved.
+      </strong>
+    );
+  }
+  const failed = check.failed_count ? ` ${check.failed_count} listed bulletin(s) could not be fetched.` : "";
+  if (check.index_source?.origin === "archive") {
+    return (
+      <strong className="text-amber-700">
+        Last check {when}: the official site could not be reached from this server, so the Internet Archive copy of
+        its index (captured {formatDate(check.index_source.captured)}) was used. It lists bulletins up to{" "}
+        {check.newest_week_listed}; anything published later is not available here until the official site is reachable
+        or the PDF is uploaded. {check.downloaded} new bulletin(s) downloaded.{failed}
+      </strong>
+    );
+  }
+  return (
+    <strong className="text-emerald-700">
+      Last check {when}: official site reached, newest bulletin listed is {check.newest_week_listed},{" "}
+      {check.downloaded} new bulletin(s) downloaded.{failed}
+    </strong>
+  );
+};
+
 const AboutPage = () => {
   const { status } = useDataStatus();
   const [card, setCard] = useState(null);
@@ -66,7 +107,7 @@ const AboutPage = () => {
   return (
     <div className="container mx-auto px-6 py-8 space-y-6 max-w-6xl">
       <div>
-        <h2 className="text-xl font-bold text-gray-900">Data &amp; model</h2>
+        <h2 className="text-2xl font-bold text-gray-900">About the data and the forecast</h2>
         <p className="text-sm text-gray-500 mt-1">
           Where every number in this application comes from, how complete it is, and how well the forecast performed
           when tested. Read this before acting on anything shown elsewhere.
@@ -86,6 +127,10 @@ const AboutPage = () => {
                 {status.source} <ExternalLink className="w-3 h-3" /></a>.
               Each weekly bulletin lists the disease outbreaks that States and UTs reported, with district, case and
               death counts. The system reads the published PDFs; it has no access to unpublished or line-list data.
+              {status.bulletin_sources && Object.keys(status.bulletin_sources).length > 0 && (
+                <> Bulletin files were obtained from: {Object.entries(status.bulletin_sources).map(([source, n]) =>
+                  `${SOURCE_LABELS[source] || source} (${n})`).join(", ")}.</>
+              )}
             </p>
 
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
@@ -103,32 +148,23 @@ const AboutPage = () => {
               </h4>
               <CoverageGrid weeks={status.bulletin_weeks} />
               <p className="text-xs text-gray-600 leading-relaxed mt-3">
+                {status.weeks_with_no_outbreaks_reported?.length > 0 &&
+                  `${status.weeks_with_no_outbreaks_reported.length} of the covered weeks are bulletins stating that no outbreaks were reported (${status.weeks_with_no_outbreaks_reported.join(", ")}); they count as covered, with zero outbreaks. `}
                 Missing weeks are bulletins that have not been downloaded or uploaded. They are treated as unknown
                 everywhere: charts show gaps, and the forecaster neither learns from nor counts them as quiet weeks.
                 {status.pdfs_on_disk > status.pdfs_with_records &&
-                  ` ${status.pdfs_on_disk - status.pdfs_with_records} of ${status.pdfs_on_disk} PDF files on disk could not be read or contained no outbreak table.`}
+                  ` ${status.pdfs_on_disk - status.pdfs_with_records} of ${status.pdfs_on_disk} bulletins read contained no outbreak rows.`}
+                {status.missing_weeks?.length > 0 && status.missing_weeks.length <= 20 &&
+                  ` Missing: ${status.missing_weeks.join(", ")}.`}
               </p>
             </div>
 
             <div>
               <h4 className="text-sm font-bold text-gray-800 mb-2">Automatic updates</h4>
               <p className="text-xs text-gray-600 leading-relaxed">
-                The server checks the IDSP portal every day for new bulletins, and any PDF added with “Add IDSP
+                The server checks the official list of weekly reports (on the NCDC website) every few hours for new bulletins, and any PDF added with “Add IDSP
                 bulletin” is processed at once; either way the dataset is rebuilt and the forecast retrained.{" "}
-                {!status.last_portal_check ? (
-                  <strong className="text-amber-700">No automatic check has run on this server yet.</strong>
-                ) : status.last_portal_check.ok ? (
-                  <strong className="text-emerald-700">
-                    Last check {formatDate(status.last_portal_check.checked_at)}: portal reached,{" "}
-                    {status.last_portal_check.downloaded} new bulletin(s) downloaded.
-                  </strong>
-                ) : (
-                  <strong className="text-red-700">
-                    Last check {formatDate(status.last_portal_check.checked_at)} failed: the IDSP portal could not be
-                    reached from this server ({status.last_portal_check.error}). New bulletins must be uploaded by hand
-                    until this is resolved.
-                  </strong>
-                )}
+{portalCheckText(status.last_portal_check)}
               </p>
             </div>
 

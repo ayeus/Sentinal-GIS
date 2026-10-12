@@ -61,6 +61,10 @@ export const getSpreadRisk = (disease, period) =>
 export const getForecast = (disease) =>
   request("/api/forecast", { params: { disease }, label: "Forecast API" });
 
+// Every forecast disease for one district
+export const getDistrictForecast = (state, district) =>
+  request("/api/forecast", { params: { state, district }, label: "Forecast API" });
+
 export const getModelCard = () => request("/api/model-card", { label: "Model card API" });
 
 // ─── Analytics ──────────────────────────────────────────────────────────────

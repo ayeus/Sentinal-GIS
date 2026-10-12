@@ -21,3 +21,6 @@ backend/data/.pipeline.lock
 *.part
 backend/data/scrape_status.json
 *.tmp
+
+# Bulletin PDFs are deleted after extraction; manifest.json records where each came from
+backend/idsp_pdfs/*.pdf

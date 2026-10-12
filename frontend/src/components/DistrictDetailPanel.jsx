@@ -1,19 +1,24 @@
 import { useState, useEffect } from "react";
-import { getDistrictDetail } from "../services/api";
+import { getDistrictDetail, getDistrictForecast } from "../services/api";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 import { X, MapPin, Skull, Activity, Percent, BookOpen } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import GuidancePanel from "./GuidancePanel";
-import { formatDate, formatNumber } from "../config";
+import { formatDate, formatNumber, formatPercent, getRiskColor } from "../config";
 
 const DistrictDetailPanel = ({ state, district, onClose }) => {
   const [detail, setDetail] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [forecast, setForecast] = useState(null);
 
   useEffect(() => {
     if (!state || !district) return;
     let cancelled = false;
     setLoading(true);
+    setForecast(null);
+    getDistrictForecast(state, district)
+      .then(res => { if (!cancelled) setForecast(res); })
+      .catch(console.error);
     getDistrictDetail(state, district)
       .then(res => { if (!cancelled) setDetail(res.detail?.total_cases !== undefined ? res.detail : null); })
       .catch(err => { console.error(err); if (!cancelled) setDetail(null); })
@@ -47,6 +52,37 @@ const DistrictDetailPanel = ({ state, district, onClose }) => {
             <X className="w-4 h-4 text-gray-600" />
           </button>
         </div>
+
+        {/* What the model expects here next */}
+        {forecast?.available && forecast.window && (
+          <div className="p-4 border-b border-gray-100">
+            <h4 className="text-sm font-bold text-gray-800">
+              Forecast: {formatDate(forecast.window.window_start)} to {formatDate(forecast.window.window_end)}
+            </h4>
+            {forecast.window.status === "expired" && (
+              <p className="text-[11px] text-amber-800 bg-amber-50 border border-amber-200 rounded-lg px-2.5 py-1.5 mt-2">
+                This period has already passed. Shown as a record, not as current guidance.
+              </p>
+            )}
+            {forecast.results.length === 0 ? (
+              <p className="text-xs text-gray-600 mt-2 leading-relaxed">
+                No forecast disease is above the Minimal band (3%) for this district. That is a low estimate, not a guarantee.
+              </p>
+            ) : (
+              <div className="space-y-1.5 mt-2">
+                {forecast.results.map(row => (
+                  <div key={row.Disease} className="flex items-center gap-2 text-xs">
+                    <span className="w-2.5 h-2.5 rounded-full shrink-0" style={{ backgroundColor: getRiskColor(row.risk) }} />
+                    <span className="flex-1 font-medium text-gray-800 truncate">{row.Disease}</span>
+                    <span className="text-gray-500">{row.risk}</span>
+                    <span className="font-bold text-gray-900 w-10 text-right tabular-nums">{formatPercent(row.probability)}</span>
+                  </div>
+                ))}
+                <p className="text-[10px] text-gray-400 pt-1">Chance that at least one outbreak is reported in the period.</p>
+              </div>
+            )}
+          </div>
+        )}
 
         {loading ? (
           <div className="p-10 text-center text-gray-400 animate-pulse">Loading district record…</div>
@@ -125,7 +161,9 @@ const DistrictDetailPanel = ({ state, district, onClose }) => {
                       <div className="text-gray-600 mt-0.5">
                         {formatNumber(o.cases)} cases · {formatNumber(o.deaths)} deaths{o.status ? ` · ${o.status}` : ""}
                       </div>
-                      <div className="text-[10px] text-gray-400 mt-0.5 font-mono">IDSP ID {o.outbreak_id}</div>
+                      <div className="text-[10px] text-gray-400 mt-0.5 font-mono">
+                        {o.outbreak_id.startsWith("NOID") ? "No IDSP ID printed in the bulletin" : `IDSP ID ${o.outbreak_id}`}
+                      </div>
                     </div>
                   ))}
                 </div>
