@@ -1,17 +1,55 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+}
 
 @layer base {
-  html {
-    font-family: 'Outfit', sans-serif;
+  /* Borders default to a light gray unless a colour is given */
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+
+  body {
+    @apply bg-slate-50 text-gray-900 antialiased;
+  }
+
+  button:not(:disabled),
+  summary,
+  select {
+    cursor: pointer;
+  }
+
+  /* One visible keyboard-focus style everywhere */
+  :focus-visible {
+    outline: 2px solid var(--color-blue-500);
+    outline-offset: 2px;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
   }
 }
 
 @layer components {
   .glass-panel {
-    @apply bg-white border border-gray-200 shadow-sm rounded-xl;
+    @apply bg-white border border-gray-200 shadow-xs rounded-2xl;
   }
+}
+
+/* Leaflet tooltips in the app's own style */
+.leaflet-tooltip {
+  border: 1px solid var(--color-gray-200);
+  border-radius: 0.75rem;
+  box-shadow: 0 8px 24px rgb(15 23 42 / 0.12);
+  padding: 6px 8px;
+}
+.leaflet-container {
+  font-family: var(--font-sans);
 }
 
 /* Custom Scrollbar */
@@ -20,12 +58,12 @@
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #f1f5f9; 
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1; 
+  background: #cbd5e1;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8; 
+  background: #94a3b8;
 }

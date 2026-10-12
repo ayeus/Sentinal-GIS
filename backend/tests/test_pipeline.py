@@ -17,7 +17,7 @@ import pandas as pd
 
 from app.services import gazetteer
 from app.services.forecasting import Panel
-from data import clean_data, pdf_extractor
+from data import clean_data, pdf_extractor, scraper
 
 
 class ExtractorTests(unittest.TestCase):
@@ -26,6 +26,7 @@ class ExtractorTests(unittest.TestCase):
                "04-11- 2025", "04-11- 2025", "Under Control", "Cases of vomiting and loose stools"]
         record = pdf_extractor._parse_row(row)
         self.assertEqual(record["outbreak_id"], "AP/GUN/2025/45/1997")
+        self.assertEqual(record["_id_kind"], "idsp")
         self.assertEqual(record["district"], "Guntur")
         self.assertEqual(record["disease"], "Acute Diarrhoeal Disease")
         self.assertEqual((record["cases"], record["deaths"]), ("457", "0"))
@@ -40,6 +41,22 @@ class ExtractorTests(unittest.TestCase):
         self.assertEqual(record["report_date"], "")
         self.assertEqual(record["status"], "Completed")
 
+    def test_ids_without_a_year_and_unnumbered_rows(self):
+        short = pdf_extractor._parse_row(["AR/PPM/36/1225", "Arunachal Pradesh", "Papumpare", "Japanese Encephalitis",
+                                          "05", "00", "08-05-18", "31-08-18", "Under Surveillance", "Cases reported"])
+        self.assertEqual((short["outbreak_id"], short["_id_kind"]), ("AR/PPM/36/1225", "short"))
+        serial = pdf_extractor._parse_row(["2.", "Tamil Nadu", "Ramanathapuram", "Dengue", "21", "00",
+                                           "15-10-20", "26-10-20", "Under Control", "Cases reported"])
+        self.assertEqual((serial["_id_kind"], serial["district"], serial["cases"]), ("serial", "Ramanathapuram", "21"))
+        # A numbered line of ordinary text is not an outbreak
+        self.assertIsNone(pdf_extractor._parse_row(["1.", "Reporting status", "", "", "", "", ""]))
+
+    def test_cover_week_and_nil_statement(self):
+        self.assertEqual(pdf_extractor._cover_week("alerts/outbreaks reported in the 38th week 2020", None), (2020, 38))
+        self.assertEqual(pdf_extractor._cover_week("no week printed", date(2025, 7, 13)), (2025, 28))
+        self.assertTrue(pdf_extractor.NIL_PATTERN.search("During the week 38th there were no outbreaks reported from States"))
+        self.assertFalse(pdf_extractor.NIL_PATTERN.search("Outbreaks reported and responded to by States"))
+
     def test_non_outbreak_rows_are_ignored(self):
         self.assertIsNone(pdf_extractor._parse_row(["Unique ID.", "Name of State/UT", "Name of District"]))
         self.assertIsNone(pdf_extractor._parse_row(["No. of States/UT's Submitted outbreak report", None, "31"]))
@@ -49,6 +66,49 @@ class ExtractorTests(unittest.TestCase):
         self.assertEqual((start, end), (date(2025, 7, 7), date(2025, 7, 13)))
         start, end = pdf_extractor._parse_week_range("29th December to 4th January 2026")
         self.assertEqual((start, end), (date(2025, 12, 29), date(2026, 1, 4)))
+
+
+class ScraperTests(unittest.TestCase):
+    INDEX = """
+      <table>
+        <tr><th>YEAR</th><th>WEEKS</th></tr>
+        <tr><td>2026</td><td>
+          <a href="https://idsp.mohfw.gov.in/WriteReadData/l892s/111.pdf">1st</a>
+          <a href="WriteReadData/l892s/222.pdf">2nd</a></td></tr>
+        <tr><td>2024</td><td>
+          <a href="https://drive.google.com/file/d/1S-Nw1WSp_GngcPFZt354ebS8VPBD-DI9/view?usp=sharing">13th</a>
+          <a href="https://example.org/not-a-bulletin.html">14th</a></td></tr>
+        <tr><td>Archive</td><td><a href="old.pdf">1st</a></td></tr>
+      </table>"""
+
+    def test_index_gives_year_week_and_url(self):
+        rows = scraper.parse_index(self.INDEX)
+        self.assertEqual([(y, w) for y, w, _ in rows], [(2026, 1), (2026, 2), (2024, 13)])
+        self.assertTrue(rows[1][2].startswith("https://") and rows[1][2].endswith("/WriteReadData/l892s/222.pdf"))  # relative link resolved
+
+    def test_ncdc_index_layout(self):
+        html = """<a href="/uploads/weekly_outbreaks/2026/week30_1789731731.pdf">Week 30</a>
+                  <a href="/uploads/weekly_outbreaks/2009/week48.pdf">Week 48</a>
+                  <a href="/uploads/other/report.pdf">Annual report</a>"""
+        rows = scraper.parse_index(html)
+        self.assertEqual([(y, w) for y, w, _ in rows], [(2026, 30), (2009, 48)])
+        self.assertTrue(rows[0][2].endswith("/uploads/weekly_outbreaks/2026/week30_1789731731.pdf"))
+
+    def test_google_drive_links(self):
+        self.assertEqual(scraper._drive_file_id(scraper.parse_index(self.INDEX)[2][2]),
+                         "1S-Nw1WSp_GngcPFZt354ebS8VPBD-DI9")
+        self.assertIsNone(scraper._drive_file_id("https://drive.google.com/drive/folders/"))
+
+    def test_incomplete_pdf_is_rejected(self):
+        import tempfile, os
+        with tempfile.TemporaryDirectory() as folder:
+            good, truncated, page = (os.path.join(folder, n) for n in ("a.pdf", "b.pdf", "c.pdf"))
+            open(good, "wb").write(b"%PDF-1.7\n...\n%%EOF\n")
+            open(truncated, "wb").write(b"%PDF-1.7\n...")
+            open(page, "wb").write(b"<html>Service unavailable</html>")
+            self.assertTrue(scraper.is_complete_pdf(good))
+            self.assertFalse(scraper.is_complete_pdf(truncated))
+            self.assertFalse(scraper.is_complete_pdf(page))
 
 
 class CleaningTests(unittest.TestCase):
@@ -68,6 +128,16 @@ class CleaningTests(unittest.TestCase):
 
     def test_counts(self):
         self.assertEqual(clean_data.clean_cases("03 birds"), 3)
+
+    def test_rows_without_an_idsp_id_are_kept_under_a_synthetic_id(self):
+        raw = pd.DataFrame([{"outbreak_id": "NOID/2020/43/1", "state": "Maharashtra", "district": "Ahmednagar",
+                             "disease": "Food Poisoning", "cases": "45", "deaths": "00", "start_date": "17-10-20",
+                             "report_date": "19-10-20", "status": "Under Control", "comments": "",
+                             "bulletin_year": "2020", "bulletin_week": "43", "week_start": "", "week_end": "",
+                             "source_file": "x.pdf"}])
+        clean, _ = clean_data.build_clean_frame(raw)
+        row = clean.iloc[0]
+        self.assertEqual((row["ReportYear"], row["ReportWeek"], row["District"], row["Cases"]), (2020, 43, "Ahmadnagar", 45))
         self.assertEqual(clean_data.clean_cases(""), 0)
 
     def test_follow_up_keeps_latest_figures_and_bad_dates_fall_back(self):

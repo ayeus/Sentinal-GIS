@@ -31,11 +31,13 @@ def _window(card):
 
 
 @router.get("/forecast")
-def get_forecast(disease: Optional[str] = None, state: Optional[str] = None, include_minimal: bool = False):
+def get_forecast(disease: Optional[str] = None, state: Optional[str] = None, district: Optional[str] = None,
+                 include_minimal: bool = False):
     """
     Probability that IDSP reports an outbreak in each district during the
     forecast window. With a disease: one row per district for that disease.
-    Without: each district's highest-probability disease.
+    Without: each district's highest-probability disease. With a state and
+    district: every forecast disease for that one district.
     """
     table, card = load_forecast(), load_model_card()
     if table is None or card is None:
@@ -45,6 +47,8 @@ def get_forecast(disease: Optional[str] = None, state: Optional[str] = None, inc
     rows = table
     if state:
         rows = rows[rows["State"].str.lower() == state.lower()]
+    if district:
+        rows = rows[rows["District"].str.lower() == district.lower()]
     if disease:
         rows = rows[rows["Disease"].str.lower() == disease.lower()]
         if rows.empty:
@@ -54,7 +58,7 @@ def get_forecast(disease: Optional[str] = None, state: Optional[str] = None, inc
                 "message": f"'{disease}' is not forecast: it has too few reported outbreaks to model reliably. "
                            f"Forecast diseases: {', '.join(card['diseases_modelled'])}.",
             }
-    else:
+    elif not district:
         rows = rows.loc[rows.groupby(["State", "District"])["probability"].idxmax()]
 
     tier_counts = {tier: int((rows["tier"] == tier).sum()) for tier in TIER_ORDER}

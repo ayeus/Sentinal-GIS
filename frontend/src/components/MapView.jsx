@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
 import { MapContainer, TileLayer, GeoJSON, AttributionControl } from "react-leaflet";
-import "leaflet/dist/leaflet.css";
 import SpreadArrows from "./SpreadArrows";
 import { getStateGeoJSON } from "../services/api";
 import { MAP, GEO_STATE_KEY, GEO_DISTRICT_KEY, getRiskColor } from "../config";

@@ -50,60 +50,71 @@ def _pipeline_lock():
         _THREAD_LOCK.release()
 
 
+def _process_new_pdfs():
+    """Extract any new PDFs, rebuild the dataset and retrain. Caller holds the pipeline lock."""
+    print("🔍 [Auto-Watcher] Checking for new unextracted IDSP PDFs...")
+    try:
+        new_rows = pdf_extractor.extract_batch()
+        if new_rows > 0:
+            print(f"📄 [Auto-Watcher] Extracted {new_rows} new records from new PDF(s).")
+            print("🧹 [Auto-Watcher] Cleaning and standardizing dataset...")
+            total_clean = clean_data.main()
+            print(f"📊 [Auto-Watcher] Clean dataset now has {total_clean} records. Triggering ML retraining...")
+            if not ml_trainer.retrain_model():
+                return {"status": "error", "error": "Data was ingested but model retraining failed. Check server logs.", "new_records": new_rows, "total_clean": total_clean}
+            print("🎉 [Auto-Watcher] ML Model successfully retrained with latest PDF data!")
+            return {"status": "retrained", "new_records": new_rows, "total_clean": total_clean}
+        return {"status": "idle", "message": "No new PDFs to process."}
+    except Exception as e:
+        print(f"❌ [Auto-Watcher] Error during auto-processing: {e}")
+        return {"status": "error", "error": str(e)}
+
+
+BUSY = {"status": "busy", "message": "Pipeline is already running; new PDFs will be picked up by that run or the next check."}
+
+
 def auto_process_new_pdfs():
     """
     Checks for any new unextracted PDFs in idsp_pdfs/.
     If found, extracts them, cleans the data, and retrains the model automatically.
     """
     with _pipeline_lock() as acquired:
-        if not acquired:
-            return {"status": "busy", "message": "Pipeline is already running; new PDFs will be picked up by that run or the next check."}
+        return _process_new_pdfs() if acquired else BUSY
 
-        print("🔍 [Auto-Watcher] Checking for new unextracted IDSP PDFs...")
-        try:
-            new_rows = pdf_extractor.extract_batch()
-            if new_rows > 0:
-                print(f"📄 [Auto-Watcher] Extracted {new_rows} new records from new PDF(s).")
-                print("🧹 [Auto-Watcher] Cleaning and standardizing dataset...")
-                total_clean = clean_data.main()
-                print(f"📊 [Auto-Watcher] Clean dataset now has {total_clean} records. Triggering ML retraining...")
-                if not ml_trainer.retrain_model():
-                    return {"status": "error", "error": "Data was ingested but model retraining failed. Check server logs.", "new_records": new_rows, "total_clean": total_clean}
-                print("🎉 [Auto-Watcher] ML Model successfully retrained with latest PDF data!")
-                return {"status": "retrained", "new_records": new_rows, "total_clean": total_clean}
-            else:
-                return {"status": "idle", "message": "No new PDFs to process."}
-        except Exception as e:
-            print(f"❌ [Auto-Watcher] Error during auto-processing: {e}")
-            return {"status": "error", "error": str(e)}
 
 def run_pipeline():
-    print("="*50)
-    print("🚀 AUTOMATED FULL PIPELINE STARTED")
-    print("="*50)
-    
-    # 1. Scrape PDFs from IDSP portal, and record the outcome so the UI can
-    #    show whether automatic updates are actually working
-    status = {"checked_at": datetime.now(timezone.utc).isoformat(timespec="seconds")}
-    try:
-        print("\n--- Phase 1: Scraping IDSP Portal for New Bulletins ---")
-        status.update({"ok": True, **(scraper.main() or {})})
-    except Exception as e:
-        print(f"Phase 1 Scraper Notice: {e}")
-        # Keep the stored reason short and readable; the full error is in the server log
-        status.update({"ok": False, "error": type(e).__name__})
-    try:
-        SCRAPE_STATUS_PATH.write_text(json.dumps(status, indent=2))
-    except OSError as e:
-        print(f"Could not record scrape status: {e}")
-        
-    # 2. Extract, Clean & Retrain if new PDFs found
-    result = auto_process_new_pdfs()
-    
-    print("\n" + "="*50)
-    print("✅ AUTOMATED PIPELINE COMPLETED")
-    print("="*50)
-    return result
+    """Check the official index for new bulletins, download them, then process everything new."""
+    with _pipeline_lock() as acquired:
+        if not acquired:
+            return BUSY
+
+        print("="*50)
+        print("🚀 AUTOMATED FULL PIPELINE STARTED")
+        print("="*50)
+
+        # 1. Download new bulletins, and record the outcome so the UI can show
+        #    whether automatic updates are actually working. The lock is held
+        #    throughout, so the PDF watcher never starts on a half-finished batch.
+        status = {"checked_at": datetime.now(timezone.utc).isoformat(timespec="seconds")}
+        try:
+            print("\n--- Phase 1: Checking the official index for new bulletins ---")
+            status.update({"ok": True, **(scraper.main() or {})})
+        except Exception as e:
+            print(f"Phase 1 Scraper Notice: {e}")
+            # Keep the stored reason short and readable; the full error is in the server log
+            status.update({"ok": False, "error": type(e).__name__})
+        try:
+            SCRAPE_STATUS_PATH.write_text(json.dumps(status, indent=2))
+        except OSError as e:
+            print(f"Could not record scrape status: {e}")
+
+        # 2. Extract, Clean & Retrain if new PDFs found
+        result = _process_new_pdfs()
+
+        print("\n" + "="*50)
+        print("✅ AUTOMATED PIPELINE COMPLETED")
+        print("="*50)
+        return result
 
 if __name__ == "__main__":
     run_pipeline()

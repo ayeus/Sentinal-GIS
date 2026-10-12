@@ -43,12 +43,17 @@ WORKSPACE_DIR = BACKEND_DIR.parent
 DATA_DIR = _env_path("SENTINEL_DATA_DIR", BACKEND_DIR / "data")
 MODEL_DIR = _env_path("SENTINEL_MODEL_DIR", BACKEND_DIR / "model")
 PDF_DIR = _env_path("SENTINEL_PDF_DIR", BACKEND_DIR / "idsp_pdfs")
+PDF_MANIFEST_PATH = PDF_DIR / "manifest.json"
+# Delete each bulletin PDF once its rows are safely in the dataset (saves ~1 MB per week).
+# The manifest keeps the source URL of every file, so any bulletin can be fetched again.
+DELETE_PDFS_AFTER_EXTRACTION = _env_bool("DELETE_PDFS_AFTER_EXTRACTION", True)
 PROCESSED_PDFS_FILE = _env_path("SENTINEL_PROCESSED_PDFS_FILE", BACKEND_DIR / "processed_pdfs.txt")
 PIPELINE_LOCK_FILE = _env_path("SENTINEL_PIPELINE_LOCK_FILE", DATA_DIR / ".pipeline.lock")
 
 # Canonical dataset file paths
 CLEAN_DATA_PATH = DATA_DIR / "historical_cases_clean.csv"
 RAW_DATA_PATH = DATA_DIR / "historical_cases_raw.csv"
+BULLETINS_PATH = DATA_DIR / "bulletins.csv"
 ADJACENCY_PATH = DATA_DIR / "district_adjacency.csv"
 DISTRICT_GAZETTEER_PATH = DATA_DIR / "districts.csv"
 DATA_QUALITY_PATH = DATA_DIR / "data_quality.json"
@@ -129,19 +134,25 @@ MODEL_CARD_PATH = DATA_DIR / "model_card.json"
 # ─── Ingestion pipeline ─────────────────────────────────────────────────────
 ENABLE_SCHEDULER = _env_bool("ENABLE_SCHEDULER", True)
 PDF_WATCH_INTERVAL_SECONDS = _env_int("PDF_WATCH_INTERVAL_SECONDS", 60)
-# Bulletins are weekly but published irregularly, so the portal is checked every day
-SCRAPE_CRON_DAY_OF_WEEK = os.getenv("SCRAPE_CRON_DAY_OF_WEEK", "*")
-SCRAPE_CRON_HOUR = _env_int("SCRAPE_CRON_HOUR", 2)
-SCRAPE_CRON_MINUTE = _env_int("SCRAPE_CRON_MINUTE", 0)
+# Bulletins are weekly but published irregularly (often several at once), so the
+# official index is checked around the clock. One check is a single page request.
+SCRAPE_INTERVAL_HOURS = _env_float("SCRAPE_INTERVAL_HOURS", 6)
 STARTUP_CHECK_DELAY_SECONDS = _env_int("STARTUP_CHECK_DELAY_SECONDS", 30)
 # Interval used by the standalone realtime_pipeline.py loop
 REALTIME_LOOP_SECONDS = _env_int("REALTIME_LOOP_SECONDS", 1800)
 
+# Index page listing one weekly outbreak report per week. The reports moved from
+# idsp.mohfw.gov.in (retired in 2026) to the NCDC website.
 IDSP_BULLETIN_URL = os.getenv(
     "IDSP_BULLETIN_URL",
-    "https://idsp.mohfw.gov.in/index4.php?lang=1&level=0&linkid=406&lid=3689",
+    "https://ncdc.mohfw.gov.in/includes/WeeklyOutbreaks.php",
 )
+# Most bulletins fetched in one run, and the earliest year to collect
 SCRAPER_MAX_DOCUMENTS = _env_int("SCRAPER_MAX_DOCUMENTS", 400)
+SCRAPER_FIRST_YEAR = _env_int("SCRAPER_FIRST_YEAR", 2018)
+# When the IDSP server cannot be reached, read the index page and the PDFs from
+# the Internet Archive (web.archive.org) copies of the same official files
+SCRAPER_USE_ARCHIVE_FALLBACK = _env_bool("SCRAPER_USE_ARCHIVE_FALLBACK", True)
 SCRAPER_TIMEOUT_SECONDS = _env_int("SCRAPER_TIMEOUT_SECONDS", 15)
 SCRAPER_DELAY_SECONDS = _env_float("SCRAPER_DELAY_SECONDS", 1.0)
 

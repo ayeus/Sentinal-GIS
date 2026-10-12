@@ -26,9 +26,7 @@ from app.config import (
     MAX_UPLOAD_MB,
     PDF_DIR,
     PDF_WATCH_INTERVAL_SECONDS,
-    SCRAPE_CRON_DAY_OF_WEEK,
-    SCRAPE_CRON_HOUR,
-    SCRAPE_CRON_MINUTE,
+    SCRAPE_INTERVAL_HOURS,
     STARTUP_CHECK_DELAY_SECONDS,
 )
 from app.routes.forecast import router as forecast_router
@@ -51,16 +49,13 @@ async def lifespan(app: FastAPI):
     # 1. Background watcher: checks for new unextracted PDFs
     scheduler.add_job(auto_process_new_pdfs, "interval", seconds=PDF_WATCH_INTERVAL_SECONDS)
     # 2. Scheduled check of the IDSP portal for new bulletins
-    scheduler.add_job(
-        run_pipeline, "cron",
-        day_of_week=SCRAPE_CRON_DAY_OF_WEEK, hour=SCRAPE_CRON_HOUR, minute=SCRAPE_CRON_MINUTE,
-    )
+    scheduler.add_job(run_pipeline, "interval", hours=SCRAPE_INTERVAL_HOURS)
     # 3. One check shortly after start-up, so a fresh deployment does not wait for the nightly run
     scheduler.add_job(run_pipeline, "date", run_date=datetime.now() + timedelta(seconds=STARTUP_CHECK_DELAY_SECONDS))
     scheduler.start()
     print(
-        f"✅ APScheduler started: PDF watcher every {PDF_WATCH_INTERVAL_SECONDS}s + IDSP scraper "
-        f"({SCRAPE_CRON_DAY_OF_WEEK} {SCRAPE_CRON_HOUR:02d}:{SCRAPE_CRON_MINUTE:02d})."
+        f"✅ APScheduler started: PDF watcher every {PDF_WATCH_INTERVAL_SECONDS}s + "
+        f"check for new IDSP bulletins every {SCRAPE_INTERVAL_HOURS:g}h (and at start-up)."
     )
     yield
     # Shutdown scheduler when app stops
@@ -126,7 +121,7 @@ def trigger_pipeline(background_tasks: BackgroundTasks):
     return {"message": "Automated data pipeline triggered in the background. Check server logs for progress."}
 
 @app.post("/api/upload-pdf", dependencies=[Depends(require_admin)])
-def upload_pdf(file: UploadFile = File(...)):
+def upload_pdf(background_tasks: BackgroundTasks, file: UploadFile = File(...)):
     """
     Upload a new IDSP PDF outbreak report.
     Automatically extracts the tables, cleans the dataset, and retrains the ML model.
@@ -158,12 +153,17 @@ def upload_pdf(file: UploadFile = File(...)):
     finally:
         tmp_path.unlink(missing_ok=True)
 
-    print(f"📥 Received uploaded PDF: {filename}. Triggering auto-processing & retraining...")
-    result = auto_process_new_pdfs()
+    # Extraction is quick but retraining takes several minutes: run it after responding
+    print(f"📥 Received uploaded PDF: {filename}. Processing & retraining in the background...")
+    background_tasks.add_task(auto_process_new_pdfs)
     return {
         "status": "success",
         "file": filename,
-        "pipeline": result
+        "pipeline": {
+            "status": "processing",
+            "message": "Bulletin saved. Its outbreaks are being extracted and the forecast retrained; "
+                       "this takes several minutes. Reload the page afterwards.",
+        },
     }
 
 # 🔹 Production Static Files Serving & SPA Fallback

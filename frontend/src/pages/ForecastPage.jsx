@@ -6,8 +6,10 @@ import MapView from "../components/MapView";
 import RiskCard from "../components/RiskCard";
 import Legend from "../components/Legend";
 import StatCard from "../components/StatCard";
-import DistrictDetailPanel from "../components/DistrictDetailPanel";
 import FilterBar from "../components/FilterBar";
+import HowToRead from "../components/HowToRead";
+import ListTools, { downloadCsv, filterRows } from "../components/ListTools";
+import useDistrictPanel from "../hooks/useDistrictPanel";
 import useSurveillanceFilters from "../hooks/useSurveillanceFilters";
 import { getForecast, getCurrentStatus, getDistrictGeoJSON, getSpreadRisk } from "../services/api";
 import { SPREAD_LIST_LIMIT, formatDate, formatNumber, formatPercent } from "../config";
@@ -39,7 +41,8 @@ const ForecastPage = () => {
   const [loading, setLoading] = useState(true);
   const [errorMsg, setErrorMsg] = useState("");
   const [districtGeoData, setDistrictGeoData] = useState(null);
-  const [selectedDistrict, setSelectedDistrict] = useState(null);
+  const [listFilter, setListFilter] = useState({ text: "", state: "" });
+  const { openDistrict } = useDistrictPanel();
   const isExposure = mode === "exposure";
 
   useEffect(() => {
@@ -82,12 +85,13 @@ const ForecastPage = () => {
 
   const window_ = forecast?.window;
   const results = forecast?.results || [];
+  const shownResults = filterRows(results, listFilter);
   const tierInfo = Object.fromEntries((forecast?.tiers || []).map(t => [t.tier, t]));
 
   return (
     <div className="container mx-auto px-6 py-8">
       <div className="flex flex-wrap items-center gap-4 mb-2">
-        <h2 className="text-xl font-bold text-gray-900 flex-1">
+        <h2 className="text-2xl font-bold text-gray-900 flex-1">
           {isExposure ? "Districts bordering an outbreak" : "Outbreak forecast"}
         </h2>
         <div className="bg-gray-100 p-1 rounded-lg flex border border-gray-200">
@@ -118,6 +122,17 @@ const ForecastPage = () => {
           {!disease && " With all diseases selected, each district shows its highest-probability disease."}
         </p>
       )}
+
+      <HowToRead points={isExposure ? [
+        "A line joins a district that reported an outbreak to each district sharing a border with it.",
+        "It shows where a spreading disease could reach next because of geography alone. It is not a prediction.",
+        "Pick one disease at the top right for a clearer map.",
+      ] : [
+        "The percentage is the estimated chance that at least one outbreak of the disease is reported from the district in the four weeks shown above.",
+        "High, Medium and Low are bands of that percentage. The cards at the top say how often each band turned out right when the model was tested.",
+        "Use it to decide where to look first. A High rating is a warning, not a certainty, and a district without colour is not guaranteed safe.",
+        "Click a district to see the facts behind its rating and everything it has reported.",
+      ]} />
 
       {/* The forecast window has passed: say so before anything else */}
       {!isExposure && window_ && window_.status === "expired" && (
@@ -151,7 +166,7 @@ const ForecastPage = () => {
               value={forecast.tier_counts?.[tier] ?? 0}
               border={TIER_STYLE[tier].border} tone={TIER_STYLE[tier].tone}
               hint={tierInfo[tier]?.observed_outbreak_rate != null
-                ? `In testing, ${formatPercent(tierInfo[tier].observed_outbreak_rate)} of ${tier} flags were followed by a reported outbreak.`
+                ? `When tested, about ${Math.max(1, Math.round(tierInfo[tier].observed_outbreak_rate * 20))} in 20 ${tier} ratings were followed by a reported outbreak.`
                 : undefined} />
           ))}
         </div>
@@ -164,12 +179,12 @@ const ForecastPage = () => {
               <MapView rows={exposure.rows} geoData={districtGeoData} spreadVectors={exposure.vectors}
                 describe={(row) => [`${formatNumber(row.Cases)} cases reported`, row.Diseases]}
                 emptyLabel="No outbreak reported in this period"
-                onDistrictClick={(state, district) => setSelectedDistrict({ state, district })} />
+                onDistrictClick={openDistrict} />
             ) : (
               <MapView rows={results} geoData={districtGeoData}
                 describe={(row) => [`${row.risk} risk: ${formatPercent(row.probability)} chance`, row.Disease, ...facts(row)]}
                 emptyLabel="Minimal risk (below 3%)"
-                onDistrictClick={(state, district) => setSelectedDistrict({ state, district })} />
+                onDistrictClick={openDistrict} />
             )}
           </div>
           {isExposure ? (
@@ -201,7 +216,7 @@ const ForecastPage = () => {
           <h3 className="text-lg font-bold text-gray-900 mb-3 border-b border-gray-200 pb-2">
             {isExposure ? "Source districts" : "Highest risk first"}
             <span className="text-xs font-medium text-gray-400 ml-2">
-              {isExposure ? `${sources.length} · most cases first` : `${results.length} districts above Minimal`}
+              {isExposure ? `${sources.length} · most cases first` : `${shownResults.length} of ${results.length} districts above Minimal`}
             </span>
           </h3>
           {loading ? (
@@ -218,7 +233,7 @@ const ForecastPage = () => {
                     title={source.origin_district} subtitle={source.origin_state}
                     risk={source.spread_risk} value={formatNumber(source.origin_cases)} valueLabel="cases reported"
                     facts={[`Borders ${source.neighbours.join(", ")}`]}
-                    onClick={() => setSelectedDistrict({ state: source.origin_state, district: source.origin_district })} />
+                    onClick={() => openDistrict(source.origin_state, source.origin_district)} />
                 ))}
                 {sources.length > SPREAD_LIST_LIMIT && (
                   <p className="text-xs text-gray-400 text-center py-2">Showing the {SPREAD_LIST_LIMIT} largest sources; all are drawn on the map.</p>
@@ -230,24 +245,30 @@ const ForecastPage = () => {
               {forecast?.message || "No district is above the Minimal tier for this disease in this window."}
             </p>
           ) : (
+            <>
+            <ListTools rows={results} filter={listFilter} setFilter={setListFilter}
+              onDownload={() => downloadCsv("outbreak-forecast.csv", [
+                ["State", "State"], ["District", "District"], ["Disease", "Disease"], ["Risk", "risk"],
+                ["Probability", "probability"], ["Outbreaks in past 52 weeks", "outbreaks_52w"],
+                ["Outbreaks in neighbouring districts, 12 weeks", "neighbour_outbreaks_12w"],
+                ["Outbreaks in state, 12 weeks", "state_outbreaks_12w"],
+              ], shownResults)} />
             <div className="space-y-2.5 max-h-[640px] overflow-y-auto pr-2 custom-scrollbar">
-              {results.map(row => (
+              {shownResults.length === 0 && <p className="text-sm text-gray-500 p-3">No district in the list matches.</p>}
+              {shownResults.map(row => (
                 <RiskCard key={`${row.State}|${row.District}|${row.Disease}`}
                   title={row.District} subtitle={row.State} risk={row.risk}
                   caption={`${row.risk} · ${row.Disease}`}
                   value={formatPercent(row.probability)} valueLabel="probability"
                   facts={facts(row)}
-                  onClick={() => setSelectedDistrict({ state: row.State, district: row.District })} />
+                  onClick={() => openDistrict(row.State, row.District)} />
               ))}
             </div>
+            </>
           )}
         </div>
       </div>
 
-      {selectedDistrict && (
-        <DistrictDetailPanel state={selectedDistrict.state} district={selectedDistrict.district}
-          onClose={() => setSelectedDistrict(null)} />
-      )}
     </div>
   );
 };

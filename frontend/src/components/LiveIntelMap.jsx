@@ -1,6 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { MapContainer, TileLayer, GeoJSON, AttributionControl } from "react-leaflet";
-import "leaflet/dist/leaflet.css";
 import { motion, AnimatePresence } from "framer-motion";
 import { getLiveGeoAlerts, getStateGeoJSON } from "../services/api";
 import { MAP, LIVE_REFRESH_MS, GEO_STATE_KEY, NO_DATA_COLOR } from "../config";

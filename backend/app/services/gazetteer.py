@@ -62,18 +62,19 @@ def _tables():
             if key(target) not in districts.get(state, {}):
                 raise ValueError(f"district_aliases.json: '{target}' is not a district of {state} in the gazetteer")
             aliases[(state, key(reported))] = (target, "alias" if kind == "renamed" else "parent")
-    return states, districts, aliases
+    successors = {k: v for k, v in raw.get("state_successors", {}).items() if not k.startswith("_")}
+    return states, districts, aliases, successors
 
 
 def all_districts():
     """[(state, district)] for every district of the boundary layer."""
-    _, districts, _ = _tables()
+    _, districts, _, _ = _tables()
     return sorted({(state, name) for state, index in districts.items() for name in index.values()})
 
 
 def resolve_state(reported):
     """Canonical state/UT name, or None if the text is not recognisably a state."""
-    states, _, _ = _tables()
+    states, _, _, _ = _tables()
     text = re.sub(r"\(.*?\)", "", str(reported or "")).replace("&", " and ")
     k = key(text)
     k = re.sub(r"^the", "", k)
@@ -88,7 +89,26 @@ def resolve_district(state, reported):
     Returns (canonical_district, how) where how is one of
     exact | alias | parent | fuzzy | none. With 'none' the first element is None.
     """
-    _, districts, aliases = _tables()
+    return _resolve_in_state(state, reported)
+
+
+def resolve_place(state, reported_district):
+    """
+    Returns (state, canonical_district, how). Usually the reported state; when
+    the district is not found there, the state/UT later carved out of it is
+    tried (a Leh outbreak reported under Jammu and Kashmir belongs to Ladakh).
+    """
+    district, how = _resolve_in_state(state, reported_district)
+    if district is None:
+        for successor in _tables()[3].get(state, []):
+            candidate, candidate_how = _resolve_in_state(successor, reported_district, allow_fuzzy=False)
+            if candidate is not None:
+                return successor, candidate, candidate_how
+    return state, district, how
+
+
+def _resolve_in_state(state, reported, allow_fuzzy=True):
+    _, districts, aliases, _ = _tables()
     index = districts.get(state, {})
     text = str(reported or "")
 
@@ -105,6 +125,8 @@ def resolve_district(state, reported):
             elif k in table:
                 return table[k], how_exact
 
+    if not allow_fuzzy:
+        return None, "none"
     k = key(text)
     scored = sorted(((difflib.SequenceMatcher(None, k, other).ratio(), other) for other in index), reverse=True)
     if scored and scored[0][0] >= FUZZY_CUTOFF:
